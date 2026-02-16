@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c02ju3varrs0g"]
+
+[ext_resource type="Script" uid="uid://nr4o15tyd6ic" path="res://src/ui/simple_dialog/simple_dialog_player.gd" id="1_7fe6x"]
+[ext_resource type="Texture2D" uid="uid://bfnabmof8ix85" path="res://assets/ui/dialog/DialogueBoxSimple.png" id="2_rekgc"]
+[ext_resource type="FontFile" uid="uid://dfji6t5br2qyw" path="res://src/ui/fonts/Nordhin.ttf" id="3_2rcds"]
+
+[node name="SimpleDialogPlayer" type="CanvasLayer" unique_id=1255215716]
+process_mode = 3
+script = ExtResource("1_7fe6x")
+
+[node name="Background" type="TextureRect" parent="." unique_id=960927616]
+offset_left = 96.0
+offset_top = 20.0
+offset_right = 381.0
+offset_bottom = 70.0
+texture = ExtResource("2_rekgc")
+expand_mode = 1
+
+[node name="TextLabel" type="Label" parent="." unique_id=1695056763]
+offset_left = 105.0
+offset_top = 28.0
+offset_right = 372.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+theme_override_fonts/font = ExtResource("3_2rcds")
+theme_override_font_sizes/font_size = 9
+text = "Texto template
+Texto template Texto template
+Texto template Texto template Texto template"
+autowrap_mode = 1

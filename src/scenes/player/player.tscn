@@ -131,3 +131,5 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteractionArea" unique_id=156696763]
 position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_dovo2")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1160226701]
