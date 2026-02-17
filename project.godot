@@ -67,6 +67,10 @@ E={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_3="dialog"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

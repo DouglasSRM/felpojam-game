@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bayl34n5s6ic7"
-path="res://.godot/imported/dungeon-mode.ttf-6697dcfc3ed186ccff8b73731d6595da.fontdata"
+path="res://.godot/imported/dungeon-mode.ttf-ae77ff6e2a90d1e75be6a75b374871e8.fontdata"
 
 [deps]
 
-source_file="res://src/ui/fonts/dungeon-mode.ttf"
-dest_files=["res://.godot/imported/dungeon-mode.ttf-6697dcfc3ed186ccff8b73731d6595da.fontdata"]
+source_file="res://fonts/dungeon-mode.ttf"
+dest_files=["res://.godot/imported/dungeon-mode.ttf-ae77ff6e2a90d1e75be6a75b374871e8.fontdata"]
 
 [params]
 

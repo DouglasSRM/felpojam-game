@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dfji6t5br2qyw"
-path="res://.godot/imported/Nordhin.ttf-8e54e188a2864fb58bb987f754dcbd8f.fontdata"
+uid="uid://bd0h81g4se3ty"
+path="res://.godot/imported/Nordhin.otf-241cf66f43674de1ccb6d799828d2246.fontdata"
 
 [deps]
 
-source_file="res://src/ui/fonts/Nordhin.ttf"
-dest_files=["res://.godot/imported/Nordhin.ttf-8e54e188a2864fb58bb987f754dcbd8f.fontdata"]
+source_file="res://fonts/Nordhin.otf"
+dest_files=["res://.godot/imported/Nordhin.otf-241cf66f43674de1ccb6d799828d2246.fontdata"]
 
 [params]
 

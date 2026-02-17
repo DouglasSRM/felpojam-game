@@ -10,19 +10,16 @@
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="8_pyp6y"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="9_pacc2"]
 [ext_resource type="Texture2D" uid="uid://2khx6lw6sso2" path="res://assets/characters/robo_temporario_andandinho.png" id="10_pacc2"]
-[ext_resource type="Script" uid="uid://bwmccfplhqpda" path="res://src/ui/complex_dialog/resources/dialogue_function_resource.gd" id="11_tp0w8"]
-[ext_resource type="Script" uid="uid://dvqw2l4htwcuf" path="res://src/ui/complex_dialog/resources/dialogue_choice_resource.gd" id="12_bb8qs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vum8s"]
 size = Vector2(25, 25)
 
 [sub_resource type="Resource" id="Resource_6k5om"]
 script = ExtResource("9_pacc2")
-speaker_name = "LULADROID"
 speaker_img = ExtResource("10_pacc2")
 speaker_img_HFrames = 4
 text = "a ble ble ble a ble ble ble a ble ble ble a ble ble ble a ble ble ble a ble ble ble a ble ble "
-text_speed = 13.0
+text_speed = 30.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_pyp6y"]
@@ -33,47 +30,8 @@ text = "e blu blu blu e blu blu blu e blu blu blu e blu blu blu e blu blu blu e 
 text_speed = 13.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
-[sub_resource type="Resource" id="Resource_mk21t"]
-script = ExtResource("11_tp0w8")
-target_path = NodePath("../RespostasDialogoAble")
-function_name = "_activate_dialogue"
-hide_dialogue_box = true
-metadata/_custom_type_script = "uid://bwmccfplhqpda"
-
-[sub_resource type="Resource" id="Resource_ni0uh"]
-script = ExtResource("11_tp0w8")
-target_path = NodePath("../RespostasDialogoEblu")
-function_name = "_activate_dialogue"
-hide_dialogue_box = true
-metadata/_custom_type_script = "uid://bwmccfplhqpda"
-
-[sub_resource type="Resource" id="Resource_2c6j5"]
-script = ExtResource("12_bb8qs")
-speaker_img = ExtResource("10_pacc2")
-speaker_img_HFrames = 4
-text = "a ble ble ou e blu blu?"
-choice_text = Array[String](["a ble ble", "e blu blu"])
-choice_function_call = Array[ExtResource("11_tp0w8")]([SubResource("Resource_mk21t"), SubResource("Resource_ni0uh")])
-metadata/_custom_type_script = "uid://dvqw2l4htwcuf"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0w8"]
 size = Vector2(97.5, 60.875)
-
-[sub_resource type="Resource" id="Resource_tp0w8"]
-script = ExtResource("9_pacc2")
-speaker_img = ExtResource("10_pacc2")
-speaker_img_HFrames = 4
-text = "a ble!!!!"
-text_speed = 13.0
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
-
-[sub_resource type="Resource" id="Resource_bb8qs"]
-script = ExtResource("9_pacc2")
-speaker_img = ExtResource("10_pacc2")
-speaker_img_HFrames = 4
-text = "e blu!!"
-text_speed = 13.0
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [node name="InitialScene" type="Node2D" unique_id=821454405]
 script = ExtResource("1_vum8s")
@@ -119,7 +77,8 @@ vframes = 7
 
 [node name="DialogAreaRobo" parent="." unique_id=369042241 instance=ExtResource("7_lriem")]
 position = Vector2(247, 88)
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_6k5om"), SubResource("Resource_pyp6y"), SubResource("Resource_2c6j5")])
+activate_instant = true
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_6k5om"), SubResource("Resource_pyp6y")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogAreaRobo" unique_id=1700188170]
 position = Vector2(20, 19.4375)
@@ -127,12 +86,6 @@ shape = SubResource("RectangleShape2D_tp0w8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=728006799]
 offset = Vector2(240, 135)
-
-[node name="RespostasDialogoAble" parent="." unique_id=1604792675 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_tp0w8")])
-
-[node name="RespostasDialogoEblu" parent="." unique_id=745811448 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_bb8qs")])
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 

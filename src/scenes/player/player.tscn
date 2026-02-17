@@ -133,3 +133,5 @@ position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1160226701]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
