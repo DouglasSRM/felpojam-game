@@ -1,0 +1,26 @@
+class_name MainMenu extends Control
+
+const cena_inicial = "initial_scene/initial_scene"
+
+@onready var settings_menu: Panel = %settings_menu
+
+@onready var play: Button = %play
+@onready var options: Button = %options
+@onready var quit: Button = %quit
+@onready var close_btn: Button = %close_btn
+
+@onready var crt_effect: CanvasLayer = %CrtEffect
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
+func _ready() -> void:
+	settings_menu.visible = false
+
+func _on_play_pressed() -> void:
+	SceneManager.change_scene(self, cena_inicial)
+	audio_stream_player.stop()
+
+func _on_options_pressed() -> void:
+	settings_menu.visible = true
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

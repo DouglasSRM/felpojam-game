@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="felpojam-game"
-run/main_scene="uid://bxip4mu3u2civ"
+run/main_scene="uid://6k3xfdbtsw8i"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SignalBus="*uid://bo6vswyg1uqjr"
+SceneManager="*uid://hc1vjrxqjnbo"
 
 [display]
 
@@ -26,6 +27,7 @@ window/size/viewport_height=270
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [input]
 

@@ -100,10 +100,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
-size = Vector2(32, 8)
+size = Vector2(31, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(32, 30)
+size = Vector2(31, 30)
 
 [node name="Player" type="CharacterBody2D" unique_id=1008942108]
 z_index = 1
@@ -115,13 +115,13 @@ texture_filter = 1
 texture = ExtResource("1_8afob")
 offset = Vector2(0, -16)
 hframes = 4
-vframes = 7
+vframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=859538809]
 libraries/ = SubResource("AnimationLibrary_75vfm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1678011557]
-position = Vector2(0, -6)
+position = Vector2(-0.5, -5.5)
 shape = SubResource("RectangleShape2D_8afob")
 
 [node name="DialogueInteractionArea" type="Area2D" parent="." unique_id=1251565482]
@@ -129,7 +129,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteractionArea" unique_id=156696763]
-position = Vector2(0, -17)
+position = Vector2(-0.5, -15)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1160226701]

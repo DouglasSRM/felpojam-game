@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://6k3xfdbtsw8i"]
+
+[ext_resource type="Script" uid="uid://blim6llfuptfy" path="res://src/scenes/main_menu/main_menu.gd" id="1_ob46e"]
+[ext_resource type="FontFile" uid="uid://bayl34n5s6ic7" path="res://fonts/dungeon-mode.ttf" id="2_ob46e"]
+[ext_resource type="Texture2D" uid="uid://csfk5imrivyuc" path="res://assets/main_menu/telainicialanimada1.png" id="2_x2yjq"]
+[ext_resource type="Texture2D" uid="uid://chubopvtudwlu" path="res://assets/main_menu/telainicialanimada2.png" id="3_lqpn7"]
+[ext_resource type="Texture2D" uid="uid://b0wx20gb0wl3b" path="res://assets/main_menu/telainicialanimada3.png" id="4_qel0l"]
+[ext_resource type="Texture2D" uid="uid://v8qvhr74bx7q" path="res://assets/main_menu/telainicialanimada4.png" id="5_rrgl4"]
+[ext_resource type="AudioStream" uid="uid://c5r5eyjut81ct" path="res://soundtrack/asiansparrow4.ogg" id="5_wem23"]
+[ext_resource type="Texture2D" uid="uid://bpx7o7fjygbhv" path="res://assets/main_menu/telainicialanimada5.png" id="6_dn3lk"]
+[ext_resource type="Texture2D" uid="uid://qe1eb7uk8bht" path="res://assets/main_menu/telainicialanimada6.png" id="7_4ujhu"]
+[ext_resource type="Texture2D" uid="uid://bo8a5yatmljyf" path="res://assets/main_menu/option_menu.png" id="9_lqpn7"]
+[ext_resource type="Script" uid="uid://cr0o3usgdxlqw" path="res://src/scenes/main_menu/soundtrack.gd" id="10_lqpn7"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_vnpsp"]
+frames = 6
+frame_0/texture = ExtResource("2_x2yjq")
+frame_0/duration = 0.45
+frame_1/texture = ExtResource("3_lqpn7")
+frame_1/duration = 0.45
+frame_2/texture = ExtResource("4_qel0l")
+frame_2/duration = 0.45
+frame_3/texture = ExtResource("5_rrgl4")
+frame_3/duration = 0.45
+frame_4/texture = ExtResource("6_dn3lk")
+frame_4/duration = 0.45
+frame_5/texture = ExtResource("7_4ujhu")
+frame_5/duration = 0.45
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uqeha"]
+texture = SubResource("AnimatedTexture_vnpsp")
+modulate_color = Color(0.70380783, 0.70380783, 0.70380783, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wem23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ovsr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5seab"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qel0l"]
+texture = ExtResource("9_lqpn7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2yjq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thkx5"]
+
+[node name="MainMenu" type="Control" unique_id=1253128885]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ob46e")
+
+[node name="background" type="Panel" parent="." unique_id=53480967]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uqeha")
+
+[node name="main_title" type="RichTextLabel" parent="background" unique_id=1281277842]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -55.0
+offset_right = 240.0
+offset_bottom = 9.000244
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_ob46e")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[shake rate=4.0 level=4 connected=1]Joguinho Jam[/shake]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="main_menu" type="VBoxContainer" parent="background" unique_id=10489993]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -139.0
+offset_right = 132.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+size_flags_stretch_ratio = 8.63
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="play" type="Button" parent="background/main_menu" unique_id=1964807369]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.87058824, 0.87058824, 0.87058824, 1)
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wem23")
+text = "Iniciar"
+flat = true
+
+[node name="options" type="Button" parent="background/main_menu" unique_id=1832617382]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.87058824, 0.87058824, 0.87058824, 1)
+theme_override_colors/font_outline_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3ovsr")
+text = "Opçoes"
+flat = true
+
+[node name="quit" type="Button" parent="background/main_menu" unique_id=1014640828]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.87058824, 0.87058824, 0.87058824, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5seab")
+text = "Sair"
+flat = true
+
+[node name="settings_menu" type="Panel" parent="." unique_id=1979006034]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -64.0
+offset_right = 104.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qel0l")
+
+[node name="settings_label" type="Label" parent="settings_menu" unique_id=1388058205]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 10
+text = "Settings Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings_menu" type="VBoxContainer" parent="settings_menu" unique_id=1955166811]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -48.5
+offset_right = 74.5
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fullscreen_cb" type="CheckButton" parent="settings_menu/settings_menu" unique_id=981666247]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x2yjq")
+button_pressed = true
+text = "Fullscreen"
+
+[node name="EmptyLabel" type="Label" parent="settings_menu/settings_menu" unique_id=869101562]
+layout_mode = 2
+
+[node name="Soundtrack label" type="Label" parent="settings_menu/settings_menu" unique_id=154469951]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 8
+text = "Soundtrack"
+
+[node name="Soundtrack" type="HSlider" parent="settings_menu/settings_menu" unique_id=1961250198]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("10_lqpn7")
+bus_name = "Master"
+
+[node name="close_btn" type="Button" parent="settings_menu" unique_id=1218792098]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_thkx5")
+text = "Close"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1670137563]
+stream = ExtResource("5_wem23")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="background/main_menu/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="background/main_menu/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="background/main_menu/quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="settings_menu/settings_menu/fullscreen_cb" to="." method="_on_fullscreen_cb_toggled"]
+[connection signal="pressed" from="settings_menu/close_btn" to="." method="_on_close_btn_pressed"]

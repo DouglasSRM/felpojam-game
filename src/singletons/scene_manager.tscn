@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://hc1vjrxqjnbo"]
+
+[ext_resource type="Script" uid="uid://0vw7w74pu2wn" path="res://src/singletons/scene_manager.gd" id="1_6xeoq"]
+[ext_resource type="Shader" uid="uid://bqmri57k5jl58" path="res://src/post_processing_effects/horizontal_weep_transition.gdshader" id="2_1hwvu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mbrwa"]
+shader = ExtResource("2_1hwvu")
+shader_parameter/progress = 0.0
+shader_parameter/reverse = false
+shader_parameter/number_of_tiles = Vector2(15, 8.4375)
+shader_parameter/pixels_per_title = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_hen7b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition_effect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition_effect:material:shader_parameter/reverse")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mbrwa"]
+resource_name = "transition_in"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition_effect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition_effect:material:shader_parameter/reverse")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iwxbl"]
+resource_name = "transition_out"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition_effect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition_effect:material:shader_parameter/reverse")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hen7b"]
+_data = {
+&"RESET": SubResource("Animation_hen7b"),
+&"transition_in": SubResource("Animation_mbrwa"),
+&"transition_out": SubResource("Animation_iwxbl")
+}
+
+[node name="SceneManager" type="CanvasLayer" unique_id=1913475169]
+process_mode = 3
+script = ExtResource("1_6xeoq")
+
+[node name="transition_effect" type="ColorRect" parent="." unique_id=507452172]
+material = SubResource("ShaderMaterial_mbrwa")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0.80275995, 0.7812, 0.84, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=776991253]
+libraries/ = SubResource("AnimationLibrary_hen7b")
