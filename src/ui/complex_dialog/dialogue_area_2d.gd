@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 			set_process(false)
 			return
 		
-		if Input.is_action_just_pressed("E"):
+		if Input.is_action_just_pressed("ui_accept"):
 			_activate_dialogue()
 			has_activated_already = true
 			player_body_in = false
@@ -39,7 +39,7 @@ func set_player_reference():
 	for i in get_tree().get_nodes_in_group("player"):
 		player_node = i
 
-func _activate_dialogue() -> void:
+func _activate_dialogue() -> void: 
 	if player_node:
 		player_node.can_move = false
 	

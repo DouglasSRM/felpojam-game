@@ -7,9 +7,7 @@ const cena_inicial = "initial_scene/initial_scene"
 @onready var play: Button = %play
 @onready var options: Button = %options
 @onready var quit: Button = %quit
-@onready var close_btn: Button = %close_btn
 
-@onready var crt_effect: CanvasLayer = %CrtEffect
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
