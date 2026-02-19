@@ -112,48 +112,48 @@ scene_text_file = "res://data/json/dialogs.json"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=728006799]
 offset = Vector2(240, 135)
 
-[node name="Robo" type="Node2D" parent="." unique_id=1095403224]
+[node name="Dialogos" type="Node2D" parent="." unique_id=1095403224]
 
-[node name="RespostasDialogoAble" parent="Robo" unique_id=1604792675 instance=ExtResource("7_lriem")]
+[node name="RespostasDialogoAble" parent="Dialogos" unique_id=1604792675 instance=ExtResource("7_lriem")]
 dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_tp0w8")])
 
-[node name="RespostasDialogoEblu" parent="Robo" unique_id=745811448 instance=ExtResource("7_lriem")]
+[node name="RespostasDialogoEblu" parent="Dialogos" unique_id=745811448 instance=ExtResource("7_lriem")]
 dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_bb8qs")])
 
-[node name="DialogAreaGustavo" parent="Robo" unique_id=369042241 instance=ExtResource("7_lriem")]
+[node name="DialogAreaGustavo" parent="Dialogos" unique_id=369042241 instance=ExtResource("7_lriem")]
 position = Vector2(214, 106)
 dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_6k5om"), SubResource("Resource_pyp6y"), SubResource("Resource_2c6j5")])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Robo/DialogAreaGustavo" unique_id=1700188170]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogAreaGustavo" unique_id=1700188170]
 position = Vector2(-21, 41)
 shape = SubResource("RectangleShape2D_tp0w8")
 
-[node name="DialogAreaCama" parent="Robo" unique_id=1617879260 instance=ExtResource("4_82qsf")]
+[node name="DialogAreaCama" parent="Dialogos" unique_id=1617879260 instance=ExtResource("4_82qsf")]
 position = Vector2(65, 90)
 dialog_key = "cama"
 
-[node name="CollisionShape2D" parent="Robo/DialogAreaCama" index="0" unique_id=1559650857]
+[node name="CollisionShape2D" parent="Dialogos/DialogAreaCama" index="0" unique_id=1559650857]
 position = Vector2(-10, 39)
 shape = SubResource("RectangleShape2D_bb8qs")
 
-[node name="KeyHint" parent="Robo/DialogAreaCama" index="1" unique_id=316488180]
+[node name="KeyHint" parent="Dialogos/DialogAreaCama" index="1" unique_id=316488180]
 offset_left = 5.0
 offset_right = 18.0
 metadata/_edit_use_anchors_ = true
 
-[node name="DialogAreaBau" parent="Robo" unique_id=689924629 instance=ExtResource("4_82qsf")]
+[node name="DialogAreaBau" parent="Dialogos" unique_id=689924629 instance=ExtResource("4_82qsf")]
 position = Vector2(139, 103)
 dialog_key = "chest1"
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" parent="Robo/DialogAreaBau" index="0" unique_id=1559650857]
+[node name="CollisionShape2D" parent="Dialogos/DialogAreaBau" index="0" unique_id=1559650857]
 position = Vector2(-3.5, 16.5)
 shape = SubResource("RectangleShape2D_vum8s")
 
-[node name="KeyHint" parent="Robo/DialogAreaBau" index="1" unique_id=316488180]
+[node name="KeyHint" parent="Dialogos/DialogAreaBau" index="1" unique_id=316488180]
 metadata/_edit_use_anchors_ = true
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 
-[editable path="Robo/DialogAreaCama"]
-[editable path="Robo/DialogAreaBau"]
+[editable path="Dialogos/DialogAreaCama"]
+[editable path="Dialogos/DialogAreaBau"]
