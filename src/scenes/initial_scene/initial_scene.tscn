@@ -34,7 +34,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("9_pacc2")
 speaker_name = "LULADROID"
 speaker_img = ExtResource("10_bb8qs")
-text = "a ble ble ble a ble ble ble a ble ble ble a ble ble ble a ble ble ble a ble ble ble a ble ble "
+text = "[shake rate=20.0 level=5 connected=1]JULIAAAAAAA[/shake]"
 text_speed = 13.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
