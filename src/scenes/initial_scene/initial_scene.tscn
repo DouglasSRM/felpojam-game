@@ -62,13 +62,20 @@ function_name = "_activate_dialogue"
 hide_dialogue_box = true
 metadata/_custom_type_script = "uid://bwmccfplhqpda"
 
+[sub_resource type="Resource" id="Resource_vih5p"]
+script = ExtResource("11_tp0w8")
+target_path = NodePath("../resposta 3")
+function_name = "_activate_dialogue"
+hide_dialogue_box = true
+metadata/_custom_type_script = "uid://bwmccfplhqpda"
+
 [sub_resource type="Resource" id="Resource_2c6j5"]
 script = ExtResource("12_bb8qs")
 speaker_img = ExtResource("10_pacc2")
 speaker_img_HFrames = 4
 text = "a ble ble ou e blu blu?"
-choice_text = Array[String](["a ble ble", "e blu blu"])
-choice_function_call = Array[ExtResource("11_tp0w8")]([SubResource("Resource_mk21t"), SubResource("Resource_ni0uh")])
+choice_text = Array[String](["a ble ble", "e blu blu", ">_<"])
+choice_function_call = Array[ExtResource("11_tp0w8")]([SubResource("Resource_mk21t"), SubResource("Resource_ni0uh"), SubResource("Resource_vih5p")])
 metadata/_custom_type_script = "uid://dvqw2l4htwcuf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0w8"]
@@ -77,8 +84,15 @@ size = Vector2(57, 49.4375)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8qs"]
 size = Vector2(46, 70)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vum8s"]
-size = Vector2(25, 25)
+[sub_resource type="Resource" id="Resource_y18up"]
+script = ExtResource("9_pacc2")
+speaker_name = "Gustavo"
+text = "miau"
+text_speed = 13.0
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk21t"]
+size = Vector2(47, 32)
 
 [node name="InitialScene" type="Node2D" unique_id=821454405]
 y_sort_enabled = true
@@ -95,7 +109,7 @@ tile_map_data = PackedByteArray("AAACAAIAAwARABUAAAADAAIAAwARABUAAAAEAAIAAwARABU
 tile_set = ExtResource("1_bptee")
 
 [node name="Interactable" type="TileMapLayer" parent="TileMaps" unique_id=534864473]
-tile_map_data = PackedByteArray("AAACAAkAAwAGABEAAAAIAAcAAQADAAEAAAAFAAcAAwAJABEAAAA=")
+tile_map_data = PackedByteArray("AAACAAkAAwAGABEAAAAFAAcAAwAJABEAAAA=")
 tile_set = ExtResource("1_bptee")
 
 [node name="Player" parent="." unique_id=1008942108 instance=ExtResource("5_vum8s")]
@@ -141,19 +155,24 @@ offset_left = 5.0
 offset_right = 18.0
 metadata/_edit_use_anchors_ = true
 
-[node name="DialogAreaBau" parent="Dialogos" unique_id=689924629 instance=ExtResource("4_82qsf")]
-position = Vector2(139, 103)
-dialog_key = "chest1"
-metadata/_edit_group_ = true
+[node name="resposta 3" parent="Dialogos" unique_id=1699167769 instance=ExtResource("7_lriem")]
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_y18up")])
 
-[node name="CollisionShape2D" parent="Dialogos/DialogAreaBau" index="0" unique_id=1559650857]
-position = Vector2(-3.5, 16.5)
-shape = SubResource("RectangleShape2D_vum8s")
+[node name="DialogoPosters" parent="Dialogos" unique_id=689924629 instance=ExtResource("4_82qsf")]
+position = Vector2(110, 89)
+dialog_key = "posters"
 
-[node name="KeyHint" parent="Dialogos/DialogAreaBau" index="1" unique_id=316488180]
-metadata/_edit_use_anchors_ = true
+[node name="CollisionShape2D" parent="Dialogos/DialogoPosters" index="0" unique_id=1559650857]
+position = Vector2(9.5, 6)
+shape = SubResource("RectangleShape2D_mk21t")
+
+[node name="KeyHint" parent="Dialogos/DialogoPosters" index="1" unique_id=316488180]
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 23.0
+offset_bottom = 14.0
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 
 [editable path="Dialogos/DialogAreaCama"]
-[editable path="Dialogos/DialogAreaBau"]
+[editable path="Dialogos/DialogoPosters"]
