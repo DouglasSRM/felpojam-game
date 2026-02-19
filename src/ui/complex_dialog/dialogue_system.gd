@@ -38,6 +38,11 @@ func _process(_delta: float) -> void:
 		next_item = false
 		var i = dialogue[current_dialogue_item]
 		
+		if i.speaker_on_right:
+			set_speaker_right()
+		else:
+			set_speaker_left()
+		
 		if i is DialogueFunction:
 			self.visible = !i.hide_dialogue_box
 			_function_resource(i)
@@ -51,6 +56,14 @@ func _process(_delta: float) -> void:
 			printerr("Resource do tipo DE adicionado acidentalmente!")
 			current_dialogue_item += 1
 			next_item = true
+
+func set_speaker_right() -> void:
+	speaker_parent.get_parent().move_child(speaker_parent, 1)
+	speaker_name_label.position = Vector2(-139, -49)
+
+func set_speaker_left() -> void:
+	speaker_parent.get_parent().move_child(speaker_parent, 0)
+	speaker_name_label.position = Vector2(-64, -49)
 
 func _function_resource(i: DialogueFunction) -> void:
 	var target_node: Node = get_node(i.target_path)

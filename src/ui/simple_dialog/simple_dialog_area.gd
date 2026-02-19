@@ -9,13 +9,13 @@ func _on_ready() -> void:
 	key_hint.visible = false
 
 func _input(event):
-	if area_active and event.is_action_pressed("E"):
+	if area_active and event.is_action_pressed("ui_accept"):
 		SignalBus.display_simple_dialog.emit(dialog_key)
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	set_area_active(true)
 
-func _on_area_exited(area: Area2D) -> void:
+func _on_area_exited(_area: Area2D) -> void:
 	set_area_active(false)
 
 func set_area_active(flag: bool) -> void:
