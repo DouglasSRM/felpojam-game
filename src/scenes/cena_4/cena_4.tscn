@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b0mtibme418cc"]
+
+[ext_resource type="PackedScene" uid="uid://bvgp7nbpgp15d" path="res://src/scenes/base_scene/base_scene.tscn" id="1_k3cqg"]
+[ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="2_y7jf7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohbx2"]
+size = Vector2(16, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7jf7"]
+size = Vector2(16, 20)
+
+[node name="Cena4" unique_id=823413629 instance=ExtResource("1_k3cqg")]
+
+[node name="Any" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="0" unique_id=1619693791]
+position = Vector2(201, 67)
+
+[node name="MarkerCena5" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="1" unique_id=619847916]
+position = Vector2(248, 66)
+
+[node name="Interactable" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="2" unique_id=744383844]
+tile_map_data = PackedByteArray(0, 0, 12, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0, 15, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0)
+
+[node name="SceneTriggerTo3" parent="." index="3" unique_id=1319502396 instance=ExtResource("2_y7jf7")]
+connected_scene = "cena_3"
+trigger_name = "MarkerCena4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTriggerTo3" index="0" unique_id=1310837642]
+position = Vector2(200, 39)
+shape = SubResource("RectangleShape2D_ohbx2")
+
+[node name="SceneTriggerTo5" parent="." index="4" unique_id=389520863 instance=ExtResource("2_y7jf7")]
+connected_scene = "cena_5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTriggerTo5" index="0" unique_id=967561364]
+position = Vector2(248, 39)
+shape = SubResource("RectangleShape2D_y7jf7")

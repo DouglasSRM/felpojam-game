@@ -237,7 +237,7 @@ shape = SubResource("RectangleShape2D_y18up")
 
 [node name="EntranceMarkers" type="Node2D" parent="." unique_id=1007400135]
 
-[node name="any" type="Marker2D" parent="EntranceMarkers" unique_id=1086939520]
+[node name="Any" type="Marker2D" parent="EntranceMarkers" unique_id=1086939520]
 position = Vector2(200, 128)
 
 [connection signal="ready" from="." to="." method="_on_ready"]

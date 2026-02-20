@@ -2,6 +2,7 @@ extends CanvasLayer
 
 
 var player: Player
+var trigger_name: String
 
 var scene_dir_path = "res://src/scenes/"
 
