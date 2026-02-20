@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bshfi56ow2ufx"]
 
 [ext_resource type="Script" uid="uid://budesa0tp0opl" path="res://src/scenes/character_gustavo/gustavo.gd" id="1_1yur5"]
-[ext_resource type="Texture2D" uid="uid://csfrekapco6as" path="res://assets/characters/gustavosprite-Sheet.png" id="1_su4do"]
+[ext_resource type="Texture2D" uid="uid://csfrekapco6as" path="res://assets/characters/gustavo/gustavosprite-Sheet.png" id="1_su4do"]
 
 [sub_resource type="Animation" id="Animation_8afob"]
 length = 0.001

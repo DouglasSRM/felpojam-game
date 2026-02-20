@@ -1,4 +1,4 @@
-extends Node2D
+class_name DialogueSystem extends Node2D
 
 const dialogue_button_preload = preload("res://src/ui/complex_dialog/dialogue_button.tscn")
 
@@ -12,13 +12,17 @@ const dialogue_button_preload = preload("res://src/ui/complex_dialog/dialogue_bu
 var dialogue: Array[DE]
 var current_dialogue_item: int = 0
 var next_item: bool = true
+var trava_o_player: bool = false
 
 var player_node: Player
+
+signal dialogue_finished
 
 func _ready() -> void:
 	visible = false
 	button_container.visible = false
-	set_player_reference()
+	if trava_o_player:
+		set_player_reference()
 
 func set_player_reference():
 	for i in get_tree().get_nodes_in_group("player"):
@@ -26,11 +30,13 @@ func set_player_reference():
 
 func _process(_delta: float) -> void:
 	if current_dialogue_item == dialogue.size(): # Checa se é o ultimo item do array
-		if !player_node:
+		if !player_node and trava_o_player:
 			set_player_reference()
 			return
 		
-		player_node.can_move = true
+		dialogue_finished.emit()
+		if player_node and trava_o_player:
+			player_node.can_move = true
 		queue_free()
 		return
 	
@@ -81,13 +87,14 @@ func _function_resource(i: DialogueFunction) -> void:
 
 func signal_to_continue(target_node: Node, signal_name: String) -> void:
 	if target_node.has_signal(signal_name):
-		var signal_state: Dictionary = { "done": false }
-		# usa um dicionario para a flag pois lambda functions não podem editar valores de fora,
-		# como o dicionário é um objeto por referência, o conteúdo pode ser modificado dentro da lambda
-		var callable: Callable = func(_args): signal_state.done = true
-		target_node.connect(signal_name, callable, CONNECT_ONE_SHOT)
-		while not signal_state.done:
-			await get_tree().process_frame
+		#var signal_state: Dictionary = { "done": false }
+		## usa um dicionario para a flag pois lambda functions não podem editar valores de fora,
+		## como o dicionário é um objeto por referência, o conteúdo pode ser modificado dentro da lambda
+		#var callable: Callable = func(_args): signal_state.done = true
+		#target_node.connect(signal_name, callable, CONNECT_ONE_SHOT)
+		await Signal(target_node, signal_name)
+		#while not signal_state.done:
+		#	await get_tree().process_frame
 
 func _choice_resource(i: DialogueChoice) -> void:
 	speaker_name_label.text = i.speaker_name #setar o nome do speaker aqui

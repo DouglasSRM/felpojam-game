@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csfrekapco6as"
-path="res://.godot/imported/gustavosprite-Sheet.png-25ad15dfaeda904983dfb7ddd7685290.ctex"
+uid="uid://b0tkna32qgs"
+path="res://.godot/imported/GUSTAVO - 1.png-889cead1823f71b63eec4683dc012b80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/gustavosprite-Sheet.png"
-dest_files=["res://.godot/imported/gustavosprite-Sheet.png-25ad15dfaeda904983dfb7ddd7685290.ctex"]
+source_file="res://assets/characters/gustavo/GUSTAVO - 1.png"
+dest_files=["res://.godot/imported/GUSTAVO - 1.png-889cead1823f71b63eec4683dc012b80.ctex"]
 
 [params]
 

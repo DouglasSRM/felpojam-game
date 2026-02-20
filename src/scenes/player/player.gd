@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 @export var speed: int = 150
 @onready var animations: AnimationPlayer = $AnimationPlayer
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 var walking: bool = false
 var can_move: bool = true
@@ -23,10 +24,7 @@ func handle_input():
 func update_animations():
 	var direction = ""
 
-	#if velocity.x < 0: direction = "left"
-	#elif velocity.x > 0: direction = "right"
-	#elif velocity.y < 0: direction = "up"
-	#elif !walking: direction = "down"
+	
 	
 	if Input.is_action_pressed("ui_left"):
 		direction = "left"

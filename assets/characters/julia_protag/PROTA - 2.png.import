@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blxg8d6qlx812"
-path="res://.godot/imported/player_spritesheet.png-7e76f97a17946ec512358d45f2527da8.ctex"
+uid="uid://dijr6cyuslo4q"
+path="res://.godot/imported/PROTA - 2.png-eb0726a28fe0f096e404a7507a093ae5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player_spritesheet.png"
-dest_files=["res://.godot/imported/player_spritesheet.png-7e76f97a17946ec512358d45f2527da8.ctex"]
+source_file="res://assets/characters/julia_protag/PROTA - 2.png"
+dest_files=["res://.godot/imported/PROTA - 2.png-eb0726a28fe0f096e404a7507a093ae5.ctex"]
 
 [params]
 

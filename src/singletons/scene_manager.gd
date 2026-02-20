@@ -25,13 +25,13 @@ func toggle_pause():
 	pause_menu.visible = get_tree().paused
 
 func change_scene(from, to_scene_name: String) -> void:
-	if from.has_node("Player"):
+	if from is BaseScene:
 		player = from.player
 		player.get_parent().remove_child(player)
 	
 	animation_player.play("transition_out")
 	await animation_player.animation_finished
 	
-	var full_path = scene_dir_path + to_scene_name + ".tscn"
+	var full_path = scene_dir_path + to_scene_name +"/"+to_scene_name+".tscn"
 	from.get_tree().call_deferred("change_scene_to_file", full_path)
 	animation_player.play("transition_in")

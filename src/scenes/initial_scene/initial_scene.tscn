@@ -8,42 +8,70 @@
 [ext_resource type="PackedScene" uid="uid://dfe13b5urbx78" path="res://src/scenes/player/player.tscn" id="5_vum8s"]
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="7_lriem"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="8_pyp6y"]
+[ext_resource type="Texture2D" uid="uid://ckeilwd7v7275" path="res://assets/characters/julia_protag/PROTA_-_4-Sheet.png" id="9_2c6j5"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="9_pacc2"]
-[ext_resource type="Texture2D" uid="uid://bw6vknkv5phhi" path="res://assets/characters/Karkat_Sprite_temporario.png" id="10_bb8qs"]
-[ext_resource type="Texture2D" uid="uid://2khx6lw6sso2" path="res://assets/characters/robo_temporario_andandinho.png" id="10_pacc2"]
+[ext_resource type="Texture2D" uid="uid://hlg2si4v5vwk" path="res://assets/characters/gustavo/GUSTAVO - 1-Sheet.png" id="10_bb8qs"]
+[ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="11_mk21t"]
 [ext_resource type="Script" uid="uid://bwmccfplhqpda" path="res://src/ui/complex_dialog/resources/dialogue_function_resource.gd" id="11_tp0w8"]
 [ext_resource type="Script" uid="uid://dvqw2l4htwcuf" path="res://src/ui/complex_dialog/resources/dialogue_choice_resource.gd" id="12_bb8qs"]
+[ext_resource type="Texture2D" uid="uid://cb5ys8s22yuxt" path="res://assets/characters/gustavo/GUSTAVO - 3-Sheet.png" id="14_mk21t"]
+[ext_resource type="Texture2D" uid="uid://c2nx3sto38xrh" path="res://assets/characters/julia_protag/PROTA - 6.png" id="14_vih5p"]
+[ext_resource type="Texture2D" uid="uid://dqdpg4knqsplb" path="res://assets/characters/julia_protag/PROTA - 1.png" id="16_y18up"]
+[ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="17_vih5p"]
+
+[sub_resource type="Resource" id="Resource_r2uip"]
+script = ExtResource("9_pacc2")
+speaker_name = "Julia"
+speaker_img = ExtResource("9_2c6j5")
+speaker_img_HFrames = 2
+text = "a ble ble?"
+text_speed = 13.0
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_tp0w8"]
 script = ExtResource("9_pacc2")
-speaker_img = ExtResource("10_pacc2")
-speaker_img_HFrames = 4
+speaker_name = "Gustavo"
+speaker_img = ExtResource("10_bb8qs")
+speaker_img_HFrames = 2
 text = "a ble!!!!"
 text_speed = 13.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
+[sub_resource type="Resource" id="Resource_bion4"]
+script = ExtResource("9_pacc2")
+speaker_name = "Julia"
+speaker_img = ExtResource("9_2c6j5")
+speaker_img_HFrames = 2
+text = "e blu blu?"
+text_speed = 13.0
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
 [sub_resource type="Resource" id="Resource_bb8qs"]
 script = ExtResource("9_pacc2")
-speaker_img = ExtResource("10_pacc2")
-speaker_img_HFrames = 4
-text = "e blu!!"
+speaker_name = "Gustavo"
+speaker_img = ExtResource("10_bb8qs")
+speaker_img_HFrames = 2
+text = "e blu!!!!"
 text_speed = 13.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_6k5om"]
 script = ExtResource("9_pacc2")
-speaker_name = "LULADROID"
+speaker_name = "Gustavo"
 speaker_img = ExtResource("10_bb8qs")
+speaker_img_HFrames = 2
 text = "[shake rate=20.0 level=5 connected=1]JULIAAAAAAA[/shake]"
 text_speed = 13.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_pyp6y"]
 script = ExtResource("9_pacc2")
-speaker_name = "teste"
-speaker_img = ExtResource("10_pacc2")
-speaker_img_HFrames = 4
-text = "e blu blu blu e blu blu blu e blu blu blu e blu blu blu e blu blu blu e blu blu blu e blu blu blu"
+speaker_name = "Julia"
+speaker_img = ExtResource("11_mk21t")
+speaker_img_HFrames = 2
+text = "o porraaaa"
 text_speed = 13.0
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
@@ -53,6 +81,7 @@ script = ExtResource("11_tp0w8")
 target_path = NodePath("../RespostasDialogoAble")
 function_name = "_activate_dialogue"
 hide_dialogue_box = true
+wait_for_signal_to_continue = "dialogue_finished"
 metadata/_custom_type_script = "uid://bwmccfplhqpda"
 
 [sub_resource type="Resource" id="Resource_ni0uh"]
@@ -60,23 +89,44 @@ script = ExtResource("11_tp0w8")
 target_path = NodePath("../RespostasDialogoEblu")
 function_name = "_activate_dialogue"
 hide_dialogue_box = true
+wait_for_signal_to_continue = "dialogue_finished"
 metadata/_custom_type_script = "uid://bwmccfplhqpda"
 
 [sub_resource type="Resource" id="Resource_vih5p"]
 script = ExtResource("11_tp0w8")
-target_path = NodePath("../resposta 3")
+target_path = NodePath("../RespostaCarinha")
 function_name = "_activate_dialogue"
 hide_dialogue_box = true
+wait_for_signal_to_continue = "dialogue_finished"
 metadata/_custom_type_script = "uid://bwmccfplhqpda"
 
 [sub_resource type="Resource" id="Resource_2c6j5"]
 script = ExtResource("12_bb8qs")
-speaker_img = ExtResource("10_pacc2")
-speaker_img_HFrames = 4
-text = "a ble ble ou e blu blu?"
-choice_text = Array[String](["a ble ble", "e blu blu", ">_<"])
+speaker_name = "Gustavo"
+speaker_img = ExtResource("10_bb8qs")
+speaker_img_HFrames = 2
+text = "PERGUNTA IMPOrTANTE: a ble ble ou e blu blu?"
+choice_text = Array[String](["a ble ble", "e blu blu", "'-'?"])
 choice_function_call = Array[ExtResource("11_tp0w8")]([SubResource("Resource_mk21t"), SubResource("Resource_ni0uh"), SubResource("Resource_vih5p")])
 metadata/_custom_type_script = "uid://dvqw2l4htwcuf"
+
+[sub_resource type="Resource" id="Resource_uga7u"]
+script = ExtResource("9_pacc2")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("10_bb8qs")
+speaker_img_HFrames = 2
+text = "Bora trabaiar."
+text_speed = 13.0
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_dvsp3"]
+script = ExtResource("9_pacc2")
+speaker_name = "Julia"
+speaker_img = ExtResource("14_vih5p")
+text = "ah nao :("
+text_speed = 10.0
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0w8"]
 size = Vector2(57, 49.4375)
@@ -84,15 +134,29 @@ size = Vector2(57, 49.4375)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8qs"]
 size = Vector2(46, 70)
 
+[sub_resource type="Resource" id="Resource_brkob"]
+script = ExtResource("9_pacc2")
+speaker_name = "Julia"
+speaker_img = ExtResource("16_y18up")
+text = "'-' ..."
+text_speed = 3.0
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
 [sub_resource type="Resource" id="Resource_y18up"]
 script = ExtResource("9_pacc2")
 speaker_name = "Gustavo"
-text = "miau"
-text_speed = 13.0
+speaker_img = ExtResource("14_mk21t")
+speaker_img_HFrames = 2
+text = "ah deixa pra la..."
+text_speed = 10.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk21t"]
 size = Vector2(47, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y18up"]
+size = Vector2(20.5, 16)
 
 [node name="InitialScene" type="Node2D" unique_id=821454405]
 y_sort_enabled = true
@@ -109,7 +173,7 @@ tile_map_data = PackedByteArray("AAACAAIAAwARABUAAAAFAAIAAwARABUAAAAGAAIAAwARABU
 tile_set = ExtResource("1_bptee")
 
 [node name="Interactable" type="TileMapLayer" parent="TileMaps" unique_id=534864473]
-tile_map_data = PackedByteArray("AAACAAkAAwAGABEAAAAFAAcAAwAJABEAAAA=")
+tile_map_data = PackedByteArray("AAACAAkAAwAGABEAAAAFAAcAAwAJABEAAAAMAAYAAQABAAcAAAA=")
 tile_set = ExtResource("1_bptee")
 
 [node name="Player" parent="." unique_id=1008942108 instance=ExtResource("5_vum8s")]
@@ -117,7 +181,7 @@ position = Vector2(96, 160)
 speed = 100
 
 [node name="Gustavo" parent="." unique_id=1887093933 instance=ExtResource("4_bb8qs")]
-position = Vector2(193, 158)
+position = Vector2(232, 169)
 
 [node name="SimpleDialogPlayer" parent="." unique_id=1255215716 instance=ExtResource("3_gddha")]
 visible = false
@@ -129,50 +193,63 @@ offset = Vector2(240, 135)
 [node name="Dialogos" type="Node2D" parent="." unique_id=1095403224]
 
 [node name="RespostasDialogoAble" parent="Dialogos" unique_id=1604792675 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_tp0w8")])
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_r2uip"), SubResource("Resource_tp0w8")])
 
 [node name="RespostasDialogoEblu" parent="Dialogos" unique_id=745811448 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_bb8qs")])
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_bion4"), SubResource("Resource_bb8qs")])
 
-[node name="DialogAreaGustavo" parent="Dialogos" unique_id=369042241 instance=ExtResource("7_lriem")]
-position = Vector2(214, 106)
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_6k5om"), SubResource("Resource_pyp6y"), SubResource("Resource_2c6j5")])
+[node name="DialogoGustavo" parent="Dialogos" unique_id=369042241 instance=ExtResource("7_lriem")]
+position = Vector2(253, 117)
+trava_o_player = true
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_6k5om"), SubResource("Resource_pyp6y"), SubResource("Resource_2c6j5"), SubResource("Resource_uga7u"), SubResource("Resource_dvsp3")])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogAreaGustavo" unique_id=1700188170]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoGustavo" unique_id=1700188170]
 position = Vector2(-21, 41)
 shape = SubResource("RectangleShape2D_tp0w8")
 
-[node name="DialogAreaCama" parent="Dialogos" unique_id=1617879260 instance=ExtResource("4_82qsf")]
+[node name="InteracaoCama" parent="Dialogos" unique_id=1617879260 instance=ExtResource("4_82qsf")]
 position = Vector2(65, 90)
 dialog_key = "cama"
 
-[node name="CollisionShape2D" parent="Dialogos/DialogAreaCama" index="0" unique_id=1559650857]
+[node name="CollisionShape2D" parent="Dialogos/InteracaoCama" index="0" unique_id=1559650857]
 position = Vector2(-10, 39)
 shape = SubResource("RectangleShape2D_bb8qs")
 
-[node name="KeyHint" parent="Dialogos/DialogAreaCama" index="1" unique_id=316488180]
+[node name="KeyHint" parent="Dialogos/InteracaoCama" index="1" unique_id=316488180]
 offset_left = 5.0
 offset_right = 18.0
 metadata/_edit_use_anchors_ = true
 
-[node name="resposta 3" parent="Dialogos" unique_id=1699167769 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_y18up")])
+[node name="RespostaCarinha" parent="Dialogos" unique_id=1699167769 instance=ExtResource("7_lriem")]
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_brkob"), SubResource("Resource_y18up")])
 
-[node name="DialogoPosters" parent="Dialogos" unique_id=689924629 instance=ExtResource("4_82qsf")]
+[node name="InteracaoPosters" parent="Dialogos" unique_id=689924629 instance=ExtResource("4_82qsf")]
 position = Vector2(110, 89)
 dialog_key = "posters"
 
-[node name="CollisionShape2D" parent="Dialogos/DialogoPosters" index="0" unique_id=1559650857]
+[node name="CollisionShape2D" parent="Dialogos/InteracaoPosters" index="0" unique_id=1559650857]
 position = Vector2(9.5, 6)
 shape = SubResource("RectangleShape2D_mk21t")
 
-[node name="KeyHint" parent="Dialogos/DialogoPosters" index="1" unique_id=316488180]
+[node name="KeyHint" parent="Dialogos/InteracaoPosters" index="1" unique_id=316488180]
 offset_left = 10.0
 offset_top = 1.0
 offset_right = 23.0
 offset_bottom = 14.0
 
+[node name="SceneTrigger" parent="." unique_id=1319502396 instance=ExtResource("17_vih5p")]
+connected_scene = "cena_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger" unique_id=1331795292]
+position = Vector2(200, 105)
+shape = SubResource("RectangleShape2D_y18up")
+
+[node name="EntranceMarkers" type="Node2D" parent="." unique_id=1007400135]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers" unique_id=1086939520]
+position = Vector2(200, 128)
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 
-[editable path="Dialogos/DialogAreaCama"]
-[editable path="Dialogos/DialogoPosters"]
+[editable path="Dialogos/InteracaoCama"]
+[editable path="Dialogos/InteracaoPosters"]

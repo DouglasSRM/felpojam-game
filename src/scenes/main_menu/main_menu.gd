@@ -1,6 +1,6 @@
 class_name MainMenu extends Control
 
-const cena_inicial = "initial_scene/initial_scene"
+const cena_inicial = "initial_scene"
 
 @onready var settings_menu: Panel = %settings_menu
 

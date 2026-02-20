@@ -79,6 +79,8 @@ E={
 [layer_names]
 
 2d_render/layer_3="dialog"
+2d_physics/layer_3="dialogs"
+2d_physics/layer_4="triggers"
 
 [physics]
 
