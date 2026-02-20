@@ -19,51 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://dqdpg4knqsplb" path="res://assets/characters/julia_protag/PROTA - 1.png" id="16_y18up"]
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="17_vih5p"]
 
-[sub_resource type="Resource" id="Resource_r2uip"]
-script = ExtResource("9_pacc2")
-speaker_name = "Julia"
-speaker_img = ExtResource("9_2c6j5")
-speaker_img_HFrames = 2
-text = "a ble ble?"
-text_speed = 13.0
-speaker_on_right = false
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
-
-[sub_resource type="Resource" id="Resource_tp0w8"]
-script = ExtResource("9_pacc2")
-speaker_name = "Gustavo"
-speaker_img = ExtResource("10_bb8qs")
-speaker_img_HFrames = 2
-text = "a ble!!!!"
-text_speed = 13.0
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
-
-[sub_resource type="Resource" id="Resource_bion4"]
-script = ExtResource("9_pacc2")
-speaker_name = "Julia"
-speaker_img = ExtResource("9_2c6j5")
-speaker_img_HFrames = 2
-text = "e blu blu?"
-text_speed = 13.0
-speaker_on_right = false
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
-
-[sub_resource type="Resource" id="Resource_bb8qs"]
-script = ExtResource("9_pacc2")
-speaker_name = "Gustavo"
-speaker_img = ExtResource("10_bb8qs")
-speaker_img_HFrames = 2
-text = "e blu!!!!"
-text_speed = 13.0
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
-
 [sub_resource type="Resource" id="Resource_6k5om"]
 script = ExtResource("9_pacc2")
 speaker_name = "Gustavo"
 speaker_img = ExtResource("10_bb8qs")
 speaker_img_HFrames = 2
 text = "[shake rate=20.0 level=5 connected=1]JULIAAAAAAA[/shake]"
-text_speed = 13.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_pyp6y"]
@@ -72,7 +33,6 @@ speaker_name = "Julia"
 speaker_img = ExtResource("11_mk21t")
 speaker_img_HFrames = 2
 text = "o porraaaa"
-text_speed = 13.0
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -116,7 +76,6 @@ speaker_name = "Gustavo"
 speaker_img = ExtResource("10_bb8qs")
 speaker_img_HFrames = 2
 text = "Bora trabaiar."
-text_speed = 13.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_dvsp3"]
@@ -124,15 +83,45 @@ script = ExtResource("9_pacc2")
 speaker_name = "Julia"
 speaker_img = ExtResource("14_vih5p")
 text = "ah nao :("
-text_speed = 10.0
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0w8"]
 size = Vector2(57, 49.4375)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8qs"]
-size = Vector2(46, 70)
+[sub_resource type="Resource" id="Resource_r2uip"]
+script = ExtResource("9_pacc2")
+speaker_name = "Julia"
+speaker_img = ExtResource("9_2c6j5")
+speaker_img_HFrames = 2
+text = "a ble ble?"
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_tp0w8"]
+script = ExtResource("9_pacc2")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("10_bb8qs")
+speaker_img_HFrames = 2
+text = "a ble!!!!"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_bion4"]
+script = ExtResource("9_pacc2")
+speaker_name = "Julia"
+speaker_img = ExtResource("9_2c6j5")
+speaker_img_HFrames = 2
+text = "e blu blu?"
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_bb8qs"]
+script = ExtResource("9_pacc2")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("10_bb8qs")
+speaker_img_HFrames = 2
+text = "e blu!!!!"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_brkob"]
 script = ExtResource("9_pacc2")
@@ -149,11 +138,13 @@ speaker_name = "Gustavo"
 speaker_img = ExtResource("14_mk21t")
 speaker_img_HFrames = 2
 text = "ah deixa pra la..."
-text_speed = 10.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk21t"]
 size = Vector2(47, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8qs"]
+size = Vector2(46, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y18up"]
 size = Vector2(20.5, 16)
@@ -192,12 +183,6 @@ offset = Vector2(240, 135)
 
 [node name="Dialogos" type="Node2D" parent="." unique_id=1095403224]
 
-[node name="RespostasDialogoAble" parent="Dialogos" unique_id=1604792675 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_r2uip"), SubResource("Resource_tp0w8")])
-
-[node name="RespostasDialogoEblu" parent="Dialogos" unique_id=745811448 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_bion4"), SubResource("Resource_bb8qs")])
-
 [node name="DialogoGustavo" parent="Dialogos" unique_id=369042241 instance=ExtResource("7_lriem")]
 position = Vector2(253, 117)
 trava_o_player = true
@@ -207,18 +192,11 @@ dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_6k5om"), SubReso
 position = Vector2(-21, 41)
 shape = SubResource("RectangleShape2D_tp0w8")
 
-[node name="InteracaoCama" parent="Dialogos" unique_id=1617879260 instance=ExtResource("4_82qsf")]
-position = Vector2(65, 90)
-dialog_key = "cama"
+[node name="RespostasDialogoAble" parent="Dialogos" unique_id=1604792675 instance=ExtResource("7_lriem")]
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_r2uip"), SubResource("Resource_tp0w8")])
 
-[node name="CollisionShape2D" parent="Dialogos/InteracaoCama" index="0" unique_id=1559650857]
-position = Vector2(-10, 39)
-shape = SubResource("RectangleShape2D_bb8qs")
-
-[node name="KeyHint" parent="Dialogos/InteracaoCama" index="1" unique_id=316488180]
-offset_left = 5.0
-offset_right = 18.0
-metadata/_edit_use_anchors_ = true
+[node name="RespostasDialogoEblu" parent="Dialogos" unique_id=745811448 instance=ExtResource("7_lriem")]
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_bion4"), SubResource("Resource_bb8qs")])
 
 [node name="RespostaCarinha" parent="Dialogos" unique_id=1699167769 instance=ExtResource("7_lriem")]
 dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_brkob"), SubResource("Resource_y18up")])
@@ -237,6 +215,19 @@ offset_top = 1.0
 offset_right = 23.0
 offset_bottom = 14.0
 
+[node name="InteracaoCama" parent="Dialogos" unique_id=1617879260 instance=ExtResource("4_82qsf")]
+position = Vector2(65, 90)
+dialog_key = "cama"
+
+[node name="CollisionShape2D" parent="Dialogos/InteracaoCama" index="0" unique_id=1559650857]
+position = Vector2(-10, 39)
+shape = SubResource("RectangleShape2D_bb8qs")
+
+[node name="KeyHint" parent="Dialogos/InteracaoCama" index="1" unique_id=316488180]
+offset_left = 5.0
+offset_right = 18.0
+metadata/_edit_use_anchors_ = true
+
 [node name="SceneTrigger" parent="." unique_id=1319502396 instance=ExtResource("17_vih5p")]
 connected_scene = "cena_2"
 
@@ -251,5 +242,5 @@ position = Vector2(200, 128)
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 
-[editable path="Dialogos/InteracaoCama"]
 [editable path="Dialogos/InteracaoPosters"]
+[editable path="Dialogos/InteracaoCama"]
