@@ -149,6 +149,8 @@ size = Vector2(20.5, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8qs"]
 size = Vector2(46, 70)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uga7u"]
+
 [node name="InitialScene" type="Node2D" unique_id=821454405]
 y_sort_enabled = true
 script = ExtResource("1_vum8s")
@@ -240,7 +242,21 @@ offset_left = 5.0
 offset_right = 18.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Livro" parent="." unique_id=1697748613 instance=ExtResource("4_82qsf")]
+position = Vector2(41, 209)
+function_call = "ler_livro"
+
+[node name="CollisionShape2D" parent="Livro" index="0" unique_id=1559650857]
+shape = SubResource("RectangleShape2D_uga7u")
+
+[node name="KeyHint" parent="Livro" index="1" unique_id=316488180]
+offset_left = -14.0
+offset_top = -20.0
+offset_right = -1.0
+offset_bottom = -7.0
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 
 [editable path="Dialogos/InteracaoPosters"]
 [editable path="InteracaoCama"]
+[editable path="Livro"]

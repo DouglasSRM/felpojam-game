@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://08p7ijutexdq"]
+
+[ext_resource type="Script" uid="uid://dt1kilja1dcf" path="res://src/scenes/livro/livro.gd" id="1_0hq7l"]
+
+[node name="Livro" type="Node2D" unique_id=1956251736]
+z_index = 4096
+script = ExtResource("1_0hq7l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1218898741]
+offset_right = 480.0
+offset_bottom = 244.0
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1931592113]
+layout_mode = 2
+alignment = 1
+
+[node name="Previous" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1253684435]
+layout_mode = 2
+text = "     <     "
+
+[node name="Next" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1313911500]
+layout_mode = 2
+text = "     >     "
+
+[node name="Sprite" type="Sprite2D" parent="VBoxContainer" unique_id=934159278]
+position = Vector2(240, 110)
+scale = Vector2(0.25, 0.25)
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]

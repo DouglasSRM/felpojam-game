@@ -53,3 +53,22 @@ func levantar():
 	player.can_move = true
 	player.animations.play("walk_down")
 	player.animations.stop()
+
+func ler_livro():
+	for livro in get_tree().get_nodes_in_group("livro"):
+		#livro.terminou_de_ler.emit()
+		return
+	
+	var cena_livro: LeituraDeLivro = load("res://src/scenes/livro/leitura_de_livro.tscn").instantiate()
+	player.can_move = false
+	
+	cena_livro.livro_path = "res://assets/livro/a_carimbada/livro_em_ordem.png"
+	cena_livro.paginas = 11
+	
+	self.add_child(cena_livro)
+	cena_livro.add_to_group("livro")
+	await cena_livro.terminou_de_ler
+	
+	self.remove_child(cena_livro)
+	player.can_move = true
+	
