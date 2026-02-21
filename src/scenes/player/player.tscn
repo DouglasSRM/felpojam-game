@@ -18,6 +18,24 @@ tracks/0/keys = {
 "values": [Vector2i(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_qopur"]
+resource_name = "sleep"
+length = 0.45
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 4)]
+}
+
 [sub_resource type="Animation" id="Animation_dovo2"]
 resource_name = "new_animation"
 length = 0.8
@@ -93,6 +111,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_75vfm"]
 _data = {
 &"RESET": SubResource("Animation_8afob"),
+&"sleep": SubResource("Animation_qopur"),
 &"walk_down": SubResource("Animation_dovo2"),
 &"walk_left": SubResource("Animation_gmlin"),
 &"walk_right": SubResource("Animation_lvxji"),
@@ -113,10 +132,11 @@ script = ExtResource("1_qopur")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1033950022]
 texture_filter = 1
+position = Vector2(0, 1)
 texture = ExtResource("1_8afob")
 offset = Vector2(0, -16)
 hframes = 4
-vframes = 4
+vframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=859538809]
 libraries/ = SubResource("AnimationLibrary_75vfm")

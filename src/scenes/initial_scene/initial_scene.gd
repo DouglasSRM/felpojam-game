@@ -38,13 +38,18 @@ func deitar():
 	player.collision_layer = 0
 	player.collision_mask = 0
 	var tween: Tween = create_tween().set_trans(Tween.TRANS_SINE)
-	tween.tween_property(player, "global_position", Vector2(56,140), 0.8)
+	tween.tween_property(player, "global_position", Vector2(56,130), 0.8)
 	await tween.finished
+	player.animations.play("sleep")
+	player.sprite_2d.frame = 17
 
 func levantar():
+	player.sprite_2d.frame = 0
 	var tween: Tween = create_tween().set_trans(Tween.TRANS_SINE)
 	tween.tween_property(player, "global_position", Vector2(98,160), 0.8)
 	await tween.finished
 	player.collision_layer = player_collision_layer
 	player.collision_mask = player_collision_mask
 	player.can_move = true
+	player.animations.play("walk_down")
+	player.animations.stop()

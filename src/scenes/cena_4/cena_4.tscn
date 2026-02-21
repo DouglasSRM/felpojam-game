@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bvgp7nbpgp15d" path="res://src/scenes/base_scene/base_scene.tscn" id="1_k3cqg"]
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="2_y7jf7"]
-[ext_resource type="PackedScene" uid="uid://cdt0pws6hrg6p" path="res://src/scenes/carimbar/carimbar.tscn" id="3_ohbx2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohbx2"]
 size = Vector2(16, 20)
@@ -35,5 +34,3 @@ connected_scene = "cena_5"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTriggerTo5" index="0" unique_id=967561364]
 position = Vector2(248, 39)
 shape = SubResource("RectangleShape2D_y7jf7")
-
-[node name="Carimbar" parent="." index="5" unique_id=1476343516 instance=ExtResource("3_ohbx2")]
