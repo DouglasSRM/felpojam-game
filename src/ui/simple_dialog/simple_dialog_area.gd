@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var dialog_key: String = ""
+@export var function_call: String = ""
 @onready var key_hint: TextureRect = $KeyHint
 var area_active: bool
 
@@ -10,7 +11,13 @@ func _on_ready() -> void:
 
 func _input(event):
 	if area_active and event.is_action_pressed("ui_accept"):
-		SignalBus.display_simple_dialog.emit(dialog_key)
+		if dialog_key:
+			SignalBus.display_simple_dialog.emit(dialog_key)
+			return
+		
+		if function_call:
+			if self.owner.has_method(function_call):
+				self.owner.call(function_call)
 
 func _on_area_entered(_area: Area2D) -> void:
 	set_area_active(true)

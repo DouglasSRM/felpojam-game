@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+var scene_stack: Array[Node] = []
 
 var player: Player
 var trigger_name: String
@@ -10,6 +11,29 @@ var scene_dir_path = "res://src/scenes/"
 
 @onready var transition_effect: ColorRect = $transition_effect
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+func push_scene(scene: String):
+	var full_path = scene_dir_path + scene +".tscn"
+	var current = get_tree().current_scene
+	if current:
+		scene_stack.push_back(current)
+		get_tree().root.remove_child(current)
+	
+	var new_scene = load(full_path).instantiate()
+	get_tree().root.add_child(new_scene)
+	get_tree().current_scene = new_scene
+
+func pop_scene():
+	if scene_stack.size() == 0:
+		return
+	
+	var current = get_tree().current_scene
+	if current:
+		current.queue_free()
+	
+	var last = scene_stack.pop_back()
+	get_tree().root.add_child(last)
+	get_tree().current_scene = last
 
 func _ready():
 	add_child(pause_menu)

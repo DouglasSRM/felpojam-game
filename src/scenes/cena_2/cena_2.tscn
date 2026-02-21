@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bvgp7nbpgp15d" path="res://src/scenes/base_scene/base_scene.tscn" id="1_blbvc"]
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="3_oiags"]
 [ext_resource type="Texture2D" uid="uid://b0o63twabxl4u" path="res://assets/characters/npcs/charpim-Sheet.png" id="4_blbvc"]
+[ext_resource type="PackedScene" uid="uid://yi2f5p61t3oc" path="res://src/ui/simple_dialog/simple_dialog_area.tscn" id="5_q14wn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q14wn"]
 size = Vector2(15.5, 9.5)
@@ -50,6 +51,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lg6p"]
 size = Vector2(19, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rmgw"]
+
 [node name="Cena2" unique_id=823413629 instance=ExtResource("1_blbvc")]
 script = ExtResource("1_1ymmg")
 
@@ -84,3 +87,12 @@ connected_scene = "cena_3"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTriggerTo3" index="0" unique_id=1494640588]
 position = Vector2(152.5, 40)
 shape = SubResource("RectangleShape2D_0lg6p")
+
+[node name="CallCarimbo" parent="." index="7" unique_id=689924629 instance=ExtResource("5_q14wn")]
+position = Vector2(61, 184)
+function_call = "carimbar"
+
+[node name="CollisionShape2D" parent="CallCarimbo" index="0" unique_id=1559650857]
+shape = SubResource("RectangleShape2D_7rmgw")
+
+[editable path="CallCarimbo"]

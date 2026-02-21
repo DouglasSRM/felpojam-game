@@ -141,13 +141,13 @@ text = "ah deixa pra la..."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk21t"]
-size = Vector2(47, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8qs"]
-size = Vector2(46, 70)
+size = Vector2(47, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y18up"]
 size = Vector2(20.5, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8qs"]
+size = Vector2(46, 70)
 
 [node name="InitialScene" type="Node2D" unique_id=821454405]
 y_sort_enabled = true
@@ -168,7 +168,7 @@ tile_map_data = PackedByteArray("AAACAAkAAwAGABEAAAAFAAcAAwAJABEAAAAMAAYAAQABAAc
 tile_set = ExtResource("1_bptee")
 
 [node name="Player" parent="." unique_id=1008942108 instance=ExtResource("5_vum8s")]
-position = Vector2(96, 160)
+position = Vector2(98, 160)
 speed = 100
 
 [node name="Gustavo" parent="." unique_id=1887093933 instance=ExtResource("4_bb8qs")]
@@ -206,7 +206,7 @@ position = Vector2(110, 89)
 dialog_key = "posters"
 
 [node name="CollisionShape2D" parent="Dialogos/InteracaoPosters" index="0" unique_id=1559650857]
-position = Vector2(9.5, 6)
+position = Vector2(9.5, 4)
 shape = SubResource("RectangleShape2D_mk21t")
 
 [node name="KeyHint" parent="Dialogos/InteracaoPosters" index="1" unique_id=316488180]
@@ -214,19 +214,6 @@ offset_left = 10.0
 offset_top = 1.0
 offset_right = 23.0
 offset_bottom = 14.0
-
-[node name="InteracaoCama" parent="Dialogos" unique_id=1617879260 instance=ExtResource("4_82qsf")]
-position = Vector2(65, 90)
-dialog_key = "cama"
-
-[node name="CollisionShape2D" parent="Dialogos/InteracaoCama" index="0" unique_id=1559650857]
-position = Vector2(-10, 39)
-shape = SubResource("RectangleShape2D_bb8qs")
-
-[node name="KeyHint" parent="Dialogos/InteracaoCama" index="1" unique_id=316488180]
-offset_left = 5.0
-offset_right = 18.0
-metadata/_edit_use_anchors_ = true
 
 [node name="SceneTrigger" parent="." unique_id=1319502396 instance=ExtResource("17_vih5p")]
 connected_scene = "cena_2"
@@ -240,7 +227,20 @@ shape = SubResource("RectangleShape2D_y18up")
 [node name="Any" type="Marker2D" parent="EntranceMarkers" unique_id=1086939520]
 position = Vector2(200, 128)
 
+[node name="InteracaoCama" parent="." unique_id=1617879260 instance=ExtResource("4_82qsf")]
+position = Vector2(65, 90)
+function_call = "interagir_cama"
+
+[node name="CollisionShape2D" parent="InteracaoCama" index="0" unique_id=1559650857]
+position = Vector2(-10, 39)
+shape = SubResource("RectangleShape2D_bb8qs")
+
+[node name="KeyHint" parent="InteracaoCama" index="1" unique_id=316488180]
+offset_left = 5.0
+offset_right = 18.0
+metadata/_edit_use_anchors_ = true
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 
 [editable path="Dialogos/InteracaoPosters"]
-[editable path="Dialogos/InteracaoCama"]
+[editable path="InteracaoCama"]
