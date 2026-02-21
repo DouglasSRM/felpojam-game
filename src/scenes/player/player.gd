@@ -42,7 +42,8 @@ func update_animations():
 
 func _physics_process(_delta: float) -> void:
 	if !can_move:
-		animations.stop()
+		if animations.current_animation.contains("walk"):
+			animations.stop()
 		return
 	
 	handle_input()

@@ -141,7 +141,7 @@ text = "ah deixa pra la..."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk21t"]
-size = Vector2(47, 28)
+size = Vector2(37, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y18up"]
 size = Vector2(20.5, 16)
@@ -208,7 +208,7 @@ position = Vector2(110, 89)
 dialog_key = "posters"
 
 [node name="CollisionShape2D" parent="Dialogos/InteracaoPosters" index="0" unique_id=1559650857]
-position = Vector2(9.5, 4)
+position = Vector2(14.5, 4)
 shape = SubResource("RectangleShape2D_mk21t")
 
 [node name="KeyHint" parent="Dialogos/InteracaoPosters" index="1" unique_id=316488180]

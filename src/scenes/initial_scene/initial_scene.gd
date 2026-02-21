@@ -40,19 +40,16 @@ func deitar():
 	var tween: Tween = create_tween().set_trans(Tween.TRANS_SINE)
 	tween.tween_property(player, "global_position", Vector2(56,130), 0.8)
 	await tween.finished
-	player.animations.play("sleep")
-	player.sprite_2d.frame = 17
+	player.animations.play("sleeping")
 
 func levantar():
-	player.sprite_2d.frame = 0
+	player.animations.play("walk_down")
 	var tween: Tween = create_tween().set_trans(Tween.TRANS_SINE)
 	tween.tween_property(player, "global_position", Vector2(98,160), 0.8)
 	await tween.finished
 	player.collision_layer = player_collision_layer
 	player.collision_mask = player_collision_mask
 	player.can_move = true
-	player.animations.play("walk_down")
-	player.animations.stop()
 
 func ler_livro():
 	for livro in get_tree().get_nodes_in_group("livro"):
