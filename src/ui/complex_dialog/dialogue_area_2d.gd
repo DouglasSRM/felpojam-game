@@ -1,4 +1,4 @@
-extends Area2D
+class_name DialogArea extends Area2D
 
 const dialogue_system_preload = preload("res://src/ui/complex_dialog/dialogue_system.tscn")
 
@@ -36,7 +36,6 @@ func _process(_delta: float) -> void:
 		
 		if Input.is_action_just_pressed("ui_accept"):
 			_activate_dialogue()
-			has_activated_already = true
 			player_body_in = false
 
 func set_player_reference():
@@ -60,7 +59,9 @@ func _activate_dialogue() -> void:
 	new_dialogue.dialogue        = self.dialogue
 	new_dialogue.trava_o_player  = self.trava_o_player
 	get_parent().add_child(new_dialogue)
+	#push_font_size(10) #.get_font_list)
 	new_dialogue.dialogue_finished.connect(Callable(self, '_on_dialogue_finished'))
+	has_activated_already = true
 
 func _on_dialogue_finished() -> void:
 	dialogue_finished.emit()
@@ -71,7 +72,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_body_in = true
 		if activate_instant:
-			has_activated_already = true
 			_activate_dialogue()
 
 func _on_body_exited(body: Node2D) -> void:

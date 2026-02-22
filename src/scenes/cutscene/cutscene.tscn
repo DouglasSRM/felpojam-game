@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cl01ckl22lhqf"]
+
+[ext_resource type="Texture2D" uid="uid://mds7gp7kl0ok" path="res://assets/carimbo/carimbo.png" id="1_470e7"]
+[ext_resource type="Script" uid="uid://e1lridgw1s07" path="res://src/scenes/cutscene/cutscene.gd" id="1_wjx8e"]
+[ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="3_mopfk"]
+[ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="4_dir8p"]
+[ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="5_5p2fw"]
+[ext_resource type="Texture2D" uid="uid://do2p6dqx5gplq" path="res://assets/characters/jurya_alien/alien_dialogo.png" id="6_37xu1"]
+[ext_resource type="Texture2D" uid="uid://bxta6jlc128fo" path="res://assets/characters/julia_protag/JULIA BRAVA.png" id="7_dir8p"]
+
+[sub_resource type="Animation" id="Animation_wjx8e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_m1daq"]
+resource_name = "temp"
+length = 1.0333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_52hlw"]
+_data = {
+&"RESET": SubResource("Animation_wjx8e"),
+&"temp": SubResource("Animation_m1daq")
+}
+
+[sub_resource type="Resource" id="Resource_7831v"]
+script = ExtResource("5_5p2fw")
+speaker_name = "Alien"
+speaker_img = ExtResource("6_37xu1")
+text = "Não são apenas carimbos! De onde eu venho, tem um simbolismo muito importante."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_mopfk"]
+script = ExtResource("5_5p2fw")
+speaker_name = "Alien"
+speaker_img = ExtResource("6_37xu1")
+font_size = 15
+text = "Representa toda a nossa vida. O início, mudanças importantes, recomeços. Até o fim."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_dir8p"]
+script = ExtResource("5_5p2fw")
+speaker_name = "Alien"
+speaker_img = ExtResource("6_37xu1")
+text = "Mas no geral é pra ser algo positivo. É a nossa identidade, sabe."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_5p2fw"]
+script = ExtResource("5_5p2fw")
+speaker_name = "Alien"
+speaker_img = ExtResource("6_37xu1")
+text = "Engraçado imaginar que não é assim do seu planeta lama-"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_37xu1"]
+script = ExtResource("5_5p2fw")
+speaker_name = "Julia"
+speaker_img = ExtResource("7_dir8p")
+speaker_img_HFrames = 2
+speaker_img_step_frame = 2
+text = "É TERRA!!"
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_y7xkx"]
+script = ExtResource("5_5p2fw")
+speaker_name = "Alien"
+speaker_img = ExtResource("6_37xu1")
+text = "Enfim, o carimbo representa a minha identidade. Eu sei quem eu sou por causa dele."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_ht2v3"]
+script = ExtResource("5_5p2fw")
+speaker_name = "Alien"
+speaker_img = ExtResource("6_37xu1")
+text = "Como você sabe quem você é se vocês não tem isso? Qual o seu carimbo?"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[node name="Cutscene" type="Node2D" unique_id=1623838150]
+script = ExtResource("1_wjx8e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1942186209]
+position = Vector2(235, 126)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_470e7")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1241334726]
+libraries/ = SubResource("AnimationLibrary_52hlw")
+
+[node name="DialogoCutscene" parent="." unique_id=369042241 instance=ExtResource("3_mopfk")]
+monitorable = false
+dialogue = Array[ExtResource("4_dir8p")]([SubResource("Resource_7831v"), SubResource("Resource_mopfk"), SubResource("Resource_dir8p"), SubResource("Resource_5p2fw"), SubResource("Resource_37xu1"), SubResource("Resource_y7xkx"), SubResource("Resource_ht2v3")])

@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 SignalBus="*uid://bo6vswyg1uqjr"
 SceneManager="*uid://hc1vjrxqjnbo"
+Utils="*uid://cpq05ktsixir0"
+Global="*uid://cw0augs2ifb8d"
 
 [display]
 

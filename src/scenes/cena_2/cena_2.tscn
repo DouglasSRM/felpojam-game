@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="3_oiags"]
 [ext_resource type="Texture2D" uid="uid://b0o63twabxl4u" path="res://assets/characters/npcs/charpim-Sheet.png" id="4_blbvc"]
 [ext_resource type="PackedScene" uid="uid://yi2f5p61t3oc" path="res://src/ui/simple_dialog/simple_dialog_area.tscn" id="5_q14wn"]
+[ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="6_u60kx"]
+[ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="7_n5byc"]
+[ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="8_kpg3w"]
+[ext_resource type="Texture2D" uid="uid://bpd207slekgcf" path="res://assets/characters/npcs/pim.png" id="9_87v38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q14wn"]
 size = Vector2(15.5, 9.5)
@@ -53,6 +57,18 @@ size = Vector2(19, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7rmgw"]
 
+[sub_resource type="Resource" id="Resource_mpp05"]
+script = ExtResource("8_kpg3w")
+speaker_name = "who is this man"
+speaker_img = ExtResource("9_87v38")
+speaker_img_HFrames = 2
+text = "are you sure?"
+text_speed = 2.0
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u60kx"]
+size = Vector2(87.62608, 61.346436)
+
 [node name="Cena2" unique_id=823413629 instance=ExtResource("1_blbvc")]
 script = ExtResource("1_1ymmg")
 
@@ -94,5 +110,15 @@ function_call = "carimbar"
 
 [node name="CollisionShape2D" parent="CallCarimbo" index="0" unique_id=1559650857]
 shape = SubResource("RectangleShape2D_7rmgw")
+
+[node name="Importante" parent="." index="8" unique_id=369042241 instance=ExtResource("6_u60kx")]
+position = Vector2(189.37392, 179.34644)
+activate_instant = true
+trava_o_player = true
+dialogue = Array[ExtResource("7_n5byc")]([SubResource("Resource_mpp05")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Importante" index="0" unique_id=740849614]
+position = Vector2(99.62608, -75.346436)
+shape = SubResource("RectangleShape2D_u60kx")
 
 [editable path="CallCarimbo"]

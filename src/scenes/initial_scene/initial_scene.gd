@@ -1,6 +1,10 @@
 extends BaseScene
 
 @onready var simple_dialog_player: CanvasLayer = $SimpleDialogPlayer
+@onready var interacao_cama: Area2D = $InteracaoCama
+@onready var dialogo_gustavo: Area2D = $Dialogos/DialogoGustavo
+
+const player_deitada = Vector2(56,130)
 
 var deitada: bool = false
 
@@ -9,9 +13,33 @@ var player_collision_mask
 
 var pode_deitar: bool = true
 
+
 func _ready() -> void:
 	super()
-	player.animations.play("walk_down")
+	if !Global.jogo_iniciou:
+		Global.jogo_iniciou = true
+		set_status_inicial()
+		await Utils.sleep(1)
+		dialogo_gustavo._activate_dialogue()
+		await Utils.sleep(0.5)
+		await levantar("scream", 0.5)
+		interacao_cama.visible = true
+
+
+func set_status_inicial():
+	player.global_position = player_deitada
+	set_player_dormindo()
+	player.animations.play("sleeping")
+	interacao_cama.visible = false
+	deitada = true
+
+
+func set_player_dormindo():
+	player.can_move = false
+	player_collision_layer = player.collision_layer
+	player_collision_mask = player.collision_mask
+	player.collision_layer = 0
+	player.collision_mask = 0
 
 func _on_ready() -> void:
 	simple_dialog_player.visible = true
@@ -25,31 +53,26 @@ func interagir_cama() -> void:
 	if !deitada:
 		await deitar()
 	else:
-		await levantar()
+		await levantar("scream", 0.5)
+		player.can_move = true
 	deitada = !deitada
 	
-	await get_tree().create_timer(0.1).timeout
+	await Utils.sleep(0.1)
 	pode_deitar = true
 
 func deitar():
-	player.can_move = false
-	player_collision_layer = player.collision_layer
-	player_collision_mask = player.collision_mask
-	player.collision_layer = 0
-	player.collision_mask = 0
-	var tween: Tween = create_tween().set_trans(Tween.TRANS_SINE)
-	tween.tween_property(player, "global_position", Vector2(56,130), 0.8)
-	await tween.finished
+	set_player_dormindo()
+	await Utils.tween_meio_circulo(player, player_deitada, true, 0.8)
 	player.animations.play("sleeping")
 
-func levantar():
-	player.animations.play("walk_down")
-	var tween: Tween = create_tween().set_trans(Tween.TRANS_SINE)
-	tween.tween_property(player, "global_position", Vector2(98,160), 0.8)
-	await tween.finished
+
+func levantar(animation: String, wait_time: float):
+	player.animations.play(animation)
+	await Utils.sleep(wait_time)
+	await Utils.tween_meio_circulo(player, Vector2(98,160), false, 0.8)
 	player.collision_layer = player_collision_layer
 	player.collision_mask = player_collision_mask
-	player.can_move = true
+
 
 func ler_livro():
 	for livro in get_tree().get_nodes_in_group("livro"):

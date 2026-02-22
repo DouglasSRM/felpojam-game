@@ -49,14 +49,16 @@ func toggle_pause():
 	get_tree().paused = !get_tree().paused
 	pause_menu.visible = get_tree().paused
 
-func change_scene(from, to_scene_name: String) -> void:
+func change_scene(from, to_scene_name: String, transicao: bool = true) -> void:
 	if from is BaseScene:
 		player = from.player
 		player.get_parent().remove_child(player)
 	
-	animation_player.play("carimbo_in")
-	await animation_player.animation_finished
+	if transicao:
+		animation_player.play("carimbo_in")
+		await animation_player.animation_finished
 	
 	var full_path = scene_dir_path + to_scene_name +"/"+to_scene_name+".tscn"
 	from.get_tree().call_deferred("change_scene_to_file", full_path)
-	animation_player.play("carimbo_out")
+	if transicao:
+		animation_player.play("carimbo_out")

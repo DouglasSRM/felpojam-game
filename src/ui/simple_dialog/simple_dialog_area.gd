@@ -20,10 +20,12 @@ func _input(event):
 				self.owner.call(function_call)
 
 func _on_area_entered(_area: Area2D) -> void:
-	set_area_active(true)
+	if self.visible:
+		set_area_active(true)
 
 func _on_area_exited(_area: Area2D) -> void:
-	set_area_active(false)
+	if self.visible:
+		set_area_active(false)
 
 func set_area_active(flag: bool) -> void:
 	self.area_active = flag

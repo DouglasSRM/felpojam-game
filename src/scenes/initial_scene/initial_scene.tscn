@@ -8,23 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://dfe13b5urbx78" path="res://src/scenes/player/player.tscn" id="5_vum8s"]
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="7_lriem"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="8_pyp6y"]
-[ext_resource type="Texture2D" uid="uid://ckeilwd7v7275" path="res://assets/characters/julia_protag/PROTA_-_4-Sheet.png" id="9_2c6j5"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="9_pacc2"]
+[ext_resource type="Texture2D" uid="uid://xdk8l0xkabsf" path="res://assets/characters/gustavo/gustavo_gritando.png" id="9_uga7u"]
 [ext_resource type="Texture2D" uid="uid://hlg2si4v5vwk" path="res://assets/characters/gustavo/GUSTAVO - 1-Sheet.png" id="10_bb8qs"]
 [ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="11_mk21t"]
-[ext_resource type="Script" uid="uid://bwmccfplhqpda" path="res://src/ui/complex_dialog/resources/dialogue_function_resource.gd" id="11_tp0w8"]
-[ext_resource type="Script" uid="uid://dvqw2l4htwcuf" path="res://src/ui/complex_dialog/resources/dialogue_choice_resource.gd" id="12_bb8qs"]
-[ext_resource type="Texture2D" uid="uid://cb5ys8s22yuxt" path="res://assets/characters/gustavo/GUSTAVO - 3-Sheet.png" id="14_mk21t"]
-[ext_resource type="Texture2D" uid="uid://c2nx3sto38xrh" path="res://assets/characters/julia_protag/PROTA - 6.png" id="14_vih5p"]
-[ext_resource type="Texture2D" uid="uid://dqdpg4knqsplb" path="res://assets/characters/julia_protag/PROTA - 1.png" id="16_y18up"]
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="17_vih5p"]
 
 [sub_resource type="Resource" id="Resource_6k5om"]
 script = ExtResource("9_pacc2")
 speaker_name = "Gustavo"
-speaker_img = ExtResource("10_bb8qs")
+speaker_img = ExtResource("9_uga7u")
 speaker_img_HFrames = 2
-text = "[shake rate=20.0 level=5 connected=1]JULIAAAAAAA[/shake]"
+speaker_img_initial_frame = 1
+speaker_img_step_frame = 10
+text = "[shake rate=20.0 level=5 connected=1]ACOOOOOOOOOOOOOORDA CARA[/shake]"
+text_speed = 15.0
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_pyp6y"]
@@ -32,116 +30,40 @@ script = ExtResource("9_pacc2")
 speaker_name = "Julia"
 speaker_img = ExtResource("11_mk21t")
 speaker_img_HFrames = 2
-text = "o porraaaa"
+text = "[wave amp=25.0 freq=5.0 connected=1]Gustavo...[/wave]"
+text_speed = 5.0
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
-[sub_resource type="Resource" id="Resource_mk21t"]
-script = ExtResource("11_tp0w8")
-target_path = NodePath("../RespostasDialogoAble")
-function_name = "_activate_dialogue"
-hide_dialogue_box = true
-wait_for_signal_to_continue = "dialogue_finished"
-metadata/_custom_type_script = "uid://bwmccfplhqpda"
-
-[sub_resource type="Resource" id="Resource_ni0uh"]
-script = ExtResource("11_tp0w8")
-target_path = NodePath("../RespostasDialogoEblu")
-function_name = "_activate_dialogue"
-hide_dialogue_box = true
-wait_for_signal_to_continue = "dialogue_finished"
-metadata/_custom_type_script = "uid://bwmccfplhqpda"
-
-[sub_resource type="Resource" id="Resource_vih5p"]
-script = ExtResource("11_tp0w8")
-target_path = NodePath("../RespostaCarinha")
-function_name = "_activate_dialogue"
-hide_dialogue_box = true
-wait_for_signal_to_continue = "dialogue_finished"
-metadata/_custom_type_script = "uid://bwmccfplhqpda"
-
-[sub_resource type="Resource" id="Resource_2c6j5"]
-script = ExtResource("12_bb8qs")
-speaker_name = "Gustavo"
-speaker_img = ExtResource("10_bb8qs")
-speaker_img_HFrames = 2
-text = "PERGUNTA IMPOrTANTE: a ble ble ou e blu blu?"
-choice_text = Array[String](["a ble ble", "e blu blu", "'-'?"])
-choice_function_call = Array[ExtResource("11_tp0w8")]([SubResource("Resource_mk21t"), SubResource("Resource_ni0uh"), SubResource("Resource_vih5p")])
-metadata/_custom_type_script = "uid://dvqw2l4htwcuf"
-
-[sub_resource type="Resource" id="Resource_uga7u"]
+[sub_resource type="Resource" id="Resource_054xu"]
 script = ExtResource("9_pacc2")
 speaker_name = "Gustavo"
-speaker_img = ExtResource("10_bb8qs")
+speaker_img = ExtResource("9_uga7u")
 speaker_img_HFrames = 2
-text = "Bora trabaiar."
+text = "A GENTE TÁ [shake rate=20.0 level=5 connected=1]treze[/shake] MINUTOS ATRASADOS."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
-[sub_resource type="Resource" id="Resource_dvsp3"]
-script = ExtResource("9_pacc2")
-speaker_name = "Julia"
-speaker_img = ExtResource("14_vih5p")
-text = "ah nao :("
-speaker_on_right = false
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0w8"]
-size = Vector2(57, 49.4375)
-
-[sub_resource type="Resource" id="Resource_r2uip"]
-script = ExtResource("9_pacc2")
-speaker_name = "Julia"
-speaker_img = ExtResource("9_2c6j5")
-speaker_img_HFrames = 2
-text = "a ble ble?"
-speaker_on_right = false
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
-
-[sub_resource type="Resource" id="Resource_tp0w8"]
-script = ExtResource("9_pacc2")
-speaker_name = "Gustavo"
-speaker_img = ExtResource("10_bb8qs")
-speaker_img_HFrames = 2
-text = "a ble!!!!"
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
-
-[sub_resource type="Resource" id="Resource_bion4"]
-script = ExtResource("9_pacc2")
-speaker_name = "Julia"
-speaker_img = ExtResource("9_2c6j5")
-speaker_img_HFrames = 2
-text = "e blu blu?"
-speaker_on_right = false
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk21t"]
+size = Vector2(37, 28)
 
 [sub_resource type="Resource" id="Resource_bb8qs"]
 script = ExtResource("9_pacc2")
 speaker_name = "Gustavo"
 speaker_img = ExtResource("10_bb8qs")
 speaker_img_HFrames = 2
-text = "e blu!!!!"
+text = "Sonho tava bom Valentina?"
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
-[sub_resource type="Resource" id="Resource_brkob"]
+[sub_resource type="Resource" id="Resource_mk21t"]
 script = ExtResource("9_pacc2")
 speaker_name = "Julia"
-speaker_img = ExtResource("16_y18up")
-text = "'-' ..."
-text_speed = 3.0
-speaker_on_right = false
-metadata/_custom_type_script = "uid://bu36cy11lb2of"
-
-[sub_resource type="Resource" id="Resource_y18up"]
-script = ExtResource("9_pacc2")
-speaker_name = "Gustavo"
-speaker_img = ExtResource("14_mk21t")
+speaker_img = ExtResource("11_mk21t")
 speaker_img_HFrames = 2
-text = "ah deixa pra la..."
+text = "Esse não é meu nome..."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk21t"]
-size = Vector2(37, 28)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0w8"]
+size = Vector2(41, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y18up"]
 size = Vector2(20.5, 16)
@@ -174,7 +96,8 @@ position = Vector2(98, 160)
 speed = 100
 
 [node name="Gustavo" parent="." unique_id=1887093933 instance=ExtResource("4_bb8qs")]
-position = Vector2(232, 169)
+position = Vector2(153, 163)
+metadata/_edit_group_ = true
 
 [node name="SimpleDialogPlayer" parent="." unique_id=1255215716 instance=ExtResource("3_gddha")]
 visible = false
@@ -186,22 +109,10 @@ offset = Vector2(240, 135)
 [node name="Dialogos" type="Node2D" parent="." unique_id=1095403224]
 
 [node name="DialogoGustavo" parent="Dialogos" unique_id=369042241 instance=ExtResource("7_lriem")]
-position = Vector2(253, 117)
+position = Vector2(-72, 95)
+only_activate_once = true
 trava_o_player = true
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_6k5om"), SubResource("Resource_pyp6y"), SubResource("Resource_2c6j5"), SubResource("Resource_uga7u"), SubResource("Resource_dvsp3")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoGustavo" unique_id=1700188170]
-position = Vector2(-21, 41)
-shape = SubResource("RectangleShape2D_tp0w8")
-
-[node name="RespostasDialogoAble" parent="Dialogos" unique_id=1604792675 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_r2uip"), SubResource("Resource_tp0w8")])
-
-[node name="RespostasDialogoEblu" parent="Dialogos" unique_id=745811448 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_bion4"), SubResource("Resource_bb8qs")])
-
-[node name="RespostaCarinha" parent="Dialogos" unique_id=1699167769 instance=ExtResource("7_lriem")]
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_brkob"), SubResource("Resource_y18up")])
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_6k5om"), SubResource("Resource_pyp6y"), SubResource("Resource_054xu")])
 
 [node name="InteracaoPosters" parent="Dialogos" unique_id=689924629 instance=ExtResource("4_82qsf")]
 position = Vector2(110, 89)
@@ -216,6 +127,15 @@ offset_left = 10.0
 offset_top = 1.0
 offset_right = 23.0
 offset_bottom = 14.0
+
+[node name="DialogoInteracaoGustavo" parent="Dialogos" unique_id=1144190707 instance=ExtResource("7_lriem")]
+position = Vector2(143, 157)
+trava_o_player = true
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_bb8qs"), SubResource("Resource_mk21t")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoInteracaoGustavo" unique_id=1989961473]
+position = Vector2(10.5, -10.5)
+shape = SubResource("RectangleShape2D_tp0w8")
 
 [node name="SceneTrigger" parent="." unique_id=1319502396 instance=ExtResource("17_vih5p")]
 connected_scene = "cena_2"

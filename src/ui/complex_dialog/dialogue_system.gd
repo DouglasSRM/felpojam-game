@@ -167,16 +167,19 @@ func _text_resource(i: DialogueText) -> void:
 	else:
 		speaker_parent.visible = false
 	
+	dialogue_label.add_theme_font_size_override("normal_font_size", i.font_size)
 	dialogue_label.visible_characters = 0
 	dialogue_label.text = i.text
 	var text_without_square_brackets: String = _text_without_square_brackets(i.text)
 	var total_characters: int = text_without_square_brackets.length()
 	var character_timer: float = 0.0
+	
+	var count: int = 0
+	
 	while (dialogue_label.visible_characters < total_characters):
 		if Input.is_action_just_pressed("ui_accept") and (dialogue_label.visible_characters > 0):
 			dialogue_label.visible_characters = total_characters
 			break
-		
 		character_timer += get_process_delta_time()
 		if (character_timer >= 1.0 / i.text_speed) or (text_without_square_brackets[dialogue_label.visible_characters] == " "):
 			var character: String = text_without_square_brackets[dialogue_label.visible_characters]
@@ -185,10 +188,14 @@ func _text_resource(i: DialogueText) -> void:
 				audio_stream_player.pitch_scale = randf_range(i.text_volume_pitch_min, i.text_volume_pitch_max)
 				audio_stream_player.play()
 				if (speaker_parent.visible) and (i.speaker_img_HFrames > 1):
-					if speaker_sprite.frame < i.speaker_img_HFrames - 1:
-						speaker_sprite.frame += 1
-					else:
-						speaker_sprite.frame = 0
+					if count == 0:
+						speaker_sprite.frame = i.speaker_img_initial_frame
+					count += 1
+					if count % i.speaker_img_step_frame == 0:
+						if speaker_sprite.frame < i.speaker_img_HFrames - 1:
+							speaker_sprite.frame += 1
+						else:
+							speaker_sprite.frame = 0
 			character_timer = 0.0
 		await get_tree().process_frame
 	
