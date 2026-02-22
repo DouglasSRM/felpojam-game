@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="3_mopfk"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="4_dir8p"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="5_5p2fw"]
-[ext_resource type="Texture2D" uid="uid://do2p6dqx5gplq" path="res://assets/characters/jurya_alien/alien_dialogo.png" id="6_37xu1"]
+[ext_resource type="Texture2D" uid="uid://chf7nvg6i2pn7" path="res://assets/characters/jurya_alien/ALIEN - 1.png" id="6_dir8p"]
 [ext_resource type="Texture2D" uid="uid://bxta6jlc128fo" path="res://assets/characters/julia_protag/JULIA BRAVA.png" id="7_dir8p"]
 
 [sub_resource type="Animation" id="Animation_wjx8e"]
@@ -49,14 +49,14 @@ _data = {
 [sub_resource type="Resource" id="Resource_7831v"]
 script = ExtResource("5_5p2fw")
 speaker_name = "Alien"
-speaker_img = ExtResource("6_37xu1")
+speaker_img = ExtResource("6_dir8p")
 text = "Não são apenas carimbos! De onde eu venho, tem um simbolismo muito importante."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_mopfk"]
 script = ExtResource("5_5p2fw")
 speaker_name = "Alien"
-speaker_img = ExtResource("6_37xu1")
+speaker_img = ExtResource("6_dir8p")
 font_size = 15
 text = "Representa toda a nossa vida. O início, mudanças importantes, recomeços. Até o fim."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
@@ -64,20 +64,20 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 [sub_resource type="Resource" id="Resource_dir8p"]
 script = ExtResource("5_5p2fw")
 speaker_name = "Alien"
-speaker_img = ExtResource("6_37xu1")
+speaker_img = ExtResource("6_dir8p")
 text = "Mas no geral é pra ser algo positivo. É a nossa identidade, sabe."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_5p2fw"]
 script = ExtResource("5_5p2fw")
 speaker_name = "Alien"
-speaker_img = ExtResource("6_37xu1")
+speaker_img = ExtResource("6_dir8p")
 text = "Engraçado imaginar que não é assim do seu planeta lama-"
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_37xu1"]
 script = ExtResource("5_5p2fw")
-speaker_name = "Julia"
+speaker_name = "protagonista"
 speaker_img = ExtResource("7_dir8p")
 speaker_img_HFrames = 2
 speaker_img_step_frame = 2
@@ -88,14 +88,14 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 [sub_resource type="Resource" id="Resource_y7xkx"]
 script = ExtResource("5_5p2fw")
 speaker_name = "Alien"
-speaker_img = ExtResource("6_37xu1")
+speaker_img = ExtResource("6_dir8p")
 text = "Enfim, o carimbo representa a minha identidade. Eu sei quem eu sou por causa dele."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_ht2v3"]
 script = ExtResource("5_5p2fw")
 speaker_name = "Alien"
-speaker_img = ExtResource("6_37xu1")
+speaker_img = ExtResource("6_dir8p")
 text = "Como você sabe quem você é se vocês não tem isso? Qual o seu carimbo?"
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 

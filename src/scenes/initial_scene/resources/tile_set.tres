@@ -1129,8 +1129,6 @@ texture = ExtResource("4_llcxm")
 17:23/0 = 0
 17:21/0 = 0
 17:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
-16:21/0 = 0
-16:20/0 = 0
 16:22/0 = 0
 17:22/0 = 0
 17:22/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
@@ -1151,6 +1149,9 @@ texture = ExtResource("4_llcxm")
 6:13/0/texture_origin = Vector2i(-16, 24)
 15:21/0 = 0
 15:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+16:20/size_in_atlas = Vector2i(1, 2)
+16:20/0 = 0
+16:20/0/texture_origin = Vector2i(0, 8)
 
 [resource]
 physics_layer_0/collision_layer = 1

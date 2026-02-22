@@ -62,3 +62,11 @@ func change_scene(from, to_scene_name: String, transicao: bool = true) -> void:
 	from.get_tree().call_deferred("change_scene_to_file", full_path)
 	if transicao:
 		animation_player.play("carimbo_out")
+
+func fade_in():
+	animation_player.play("transition_out")
+	await animation_player.animation_finished
+
+func fade_out():
+	animation_player.play("transition_in")
+	await animation_player.animation_finished

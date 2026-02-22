@@ -1,85 +1,73 @@
-[gd_scene format=3 uid="uid://dtpk5xhtnasmj"]
+[gd_scene format=4 uid="uid://dtpk5xhtnasmj"]
 
 [ext_resource type="Script" uid="uid://c6s1k7tjaxwg4" path="res://src/scenes/cena_2/cena_2.gd" id="1_1ymmg"]
 [ext_resource type="PackedScene" uid="uid://bvgp7nbpgp15d" path="res://src/scenes/base_scene/base_scene.tscn" id="1_blbvc"]
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="3_oiags"]
-[ext_resource type="Texture2D" uid="uid://b0o63twabxl4u" path="res://assets/characters/npcs/charpim-Sheet.png" id="4_blbvc"]
+[ext_resource type="PackedScene" uid="uid://ct6h2rvcab11r" path="res://src/scenes/characters/chefe/chefe.tscn" id="4_q14wn"]
 [ext_resource type="PackedScene" uid="uid://yi2f5p61t3oc" path="res://src/ui/simple_dialog/simple_dialog_area.tscn" id="5_q14wn"]
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="6_u60kx"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="7_n5byc"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="8_kpg3w"]
-[ext_resource type="Texture2D" uid="uid://bpd207slekgcf" path="res://assets/characters/npcs/pim.png" id="9_87v38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q14wn"]
 size = Vector2(15.5, 9.5)
 
-[sub_resource type="Animation" id="Animation_q14wn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7rmgw"]
-resource_name = "charpim"
-length = 7.0
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 2, 2.46, 2.98, 3.44, 4.5, 5, 5.5, 6, 6.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(3, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7rmgw"]
-_data = {
-&"RESET": SubResource("Animation_q14wn"),
-&"charpim": SubResource("Animation_7rmgw")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lg6p"]
 size = Vector2(19, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rmgw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqkj3"]
+size = Vector2(20, 7)
 
-[sub_resource type="Resource" id="Resource_mpp05"]
+[sub_resource type="Resource" id="Resource_0lg6p"]
 script = ExtResource("8_kpg3w")
-speaker_name = "who is this man"
-speaker_img = ExtResource("9_87v38")
-speaker_img_HFrames = 2
-text = "are you sure?"
-text_speed = 2.0
+speaker_name = "Chefe"
+text = "Vocês estão [shake rate=20.0 level=5 connected=1]vinte e dois[/shake] minutos atrasados."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
+[sub_resource type="Resource" id="Resource_hqkj3"]
+script = ExtResource("8_kpg3w")
+speaker_name = "Julia"
+text = "Foi mal chefia, eu que atrasei a gente. Tô com uns remédios novos, sabe como é..."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_u60kx"]
+script = ExtResource("8_kpg3w")
+speaker_name = "Chefe"
+text = "Tudo bem, mas não quero que se repita."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_n5byc"]
+script = ExtResource("8_kpg3w")
+text = "Sim senhor :3"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rmgw"]
+size = Vector2(43, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u60kx"]
-size = Vector2(87.62608, 61.346436)
 
 [node name="Cena2" unique_id=823413629 instance=ExtResource("1_blbvc")]
+y_sort_enabled = true
 script = ExtResource("1_1ymmg")
 
 [node name="Any" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="0" unique_id=1417268179]
 position = Vector2(57, 65)
 
 [node name="MarkerCena3" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="1" unique_id=1983165636]
-position = Vector2(152, 76)
+position = Vector2(393, 68)
+
+[node name="Player" parent="." index="1" unique_id=1008942108]
+visible = true
+position = Vector2(169, 170)
+
+[node name="Ground" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="0" unique_id=1266151623]
+tile_map_data = PackedByteArray("AAAAAAAAAwAPABUAAAAAAAEAAwAPABUAAAAAAAIAAwAPABUAAAAAAAMAAwAPABUAAAAAAAQAAwAPABUAAAAAAAUAAwAPABUAAAAAAAYAAwAPABUAAAAAAAcAAwAPABUAAAAAAAgAAwAPABUAAAAAAAkAAwAPABUAAAAAAAoAAwAPABUAAAAAAAsAAwAPABUAAAAAAAwAAwAPABUAAAAAAA0AAwAPABUAAAAAAA4AAwAPABUAAAAAAA8AAwAPABUAAAAAABAAAwAPABUAAAABAAAAAwAPABUAAAABAAEAAwAPABUAAAABAAIAAwAPABUAAAABAAMAAwAPABUAAAABAAQAAwAPABUAAAABAAUAAwAPABUAAAABAAcAAwAPABUAAAABAAgAAwAPABUAAAABAAkAAwAPABUAAAABAAoAAwAPABUAAAABAAsAAwAPABUAAAABAAwAAwAPABUAAAABAA0AAwAPABUAAAABAA4AAwAPABUAAAABAA8AAwAPABUAAAABABAAAwAPABUAAAACAAAAAwAPABUAAAACAAEAAwAPABUAAAACAAgAAwAQABQAAAACAAoAAwAQABQAAAACAAwAAwAQABQAAAACAA4AAwAQABQAAAACABAAAwAQABQAAAADAAwAAwAQABQAAAADAA4AAwAQABQAAAADABAAAwAQABQAAAAEAAwAAwAQABQAAAAEAA4AAwAQABQAAAAEABAAAwAQABQAAAAFAAwAAwAQABQAAAAFAA4AAwAQABQAAAAFABAAAwAQABQAAAAGAAwAAwAQABQAAAAGAA4AAwAQABQAAAAGABAAAwAQABQAAAAHAAwAAwAQABQAAAAHAA4AAwAQABQAAAAHABAAAwAQABQAAAAIAAwAAwAQABQAAAAIAA4AAwAQABQAAAAIABAAAwAQABQAAAAJAAwAAwAQABQAAAAJAA4AAwAQABQAAAAJABAAAwAQABQAAAAKAAwAAwAQABQAAAAKAA4AAwAQABQAAAAKABAAAwAQABQAAAALAAwAAwAQABQAAAALAA4AAwAQABQAAAALABAAAwAQABQAAAAMAAwAAwAQABQAAAAMAA4AAwAQABQAAAAMABAAAwAQABQAAAANAAwAAwAQABQAAAANAA4AAwAQABQAAAANABAAAwAQABQAAAAOAAwAAwAQABQAAAAOAA4AAwAQABQAAAAOABAAAwAQABQAAAAPAAwAAwAQABQAAAAPAA4AAwAQABQAAAAPABAAAwAQABQAAAARAAAAAwAPABUAAAARAAEAAwAPABUAAAARAAIAAwAPABUAAAARAAMAAAALAAwAAAARAAQAAAALAAwAAAARAAgAAwAQABQAAAARAAoAAwAQABQAAAARAAwAAwAQABQAAAARAA4AAwAQABQAAAARABAAAwAQABQAAAASAAAAAwAPABUAAAASAAEAAwAPABUAAAASAAIAAwAPABUAAAASAAMAAAALAAwAAAASAAQAAAALAAwAAAASAAUAAAALAAwAAAASAAgAAwAQABQAAAASAAoAAwAQABQAAAASAAwAAwAQABQAAAASAA4AAwAQABQAAAASABAAAwAQABQAAAATAAAAAwAPABUAAAATAAEAAwAPABUAAAATAAIAAwAPABUAAAATAAMAAAALAAwAAAATAAQAAAALAAwAAAATAAUAAAALAAwAAAATAAYAAAALAAwAAAATAAcAAAALAAwAAAATAAgAAAALAAwAAAATAAkAAAALAAwAAAATAAoAAAALAAwAAAATAAsAAAALAAwAAAATAAwAAAALAAwAAAATAA0AAAALAAwAAAATAA4AAAALAAwAAAATAA8AAAALAAwAAAATABAAAAALAAwAAAAUAAAAAwAPABUAAAAUAAEAAwAPABUAAAAUAAIAAwAPABUAAAAUAAMAAAALAAwAAAAUAAQAAAALAAwAAAAUAAUAAAALAAwAAAAUAAYAAAALAAwAAAAUAAcAAAALAAwAAAAUAAgAAAALAAwAAAAUAAkAAAALAAwAAAAUAAoAAAALAAwAAAAUAAsAAAALAAwAAAAUAAwAAAALAAwAAAAUAA0AAAALAAwAAAAUAA4AAAALAAwAAAAUAA8AAAALAAwAAAAUABAAAAALAAwAAAAVAAAAAwAPABUAAAAVAAEAAwAPABUAAAAVAAIAAwAPABUAAAAVAAMAAAALAAwAAAAVAAQAAAALAAwAAAAVAAUAAAALAAwAAAAVAAYAAAALAAwAAAAVAAcAAAALAAwAAAAVAAgAAAALAAwAAAAVAAkAAAALAAwAAAAVAAoAAAALAAwAAAAVAAsAAAALAAwAAAAVAAwAAAALAAwAAAAVAA0AAAALAAwAAAAVAA4AAAALAAwAAAAVAA8AAAALAAwAAAAVABAAAAALAAwAAAAWAAAAAwAPABUAAAAWAAEAAwAPABUAAAAWAAIAAwAPABUAAAAWAAMAAAALAAwAAAAWAAQAAAALAAwAAAAWAAUAAAALAAwAAAAWAAYAAAALAAwAAAAWAAcAAAALAAwAAAAWAAgAAAALAAwAAAAWAAkAAAALAAwAAAAWAAoAAAALAAwAAAAWAAsAAAALAAwAAAAWAAwAAAALAAwAAAAWAA0AAAALAAwAAAAWAA4AAAALAAwAAAAWAA8AAAALAAwAAAAWABAAAAALAAwAAAAXAAAAAwAPABUAAAAXAAEAAwAPABUAAAAXAAIAAwAPABUAAAAXAAMAAAALAAwAAAAXAAQAAAALAAwAAAAXAAUAAAALAAwAAAAXAAYAAAALAAwAAAAXAAcAAAALAAwAAAAXAAgAAAALAAwAAAAXAAkAAAALAAwAAAAXAAoAAAALAAwAAAAXAAsAAAALAAwAAAAXAAwAAAALAAwAAAAXAA0AAAALAAwAAAAXAA4AAAALAAwAAAAXAA8AAAALAAwAAAAXABAAAAALAAwAAAAYAAAAAwAPABUAAAAYAAEAAwAPABUAAAAYAAIAAwAPABUAAAAYAAMAAAALAAwAAAAYAAQAAAALAAwAAAAYAAUAAAALAAwAAAAYAAYAAAALAAwAAAAYAAcAAAALAAwAAAAYAAgAAAALAAwAAAAYAAkAAAALAAwAAAAYAAoAAAALAAwAAAAYAAsAAAALAAwAAAAYAAwAAAALAAwAAAAYAA0AAAALAAwAAAAYAA4AAAALAAwAAAAYAA8AAAALAAwAAAAYABAAAAALAAwAAAAZAAAAAwAPABUAAAAZAAEAAwAPABUAAAAZAAIAAwAPABUAAAAZAAMAAAALAAwAAAAZAAQAAAALAAwAAAAZAAUAAAALAAwAAAAZAAYAAAALAAwAAAAZAAcAAAALAAwAAAAZAAgAAAALAAwAAAAZAAkAAAALAAwAAAAZAAoAAAALAAwAAAAZAAsAAAALAAwAAAAZAAwAAAALAAwAAAAZAA0AAAALAAwAAAAZAA4AAAALAAwAAAAZAA8AAAALAAwAAAAZABAAAAALAAwAAAAaAAAAAwAPABUAAAAaAAEAAwAPABUAAAAaAAIAAwAPABUAAAAaAAMAAwAPABUAAAAaAAQAAwAPABUAAAAaAAUAAwAPABUAAAAaAAYAAwAPABUAAAAaAAcAAwAPABUAAAAaAAgAAwAPABUAAAAaAAkAAwAPABUAAAAaAAoAAwAPABUAAAAaAAsAAwAPABUAAAAaAAwAAwAPABUAAAAaAA0AAwAPABUAAAAaAA4AAwAPABUAAAAaAA8AAwAPABUAAAAaABAAAwAPABUAAAAbAAAAAwAPABUAAAAbAAEAAwAPABUAAAAbAAIAAwAPABUAAAAbAAMAAwAPABUAAAAbAAQAAwAPABUAAAAbAAUAAwAPABUAAAAbAAYAAwAPABUAAAAbAAcAAwAPABUAAAAbAAgAAwAPABUAAAAbAAkAAwAPABUAAAAbAAoAAwAPABUAAAAbAAsAAwAPABUAAAAbAAwAAwAPABUAAAAbAA0AAwAPABUAAAAbAA4AAwAPABUAAAAbAA8AAwAPABUAAAAbABAAAwAPABUAAAAcAAAAAwAPABUAAAAcAAEAAwAPABUAAAAcAAIAAwAPABUAAAAcAAMAAwAPABUAAAAcAAQAAwAPABUAAAAcAAUAAwAPABUAAAAcAAYAAwAPABUAAAAcAAcAAwAPABUAAAAcAAgAAwAPABUAAAAcAAkAAwAPABUAAAAcAAoAAwAPABUAAAAcAAsAAwAPABUAAAAcAAwAAwAPABUAAAAcAA0AAwAPABUAAAAcAA4AAwAPABUAAAAcAA8AAwAPABUAAAAcABAAAwAPABUAAAAdAAAAAwAPABUAAAAdAAEAAwAPABUAAAAdAAIAAwAPABUAAAAdAAMAAwAPABUAAAAdAAQAAwAPABUAAAAdAAUAAwAPABUAAAAdAAYAAwAPABUAAAAdAAcAAwAPABUAAAAdAAgAAwAPABUAAAAdAAkAAwAPABUAAAAdAAoAAwAPABUAAAAdAAsAAwAPABUAAAAdAAwAAwAPABUAAAAdAA0AAwAPABUAAAAdAA4AAwAPABUAAAAdAA8AAwAPABUAAAAdABAAAwAPABUAAAADAAAAAwAPABUAAAADAAEAAwAPABUAAAADAAgAAwAQABQAAAADAAoAAwAQABQAAAAEAAAAAwAPABUAAAAEAAEAAwAPABUAAAAEAAgAAwAQABQAAAAEAAoAAwAQABQAAAAFAAAAAwAPABUAAAAFAAEAAwAPABUAAAAFAAgAAwAQABQAAAAFAAoAAwAQABQAAAAGAAAAAwAPABUAAAAGAAgAAwAQABQAAAAGAAoAAwAQABQAAAAHAAAAAwAPABUAAAAHAAEAAwAPABUAAAAHAAgAAwAQABQAAAAHAAoAAwAQABQAAAAIAAAAAwAPABUAAAAIAAEAAwAPABUAAAAIAAgAAwAQABQAAAAIAAoAAwAQABQAAAAJAAAAAwAPABUAAAAJAAEAAwAPABUAAAAJAAgAAwAQABQAAAAJAAoAAwAQABQAAAAKAAAAAwAPABUAAAAKAAEAAwAPABUAAAAKAAgAAwAQABQAAAAKAAoAAwAQABQAAAALAAAAAwAPABUAAAALAAEAAwAPABUAAAALAAgAAwAQABQAAAALAAoAAwAQABQAAAAMAAAAAwAPABUAAAAMAAEAAwAPABUAAAAMAAgAAwAQABQAAAAMAAoAAwAQABQAAAANAAAAAwAPABUAAAANAAEAAwAPABUAAAANAAgAAwAQABQAAAANAAoAAwAQABQAAAAOAAAAAwAPABUAAAAOAAEAAwAPABUAAAAOAAgAAwAQABQAAAAOAAoAAwAQABQAAAAPAAAAAwAPABUAAAAPAAEAAwAPABUAAAAPAAgAAwAQABQAAAAPAAoAAwAQABQAAAAQAAAAAwAPABUAAAAQAAEAAwAPABUAAAAGAAEAAwAPABUAAAARAAUAAAALAAwAAAABAAYAAwAPABUAAAAAABEAAwAPABUAAAABABEAAwAPABUAAAACABEAAwAPABUAAAADABEAAwAPABUAAAAEABEAAwAPABUAAAAFABEAAwAPABUAAAAGABEAAwAPABUAAAAHABEAAwAPABUAAAAIABEAAwAPABUAAAAJABEAAwAPABUAAAAKABEAAwAPABUAAAALABEAAwAPABUAAAAMABEAAwAPABUAAAANABEAAwAPABUAAAAOABEAAwAPABUAAAAPABEAAwAPABUAAAAQABEAAwAPABUAAAARABEAAwAPABUAAAASABEAAwAPABUAAAATABEAAwAPABUAAAAUABEAAwAPABUAAAAVABEAAwAPABUAAAAWABEAAwAPABUAAAAXABEAAwAPABUAAAAYABEAAwAPABUAAAAZABEAAwAPABUAAAAaABEAAwAPABUAAAAbABEAAwAPABUAAAAcABEAAwAPABUAAAAdABEAAwAPABUAAAAQABAAAwAQABQAAAAQAA4AAwAQABQAAAAFAAUAAAALAAwAAAAFAAQAAAALAAwAAAAFAAMAAAALAAwAAAAGAAUAAAALAAwAAAAEAAYAAAALAAwAAAAEAAUAAAALAAwAAAAEAAQAAAALAAwAAAAIAAUAAAALAAwAAAAQAAwAAwAQABQAAAAQAAoAAwAQABQAAAAQAAgAAwAQABQAAAAQAAUAAAALAAwAAAAPAAUAAAALAAwAAAAOAAUAAAALAAwAAAANAAUAAAALAAwAAAADAAYAAAALAAwAAAACAAUAAAALAAwAAAACAAQAAAALAAwAAAADAAQAAAALAAwAAAAGAAQAAAALAAwAAAADAAUAAAALAAwAAAACAAMAAAALAAwAAAADAAMAAAALAAwAAAAEAAMAAAALAAwAAAAGAAMAAAALAAwAAAAHAAMAAAALAAwAAAAIAAMAAAALAAwAAAAJAAMAAAALAAwAAAAKAAMAAAALAAwAAAALAAMAAAALAAwAAAAMAAMAAAALAAwAAAANAAMAAAALAAwAAAAOAAMAAAALAAwAAAAPAAMAAAALAAwAAAAQAAMAAAALAAwAAAAQAAQAAAALAAwAAAAPAAQAAAALAAwAAAAOAAQAAAALAAwAAAANAAQAAAALAAwAAAAMAAQAAAALAAwAAAALAAQAAAALAAwAAAAKAAQAAAALAAwAAAAJAAQAAAALAAwAAAAIAAQAAAALAAwAAAAHAAQAAAALAAwAAAAHAAUAAAALAAwAAAAJAAUAAAALAAwAAAAKAAUAAAALAAwAAAALAAUAAAALAAwAAAAMAAUAAAALAAwAAAACAAIAAwAPABUAAAADAAIAAwAPABUAAAAEAAIAAwAPABUAAAAFAAIAAwAPABUAAAAGAAIAAwAPABUAAAAHAAIAAwAPABUAAAAIAAIAAwAPABUAAAAQAAIAAwAPABUAAAAPAAIAAwAPABUAAAAOAAIAAwAPABUAAAANAAIAAwAPABUAAAAMAAIAAwAPABUAAAALAAIAAwAPABUAAAAKAAIAAwAPABUAAAAJAAIAAwAPABUAAAA=")
+
+[node name="Wall" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="1" unique_id=1506639550]
+tile_map_data = PackedByteArray("AAAIAAUAAwARABUAAAAIAAMAAwARABUAAAAIAAQAAwARABUAAAACAAYAAwARABUAAAAFAAYAAwARABUAAAAGAAYAAwARABUAAAAHAAYAAwARABUAAAAIAAYAAwARABUAAAAJAAYAAwARABUAAAAKAAYAAwARABUAAAALAAYAAwARABUAAAAMAAYAAwARABUAAAANAAYAAwARABUAAAAOAAYAAwARABUAAAAPAAYAAwARABUAAAAQAAYAAwARABUAAAARAAYAAwARABUAAAASAAYAAwARABUAAAAJAAMAAwAPABUAAAAJAAQAAwAPABUAAAAJAAUAAwARABUAAAAKAAMAAwAPABUAAAAKAAQAAwAPABUAAAAKAAUAAwARABUAAAALAAMAAwAPABUAAAALAAQAAwAPABUAAAALAAUAAwARABUAAAAMAAMAAwARABUAAAAMAAQAAwARABUAAAAMAAUAAwARABUAAAA=")
 
 [node name="Interactable" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="2" unique_id=744383844]
-tile_map_data = PackedByteArray(0, 0, 3, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0, 9, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0)
+tile_map_data = PackedByteArray("AAADAAIAAQABAAcAAAAYAAIAAQABAAcAAAAKAAYAAQABAAcAAAA=")
 
 [node name="SceneTriggerToInicial" parent="." index="3" unique_id=1319502396 instance=ExtResource("3_oiags")]
 connected_scene = "initial_scene"
@@ -88,37 +76,54 @@ connected_scene = "initial_scene"
 position = Vector2(56.25, 43.75)
 shape = SubResource("RectangleShape2D_q14wn")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="4" unique_id=1554130034]
-position = Vector2(288, 94)
-texture = ExtResource("4_blbvc")
-hframes = 5
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5" unique_id=1787979039]
-libraries/ = SubResource("AnimationLibrary_7rmgw")
-autoplay = &"charpim"
-
-[node name="SceneTriggerTo3" parent="." index="6" unique_id=1456444768 instance=ExtResource("3_oiags")]
+[node name="SceneTriggerTo3" parent="." index="4" unique_id=1456444768 instance=ExtResource("3_oiags")]
+position = Vector2(241, -1)
 connected_scene = "cena_3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTriggerTo3" index="0" unique_id=1494640588]
 position = Vector2(152.5, 40)
 shape = SubResource("RectangleShape2D_0lg6p")
 
-[node name="CallCarimbo" parent="." index="7" unique_id=689924629 instance=ExtResource("5_q14wn")]
-position = Vector2(61, 184)
-function_call = "carimbar"
+[node name="Chefe" parent="." index="5" unique_id=1222905426 instance=ExtResource("4_q14wn")]
+position = Vector2(90, 175)
 
-[node name="CollisionShape2D" parent="CallCarimbo" index="0" unique_id=1559650857]
+[node name="InteracaoUniforme" parent="." index="6" unique_id=689924629 instance=ExtResource("5_q14wn")]
+position = Vector2(169, 104)
+function_call = "armario_uniforme"
+
+[node name="CollisionShape2D" parent="InteracaoUniforme" index="0" unique_id=1559650857]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_hqkj3")
+
+[node name="KeyHint" parent="InteracaoUniforme" index="1" unique_id=316488180]
+offset_left = 8.0
+offset_top = -23.0
+offset_right = 21.0
+offset_bottom = -10.0
+
+[node name="DialogoChefe" parent="Dialogos" parent_id_path=PackedInt32Array(818597174) index="0" unique_id=369042241 instance=ExtResource("6_u60kx")]
+position = Vector2(53, 119)
+activate_instant = true
+only_activate_once = true
+trava_o_player = true
+dialogue = Array[ExtResource("7_n5byc")]([SubResource("Resource_0lg6p"), SubResource("Resource_hqkj3"), SubResource("Resource_u60kx"), SubResource("Resource_n5byc")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoChefe" index="0" unique_id=1616522756]
+position = Vector2(10, 11)
 shape = SubResource("RectangleShape2D_7rmgw")
 
-[node name="Importante" parent="." index="8" unique_id=369042241 instance=ExtResource("6_u60kx")]
-position = Vector2(189.37392, 179.34644)
-activate_instant = true
-trava_o_player = true
-dialogue = Array[ExtResource("7_n5byc")]([SubResource("Resource_mpp05")])
+[node name="Minigame" parent="." index="8" unique_id=1222590998 instance=ExtResource("5_q14wn")]
+position = Vector2(249, 187)
+function_call = "carimbar"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Importante" index="0" unique_id=740849614]
-position = Vector2(99.62608, -75.346436)
+[node name="CollisionShape2D" parent="Minigame" index="0" unique_id=1559650857]
 shape = SubResource("RectangleShape2D_u60kx")
 
-[editable path="CallCarimbo"]
+[node name="KeyHint" parent="Minigame" index="1" unique_id=316488180]
+offset_left = 3.0
+offset_top = -19.0
+offset_right = 16.0
+offset_bottom = -6.0
+
+[editable path="InteracaoUniforme"]
+[editable path="Minigame"]

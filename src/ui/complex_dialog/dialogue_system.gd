@@ -97,7 +97,11 @@ func signal_to_continue(target_node: Node, signal_name: String) -> void:
 		#	await get_tree().process_frame
 
 func _choice_resource(i: DialogueChoice) -> void:
-	speaker_name_label.text = i.speaker_name #setar o nome do speaker aqui
+	if i.speaker_name == "protagonista":
+		speaker_name_label.text = Global.nome_protagonista
+	else:
+		speaker_name_label.text = i.speaker_name
+	
 	dialogue_label.text = i.text
 	dialogue_label.visible_characters = -1
 	if i.speaker_img:
@@ -149,7 +153,11 @@ func _choice_button_pressed(target_node: Node, wait_for_signal_to_continue: Stri
 	next_item = true
 
 func _text_resource(i: DialogueText) -> void:
-	speaker_name_label.text = i.speaker_name #setar o nome do speaker aqui
+	if i.speaker_name == "protagonista":
+		speaker_name_label.text = Global.nome_protagonista
+	else:
+		speaker_name_label.text = i.speaker_name
+	
 	audio_stream_player.stream = i.text_sound
 	audio_stream_player.volume_db = i.text_volume_db
 	
