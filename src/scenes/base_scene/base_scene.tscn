@@ -23,6 +23,8 @@ tile_set = ExtResource("2_trelp")
 [node name="Wall" type="TileMapLayer" parent="TileMaps" unique_id=1506639550]
 tile_set = ExtResource("2_trelp")
 
+[node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=143949787]
+
 [node name="Interactable" type="TileMapLayer" parent="TileMaps" unique_id=744383844]
 tile_set = ExtResource("2_trelp")
 
