@@ -26,7 +26,7 @@ position = Vector2(248, 66)
 visible = true
 position = Vector2(219, 135)
 
-[node name="Interactable" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="2" unique_id=744383844]
+[node name="Interactable" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="3" unique_id=744383844]
 tile_map_data = PackedByteArray(0, 0, 12, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0, 15, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0)
 
 [node name="SceneTriggerTo3" parent="." index="3" unique_id=1319502396 instance=ExtResource("2_y7jf7")]
@@ -51,5 +51,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="InteracaoMinigame" index="0" unique_id=1559650857]
 shape = SubResource("RectangleShape2D_ueri7")
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 
 [editable path="InteracaoMinigame"]

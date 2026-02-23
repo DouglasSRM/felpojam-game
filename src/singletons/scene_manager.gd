@@ -11,6 +11,9 @@ var scene_dir_path = "res://src/scenes/"
 
 @onready var transition_effect: ColorRect = $transition_effect
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var dark_effect: ColorRect = $dark_effect
+
+var dark_effect_value: float = 1.2
 
 func push_scene(scene: String):
 	var full_path = scene_dir_path + scene +".tscn"
@@ -70,3 +73,8 @@ func fade_in():
 func fade_out():
 	animation_player.play("transition_in")
 	await animation_player.animation_finished
+
+func set_dark_effect():
+	dark_effect.visible = true
+	(dark_effect.material as ShaderMaterial).set_shader_parameter("radius", dark_effect_value)
+	dark_effect_value -= 0.1

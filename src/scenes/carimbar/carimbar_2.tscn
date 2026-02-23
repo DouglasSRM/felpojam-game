@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://mr2r3886cvsg"]
+[gd_scene format=3 uid="uid://yyg5gjsa4xtw"]
 
 [ext_resource type="PackedScene" uid="uid://cdt0pws6hrg6p" path="res://src/scenes/carimbar/carimbar.tscn" id="1_k1sjw"]
+[ext_resource type="Script" uid="uid://ca4h71hf034ox" path="res://src/scenes/carimbar/carimbar_2.gd" id="2_gg1ke"]
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="2_ou2lg"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="3_5utbn"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="4_gg1ke"]
@@ -25,7 +26,8 @@ speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [node name="Carimbar2" unique_id=1476343516 instance=ExtResource("1_k1sjw")]
-total_tickets = 2
+script = ExtResource("2_gg1ke")
+total_tickets = 16
 
 [node name="1" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="0" unique_id=369042241 instance=ExtResource("2_ou2lg")]
 dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_f5cl5")])
