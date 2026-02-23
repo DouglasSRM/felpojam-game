@@ -1180,6 +1180,7 @@ texture = ExtResource("4_llcxm")
 3:10/0/y_sort_origin = 7
 3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 24, 8, 24, -8)
 3:9/0 = 0
+3:9/0/z_index = 1
 
 [resource]
 physics_layer_0/collision_layer = 1
