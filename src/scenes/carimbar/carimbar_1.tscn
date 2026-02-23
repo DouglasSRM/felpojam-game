@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://cjd0mj1w6c5ua"]
+
+[ext_resource type="PackedScene" uid="uid://cdt0pws6hrg6p" path="res://src/scenes/carimbar/carimbar.tscn" id="1_1qsgl"]
+[ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="2_lmo83"]
+[ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="3_marpg"]
+[ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="4_s5vn2"]
+
+[sub_resource type="Resource" id="Resource_jlej3"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Carimbos...[/wave]"
+text_speed = 7.0
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_vr4t3"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Ugh.[/wave]"
+text_speed = 7.0
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_f5cl5"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Aposto que ela não ia gostar tanto de carimbos se tivesse que carimbar 8 horas por dia.[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_vsn38"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Pra mim carimbos significam tédio e cheiro de pizza mediana.[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_38rk5"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Eu não preciso de um carimbo pra ditar minha identidade...[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_4u2k6"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Ok, talvez eu não seja a melhor com identidades.[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_3muuo"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Se não o Gustavo não me chamaria de \"Valentina\".[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_efpos"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]E ok. Talvez eu tenha que escolher um nome pra registrar até amanhã.[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_va0sv"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]E talvez eu esteja procrastinando enquanto espero alguma revelação divina.[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_ieixb"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Mas uma garota pode sonhar...[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_qo2c5"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Acho que eu não me conheço o suficiente pra isso.[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_mbmfs"]
+script = ExtResource("4_s5vn2")
+text = "[wave amp=15.0 freq=5.0 connected=1]Talvez eu precise de um carimbo.[/wave]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[node name="carimbar_1" unique_id=1476343516 instance=ExtResource("1_1qsgl")]
+total_tickets = 16
+
+[node name="3" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="0" unique_id=369042241 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_jlej3")])
+
+[node name="4" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="1" unique_id=1407084817 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_vr4t3")])
+
+[node name="5" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="2" unique_id=646145575 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_f5cl5")])
+
+[node name="6" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="3" unique_id=1735646628 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_vsn38")])
+
+[node name="7" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="4" unique_id=1524882655 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_38rk5")])
+
+[node name="8" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="5" unique_id=767806647 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_4u2k6")])
+
+[node name="9" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="6" unique_id=171762788 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_3muuo")])
+
+[node name="10" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="7" unique_id=1907551022 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_efpos")])
+
+[node name="11" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="8" unique_id=1451737224 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_va0sv")])
+
+[node name="12" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="9" unique_id=1706625110 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_ieixb")])
+
+[node name="14" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="10" unique_id=1541116874 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_qo2c5")])
+
+[node name="16" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="11" unique_id=1768965618 instance=ExtResource("2_lmo83")]
+override_dialogue_position = true
+override_position = Vector2(240, 48)
+dialogue = Array[ExtResource("3_marpg")]([SubResource("Resource_mbmfs")])

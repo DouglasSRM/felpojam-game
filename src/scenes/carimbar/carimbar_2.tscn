@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://mr2r3886cvsg"]
+
+[ext_resource type="PackedScene" uid="uid://cdt0pws6hrg6p" path="res://src/scenes/carimbar/carimbar.tscn" id="1_k1sjw"]
+[ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="2_ou2lg"]
+[ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="3_5utbn"]
+[ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="4_gg1ke"]
+[ext_resource type="Texture2D" uid="uid://c2nx3sto38xrh" path="res://assets/characters/julia_protag/PROTA - 6.png" id="5_yi03q"]
+[ext_resource type="Texture2D" uid="uid://besdx78423iuu" path="res://assets/characters/julia_protag/julia_meio_pa.png" id="6_5utbn"]
+
+[sub_resource type="Resource" id="Resource_f5cl5"]
+script = ExtResource("4_gg1ke")
+speaker_name = "protagonista"
+speaker_img = ExtResource("5_yi03q")
+text = "mai q caraio"
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_gg1ke"]
+script = ExtResource("4_gg1ke")
+speaker_name = "protagonista"
+speaker_img = ExtResource("6_5utbn")
+speaker_img_HFrames = 2
+text = "Nem dormindo eu posso descansar... Saco de carimbo."
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[node name="Carimbar2" unique_id=1476343516 instance=ExtResource("1_k1sjw")]
+total_tickets = 2
+
+[node name="1" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="0" unique_id=369042241 instance=ExtResource("2_ou2lg")]
+dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_f5cl5")])
+
+[node name="2" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="1" unique_id=201043894 instance=ExtResource("2_ou2lg")]
+dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_gg1ke")])

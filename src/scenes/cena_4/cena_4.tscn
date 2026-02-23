@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://b0mtibme418cc"]
 
 [ext_resource type="PackedScene" uid="uid://bvgp7nbpgp15d" path="res://src/scenes/base_scene/base_scene.tscn" id="1_k3cqg"]
+[ext_resource type="Script" uid="uid://d0ix7p3no5elv" path="res://src/scenes/cena_4/cena_4.gd" id="2_ueri7"]
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="2_y7jf7"]
+[ext_resource type="PackedScene" uid="uid://yi2f5p61t3oc" path="res://src/ui/simple_dialog/simple_dialog_area.tscn" id="3_ohbx2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohbx2"]
 size = Vector2(16, 20)
@@ -9,13 +11,20 @@ size = Vector2(16, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7jf7"]
 size = Vector2(16, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueri7"]
+
 [node name="Cena4" unique_id=823413629 instance=ExtResource("1_k3cqg")]
+script = ExtResource("2_ueri7")
 
 [node name="Any" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="0" unique_id=1619693791]
 position = Vector2(201, 67)
 
 [node name="MarkerCena5" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="1" unique_id=619847916]
 position = Vector2(248, 66)
+
+[node name="Player" parent="." index="1" unique_id=1008942108]
+visible = true
+position = Vector2(219, 135)
 
 [node name="Interactable" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="2" unique_id=744383844]
 tile_map_data = PackedByteArray(0, 0, 12, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0, 15, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0)
@@ -34,3 +43,13 @@ connected_scene = "cena_5"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTriggerTo5" index="0" unique_id=967561364]
 position = Vector2(248, 39)
 shape = SubResource("RectangleShape2D_y7jf7")
+
+[node name="InteracaoMinigame" parent="." index="6" unique_id=689924629 instance=ExtResource("3_ohbx2")]
+position = Vector2(286, 147)
+function_call = "carimbar"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="InteracaoMinigame" index="0" unique_id=1559650857]
+shape = SubResource("RectangleShape2D_ueri7")
+
+[editable path="InteracaoMinigame"]

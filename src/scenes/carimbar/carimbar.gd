@@ -10,7 +10,6 @@ signal terminou
 
 const pos_papel_hidden = Vector2(250, -100)
 const pos_papel_shown  = Vector2(250, 100)
-const total_tickets: int = 16
 
 @onready var button: Button = $Button
 @onready var papel: Area2D = $Papel
@@ -18,6 +17,7 @@ const total_tickets: int = 16
 @onready var carimbeira: Area2D = $Carimbeira
 @onready var dialogos: Node2D = $Dialogos
 
+@export var total_tickets: int
 var current_ticket: int = 0
 var arrastando: bool = false
 var offset: Vector2 = Vector2.ZERO
@@ -26,19 +26,21 @@ var papel_atual: Area2D
 
 var state: GameState
 
-func diaologo():
+func diaologo(tempo: float):
 	for d in dialogos.get_children():
 		if d is DialogArea and d.name == str(current_ticket):
 			d._activate_dialogue()
 			await d.dialogue_finished
 			return
-	await Utils.sleep(1)
+	if tempo:
+		await Utils.sleep(tempo)
 
 func _ready():
 	button.visible = false
 	set_game_state(GameState.SEM_FOLHA)
-	await Utils.sleep(1)
 	current_ticket += 1
+	await Utils.sleep(1)
+	await diaologo(0)
 	chamar_ticket()
 
 func set_game_state(p_state: GameState):
@@ -46,10 +48,8 @@ func set_game_state(p_state: GameState):
 	match state:
 		GameState.SEM_FOLHA:
 			button.text = "Folha"
-			#button.visible = true
 		GameState.FOLHA_SEM_CARIMBO:
 			button.text = ""
-			#button.visible = false
 		GameState.FOLHA_CARIMBADA:
 			button.text = "Enviar"
 			button.visible = true
@@ -71,8 +71,8 @@ func enviar_ticket():
 	remove_child(papel_atual)
 	set_game_state(GameState.SEM_FOLHA)
 	current_ticket += 1
-	await diaologo()
-	if current_ticket < total_tickets:
+	await diaologo(0.5)
+	if current_ticket <= total_tickets:
 		chamar_ticket()
 	else:
 		terminou.emit()
