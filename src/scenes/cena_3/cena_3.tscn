@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dv44mbeq755ua"]
+[gd_scene format=4 uid="uid://dv44mbeq755ua"]
 
 [ext_resource type="PackedScene" uid="uid://bvgp7nbpgp15d" path="res://src/scenes/base_scene/base_scene.tscn" id="1_q2g1a"]
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="2_fc1yc"]
@@ -16,8 +16,11 @@ position = Vector2(152, 72)
 [node name="MarkerCena4" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="1" unique_id=1387742046]
 position = Vector2(217, 71)
 
+[node name="Ground" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="0" unique_id=1266151623]
+tile_map_data = PackedByteArray("AAACAAcAAwAAAAsAAAACAAkAAwAAAAsAAAACAAsAAwAAAAsAAAACAA0AAwAAAAsAAAACAA8AAwAAAAsAAAAEAAYAAAALAAwAAAAEAAcAAwAAAAsAAAAEAAkAAwAAAAsAAAAEAAsAAwAAAAsAAAAEAA0AAwAAAAsAAAAEAA8AAwAAAAsAAAAGAAcAAwAAAAsAAAAGAAkAAwAAAAsAAAAGAAsAAwAAAAsAAAAGAA0AAwAAAAsAAAAGAA8AAwAAAAsAAAAIAAcAAwAAAAsAAAAIAAkAAwAAAAsAAAAIAAsAAwAAAAsAAAAIAA0AAwAAAAsAAAAIAA8AAwAAAAsAAAAKAAcAAwAAAAsAAAAKAAkAAwAAAAsAAAAKAAsAAwAAAAsAAAAKAA0AAwAAAAsAAAAKAA8AAwAAAAsAAAAMAAcAAwAAAAsAAAAMAAkAAwAAAAsAAAAMAAsAAwAAAAsAAAAMAA0AAwAAAAsAAAAMAA8AAwAAAAsAAAAOAAcAAwAAAAsAAAAOAAkAAwAAAAsAAAAOAAsAAwAAAAsAAAAOAA0AAwAAAAsAAAAOAA8AAwAAAAsAAAAQAAcAAwAAAAsAAAAQAAkAAwAAAAsAAAAQAAsAAwAAAAsAAAAQAA0AAwAAAAsAAAAQAA8AAwAAAAsAAAASAAcAAwAAAAsAAAASAAkAAwAAAAsAAAASAAsAAwAAAAsAAAASAA0AAwAAAAsAAAASAA8AAwAAAAsAAAAUAAcAAwAAAAsAAAAUAAkAAwAAAAsAAAAUAAsAAwAAAAsAAAAUAA0AAwAAAAsAAAAUAA8AAwAAAAsAAAAWAAcAAwAAAAsAAAAWAAkAAwAAAAsAAAAWAAsAAwAAAAsAAAAWAA0AAwAAAAsAAAAWAA8AAwAAAAsAAAAYAAcAAwAAAAsAAAAYAAkAAwAAAAsAAAAYAAsAAwAAAAsAAAAYAA0AAwAAAAsAAAAYAA8AAwAAAAsAAAA=")
+
 [node name="Interactable" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="2" unique_id=744383844]
-tile_map_data = PackedByteArray(0, 0, 9, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0, 13, 0, 2, 0, 1, 0, 1, 0, 7, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAJAAIAAQABAAcAAAANAAIAAQABAAcAAAA=")
 
 [node name="SceneTriggerTo2" parent="." index="3" unique_id=1319502396 instance=ExtResource("2_fc1yc")]
 connected_scene = "cena_2"
