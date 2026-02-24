@@ -80,6 +80,15 @@ func change_scene_circle(from, to_scene_name: String):
 	await SceneManager.animation_player.animation_finished
 	circle.visible = false
 
+func change_scene_weep(from, to_scene_name: String):
+	transition_effect.visible = true
+	animation_player.play("transition_out")
+	await SceneManager.animation_player.animation_finished
+	change_scene(from, to_scene_name, false, true)
+	animation_player.play("transition_in")
+	await SceneManager.animation_player.animation_finished
+	transition_effect.visible = false
+
 func fade_in():
 	animation_player.play("transition_out")
 	await animation_player.animation_finished

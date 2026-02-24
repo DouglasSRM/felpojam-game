@@ -21,7 +21,7 @@ func _ready() -> void:
 	alien.velocity = Vector2(-5,0)
 	await Utils.sleep(0.5)
 	alien.velocity = Vector2(0,0)
-
+	SceneManager.change_scene_weep(self, "cutscene_2/cutscene_2")
 
 func _on_tree_entered() -> void:
 	if Global.pos_carimbo_4:

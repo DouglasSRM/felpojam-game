@@ -17,13 +17,13 @@ var pode_deitar: bool = true
 func _ready() -> void:
 	super()
 	if !Global.jogo_iniciou:
-		Global.jogo_iniciou = true
 		set_status_inicial()
 		await Utils.sleep(1)
 		dialogo_gustavo._activate_dialogue()
 		await Utils.sleep(0.5)
 		await levantar("scream", 0.5)
 		interacao_cama.visible = true
+		Global.jogo_iniciou = true
 
 
 func set_status_inicial():
@@ -53,7 +53,7 @@ func interagir_cama() -> void:
 	if !deitada:
 		await deitar()
 	else:
-		await levantar("scream", 0.5)
+		await levantar("walk_down")
 		player.can_move = true
 	deitada = !deitada
 	
@@ -66,7 +66,7 @@ func deitar():
 	player.animations.play("sleeping")
 
 
-func levantar(animation: String, wait_time: float):
+func levantar(animation: String, wait_time: float = 0):
 	player.animations.play(animation)
 	await Utils.sleep(wait_time)
 	await Utils.tween_meio_circulo(player, Vector2(98,160), false, 0.8)

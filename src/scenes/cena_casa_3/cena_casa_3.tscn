@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d4b7otvd3yd1x"]
+
+[ext_resource type="PackedScene" uid="uid://bxip4mu3u2civ" path="res://src/scenes/initial_scene/initial_scene.tscn" id="1_8i7ci"]
+[ext_resource type="Script" uid="uid://1dqqwkyyvgow" path="res://src/scenes/cena_casa_3/cena_casa_3.gd" id="2_t20bk"]
+
+[node name="CenaCasa3" unique_id=821454405 instance=ExtResource("1_8i7ci")]
+script = ExtResource("2_t20bk")
+
+[node name="Gustavo" parent="." index="2" unique_id=1887093933]
+visible = false
+
+[node name="DialogoInteracaoGustavo" parent="Dialogos" parent_id_path=PackedInt32Array(1095403224) index="2" unique_id=1144190707]
+visible = false
+
+[node name="SceneTrigger" parent="." index="6" unique_id=1319502396]
+visible = false
+
+[editable path="Dialogos/InteracaoPosters"]
+[editable path="InteracaoCama"]
+[editable path="Livro"]

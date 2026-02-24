@@ -245,7 +245,7 @@ shader_parameter/color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tvm3g"]
 shader = ExtResource("5_5djx3")
-shader_parameter/circle_size = 1.04999995231628
+shader_parameter/circle_size = 0.0
 shader_parameter/screen_width = 700.0
 shader_parameter/screen_height = 500.0
 shader_parameter/pos = Vector2(0.1, 0.4)
@@ -264,7 +264,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-color = Color(0.80275995, 0.7812, 0.84, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=776991253]
 libraries/ = SubResource("AnimationLibrary_hen7b")
