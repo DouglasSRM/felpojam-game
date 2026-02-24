@@ -10,14 +10,11 @@
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="7_n5byc"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="8_kpg3w"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q14wn"]
-size = Vector2(15.5, 9.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lg6p"]
 size = Vector2(19, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqkj3"]
-size = Vector2(20, 7)
+size = Vector2(11, 7)
 
 [sub_resource type="Resource" id="Resource_0lg6p"]
 script = ExtResource("8_kpg3w")
@@ -52,7 +49,7 @@ y_sort_enabled = true
 script = ExtResource("1_1ymmg")
 
 [node name="Any" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="0" unique_id=1417268179]
-position = Vector2(57, 65)
+position = Vector2(64, 112)
 
 [node name="MarkerCena3" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="1" unique_id=1983165636]
 position = Vector2(393, 68)
@@ -80,39 +77,33 @@ tile_set = ExtResource("3_u60kx")
 [node name="Interactable" parent="TileMaps" index="3" unique_id=744383844]
 z_index = 2
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAADAAIAAQABAAcAAAAYAAIAAQABAAcAAAALAAkAAwADAAkAAAALAA0AAwAFAAsAAAAIAA0AAwAFAAsAAAAFAA0AAwAFAAsAAAACAA0AAwAFAAsAAAA=")
+tile_map_data = PackedByteArray("AAALAAkAAwADAAkAAAALAA0AAwAFAAsAAAAIAA0AAwAFAAsAAAAFAA0AAwAFAAsAAAACAA0AAwAFAAsAAAA=")
 
-[node name="SceneTriggerToInicial" parent="." index="3" unique_id=1319502396 instance=ExtResource("3_oiags")]
-connected_scene = "initial_scene"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTriggerToInicial" index="0" unique_id=900138348]
-position = Vector2(56.25, 43.75)
-shape = SubResource("RectangleShape2D_q14wn")
-
-[node name="SceneTriggerTo3" parent="." index="4" unique_id=1456444768 instance=ExtResource("3_oiags")]
-position = Vector2(241, -1)
-connected_scene = "cena_3"
+[node name="SceneTriggerTo3" parent="." index="3" unique_id=1456444768 instance=ExtResource("3_oiags")]
+position = Vector2(64, 86)
+connected_scene = "cena_casa_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTriggerTo3" index="0" unique_id=1494640588]
-position = Vector2(152.5, 40)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_0lg6p")
 
-[node name="Chefe" parent="." index="5" unique_id=1222905426 instance=ExtResource("4_q14wn")]
+[node name="Chefe" parent="." index="4" unique_id=1222905426 instance=ExtResource("4_q14wn")]
 position = Vector2(90, 175)
+script = null
 
-[node name="InteracaoUniforme" parent="." index="6" unique_id=689924629 instance=ExtResource("5_q14wn")]
+[node name="InteracaoUniforme" parent="." index="5" unique_id=689924629 instance=ExtResource("5_q14wn")]
 position = Vector2(169, 104)
 function_call = "armario_uniforme"
 
 [node name="CollisionShape2D" parent="InteracaoUniforme" index="0" unique_id=1559650857]
-position = Vector2(-34, -6.5)
+position = Vector2(-25.5, -6.5)
 shape = SubResource("RectangleShape2D_hqkj3")
 
 [node name="KeyHint" parent="InteracaoUniforme" index="1" unique_id=316488180]
-offset_left = -28.0
-offset_top = -20.0
-offset_right = -15.0
-offset_bottom = -7.0
+offset_left = -16.0
+offset_top = -35.0
+offset_right = -3.0
+offset_bottom = -22.0
 
 [node name="DialogoChefe" parent="Dialogos" parent_id_path=PackedInt32Array(818597174) index="0" unique_id=369042241 instance=ExtResource("6_u60kx")]
 position = Vector2(53, 119)
@@ -122,12 +113,13 @@ trava_o_player = true
 dialogue = Array[ExtResource("7_n5byc")]([SubResource("Resource_0lg6p"), SubResource("Resource_hqkj3"), SubResource("Resource_u60kx"), SubResource("Resource_n5byc")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoChefe" index="0" unique_id=1616522756]
-position = Vector2(10, 11)
+position = Vector2(11, 10)
 shape = SubResource("RectangleShape2D_7rmgw")
 
-[node name="Minigame" parent="." index="8" unique_id=1222590998 instance=ExtResource("5_q14wn")]
-position = Vector2(-16, 201)
+[node name="Minigame" parent="." index="7" unique_id=1222590998 instance=ExtResource("5_q14wn")]
+position = Vector2(183, 155)
 function_call = "carimbar"
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Minigame" index="0" unique_id=1559650857]
 position = Vector2(0, 1)

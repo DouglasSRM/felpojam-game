@@ -67,6 +67,8 @@ func _on_dialogue_finished() -> void:
 	dialogue_finished.emit()
 
 func _on_body_entered(body: Node2D) -> void:
+	if !self.visible:
+		return
 	if only_activate_once and has_activated_already:
 		return
 	if body.is_in_group("player"):
@@ -75,5 +77,8 @@ func _on_body_entered(body: Node2D) -> void:
 			_activate_dialogue()
 
 func _on_body_exited(body: Node2D) -> void:
+	if !self.visible:
+		return
+	
 	if body.is_in_group("player"):
 		player_body_in = false

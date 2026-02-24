@@ -1,4 +1,4 @@
-extends BaseScene
+class_name InitialScene extends BaseScene
 
 @onready var simple_dialog_player: CanvasLayer = $SimpleDialogPlayer
 @onready var interacao_cama: Area2D = $InteracaoCama
@@ -12,7 +12,7 @@ var player_collision_layer
 var player_collision_mask
 
 var pode_deitar: bool = true
-
+@onready var gustavo: CharacterBody2D = $Gustavo
 
 func _ready() -> void:
 	super()

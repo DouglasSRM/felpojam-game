@@ -12,6 +12,7 @@ var scene_dir_path = "res://src/scenes/"
 @onready var transition_effect: ColorRect = $transition_effect
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var dark_effect: ColorRect = $dark_effect
+@onready var circle: ColorRect = $circle
 
 var dark_effect_value: float = 1.2
 
@@ -52,7 +53,7 @@ func toggle_pause():
 	get_tree().paused = !get_tree().paused
 	pause_menu.visible = get_tree().paused
 
-func change_scene(from, to_scene_name: String, transicao: bool = true) -> void:
+func change_scene(from, to_scene_name: String, transicao: bool = true, detailed: bool = false) -> void:
 	if from is BaseScene:
 		player = from.player
 		player.get_parent().remove_child(player)
@@ -61,10 +62,23 @@ func change_scene(from, to_scene_name: String, transicao: bool = true) -> void:
 		animation_player.play("carimbo_in")
 		await animation_player.animation_finished
 	
-	var full_path = scene_dir_path + to_scene_name +"/"+to_scene_name+".tscn"
+	var full_path: String
+	if detailed:
+		full_path = scene_dir_path + to_scene_name +".tscn"
+	else:
+		full_path = scene_dir_path + to_scene_name +"/"+to_scene_name+".tscn"
 	from.get_tree().call_deferred("change_scene_to_file", full_path)
 	if transicao:
 		animation_player.play("carimbo_out")
+
+func change_scene_circle(from, to_scene_name: String):
+	circle.visible = true
+	animation_player.play("circle_trans_in")
+	await SceneManager.animation_player.animation_finished
+	change_scene(from, to_scene_name, false, true)
+	animation_player.play("circle_trans_out_2")
+	await SceneManager.animation_player.animation_finished
+	circle.visible = false
 
 func fade_in():
 	animation_player.play("transition_out")

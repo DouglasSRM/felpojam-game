@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://btwtjqlno0g88"]
 
+[ext_resource type="Script" uid="uid://bjgff8nka7rvg" path="res://src/scenes/base_character/base_character.gd" id="1_yogsp"]
+
 [sub_resource type="Animation" id="Animation_8afob"]
 length = 0.001
 tracks/0/type = "value"
@@ -35,7 +37,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_gmlin"]
 resource_name = "walk_left"
-length = 0.8
+length = 3.4
 loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
@@ -101,6 +103,7 @@ size = Vector2(22, 10.5)
 
 [node name="BaseCharacter" type="CharacterBody2D" unique_id=1222905426]
 z_index = 1
+script = ExtResource("1_yogsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=23594111]
 offset = Vector2(0, -16)
