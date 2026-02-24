@@ -1,4 +1,4 @@
-class_name Player extends CharacterBody2D
+class_name Player extends BaseCharacter
 
 @export var speed: int = 150
 @onready var animations: AnimationPlayer = $AnimationPlayer
@@ -7,8 +7,10 @@ class_name Player extends CharacterBody2D
 var uniforme: bool = false
 var walking: bool = false
 var can_move: bool = true
+var force_walk: bool = false
 
 func _on_ready() -> void:
+	animation_player = animations
 	add_to_group("player")
 	
 	for i in get_children():
@@ -22,10 +24,13 @@ func handle_input():
 	walking = (moveDirection == Vector2(0,0))
 	velocity = moveDirection*speed
 
+func walk(direction: String, spd, duration: float):
+	force_walk = true
+	await super(direction, spd, duration)
+	force_walk = false
+
 func update_animations():
 	var direction = ""
-
-	
 	
 	if Input.is_action_pressed("ui_left"):
 		direction = "left"
@@ -42,6 +47,10 @@ func update_animations():
 		animations.stop()
 
 func _physics_process(_delta: float) -> void:
+	if force_walk:
+		super(_delta)
+		return
+	
 	if !can_move:
 		if animations.current_animation.contains("walk"):
 			animations.stop()

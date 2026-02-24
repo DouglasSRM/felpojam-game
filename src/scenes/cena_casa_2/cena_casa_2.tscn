@@ -6,9 +6,6 @@
 [node name="cena_casa_2" unique_id=821454405 instance=ExtResource("1_gvcbf")]
 script = ExtResource("2_ny1m8")
 
-[node name="Gustavo" parent="." index="2" unique_id=1887093933]
-visible = false
-
 [node name="DialogoGustavo" parent="Dialogos" parent_id_path=PackedInt32Array(1095403224) index="0" unique_id=369042241]
 visible = false
 

@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b4i7u3f8irs2b" path="res://assets/characters/npcs/rubens-sem-uniforme.png" id="2_k5e4i"]
 
 [node name="Chefe" unique_id=1222905426 instance=ExtResource("1_a5m1x")]
-z_index = 1
 
 [node name="Sprite2D" parent="." index="0" unique_id=23594111]
 texture = ExtResource("2_k5e4i")

@@ -19,6 +19,7 @@ func _ready() -> void:
 	carimbar.terminou.connect(Callable(self, "terminou"))
 
 func terminou():
+	Global.cena_2_pos_carimbo = true
 	SceneManager.pop_scene()
 
 func _on_button_pressed() -> void:

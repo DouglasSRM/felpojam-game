@@ -1,14 +1,45 @@
-extends BaseScene
+class_name Cena2 extends BaseScene
+
+@onready var chefe: BaseCharacter = $Chefe
+@onready var dialogo_gustavo: DialogArea = $Dialogos/DialogoGustavo
+@onready var gustavo: Gustavo = $Gustavo
+@onready var nao_trocou_uniforme: DialogArea = $Dialogos/NaoTrocouUniforme
+@onready var minigame: Interactable = $Minigame
+@onready var interacao_uniforme: Interactable = $InteracaoUniforme
+@onready var dialogo_uniforme_2: DialogArea = $Dialogos/DialogoUniforme2
+@onready var scene_trigger_to_3: SceneTrigger = $SceneTriggerTo3
+
+var trocou_uniforme: bool = false
+
+signal libera_movimento
+signal gustavo_saiu
+
+func cena_2_pos_carimbo():
+	minigame.function_call = ""
+	dialogo_uniforme_2.visible = true
+	interacao_uniforme.visible = true
+	trocou_uniforme = false
+	
+	scene_trigger_to_3.enabled = false
 
 func _ready() -> void:
 	super()
-	
 	player.animations.play("walk_down")
 
 func carimbar():
+	if !trocou_uniforme:
+		minigame.function_call = ""
+		nao_trocou_uniforme._activate_dialogue()
+		await nao_trocou_uniforme.dialogue_finished
+		await Utils.sleep(0.5)
+		minigame.function_call = "carimbar"
+		return
 	SceneManager.push_scene("carimbar/cena_carimbo")
 
 func armario_uniforme():
+	if trocou_uniforme:
+		return
+	
 	player.can_move = false
 	
 	var tempo: float = 0.8
@@ -28,3 +59,42 @@ func armario_uniforme():
 	tween2.tween_property(player, "global_position", player_original_pos, tempo) 
 	await tween2.finished
 	player.can_move = true
+	trocou_uniforme = true
+	interacao_uniforme.visible = false
+	interacao_uniforme.set_area_active(false)
+	
+	if Global.cena_2_pos_carimbo:
+		scene_trigger_to_3.enabled = true
+
+func after_dialogo_chefe():
+	chefe_sai_de_cena()
+	dialogo_gustavo._activate_dialogue()
+	await dialogo_gustavo.dialogue_finished
+	libera_movimento.emit()
+
+func gustavo_sai_de_cena():
+	await player.walk("down", 90, 0.2)
+	await gustavo.walk("left", 60, 0.6)
+	await gustavo.walk("up", 60, 0.6)
+	gustavo.global_position = Vector2(9999,9999)
+	await Utils.sleep(0.1)
+	gustavo_saiu.emit()
+
+func chefe_sai_de_cena():
+	await chefe.walk("right", 60, 1.5)
+	await chefe.stop_walking(0.2)
+	await chefe.walk("up", 60, 0.8)
+	await chefe.stop_walking(0.2)
+	await chefe.walk("right", 60, 1)
+	await chefe.stop_walking(0.2)
+	await chefe.walk("down", 60, 1.1)
+	await chefe.stop_walking(0.2)
+	await chefe.walk("right", 80, 2.2)
+	await chefe.stop_walking(0.2)
+	await chefe.walk("up", 80, 1.2)
+	chefe.global_position = Vector2(9999,9999)
+	await Utils.sleep(1)
+
+func _on_tree_entered() -> void:
+	if Global.cena_2_pos_carimbo:
+		cena_2_pos_carimbo()

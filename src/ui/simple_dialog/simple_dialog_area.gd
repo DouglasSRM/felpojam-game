@@ -1,4 +1,4 @@
-extends Area2D
+class_name Interactable extends Area2D
 
 @export var dialog_key: String = ""
 @export var function_call: String = ""
