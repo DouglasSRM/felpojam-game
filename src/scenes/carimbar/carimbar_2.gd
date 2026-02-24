@@ -1,8 +1,8 @@
 extends GameCarimbo
 
 func chamar_ticket():
-	if current_ticket == 11:
-		for i in range(4):
+	if current_ticket == 4:#11:
+		for i in range(11): #(4):
 			SceneManager.set_dark_effect()
 			await Utils.sleep(0.5)
 		Global.pos_carimbo_4 = true
