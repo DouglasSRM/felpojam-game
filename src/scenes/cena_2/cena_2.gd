@@ -53,7 +53,6 @@ func armario_uniforme():
 		return
 	
 	armario_aberto.visible = true
-	
 	player.can_move = false
 	
 	var tempo: float = 0.8
@@ -77,7 +76,7 @@ func armario_uniforme():
 	interacao_uniforme.visible = false
 	interacao_uniforme.set_area_active(false)
 	armario_aberto.visible = false
-	
+	dialogo_uniforme_2.visible = false
 	if Global.cena_2_pos_carimbo:
 		scene_trigger_to_3.enabled = true
 

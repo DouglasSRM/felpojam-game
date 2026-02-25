@@ -2,6 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://bxip4mu3u2civ" path="res://src/scenes/initial_scene/initial_scene.tscn" id="1_gvcbf"]
 [ext_resource type="Script" uid="uid://xj0p3qfkwxe3" path="res://src/scenes/cena_casa_2/cena_casa_2.gd" id="2_ny1m8"]
+[ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="3_tjiod"]
+[ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="4_q53sw"]
+[ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="5_yeb15"]
+
+[sub_resource type="Resource" id="Resource_r8qqu"]
+script = ExtResource("5_yeb15")
+text = "É amanhã..."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_q53sw"]
+script = ExtResource("5_yeb15")
+text = "E eu ainda não sei... Ugh! Por quê isso é tão difícil?"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_yeb15"]
+script = ExtResource("5_yeb15")
+text = "Melhor eu só dormir..."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [node name="cena_casa_2" unique_id=821454405 instance=ExtResource("1_gvcbf")]
 script = ExtResource("2_ny1m8")
@@ -14,6 +32,9 @@ visible = false
 
 [node name="DialogoInteracaoGustavo" parent="Dialogos" parent_id_path=PackedInt32Array(1095403224) index="2" unique_id=1144190707]
 visible = false
+
+[node name="DialogoInicial3" parent="Dialogos" parent_id_path=PackedInt32Array(1095403224) index="3" unique_id=1540354840 instance=ExtResource("3_tjiod")]
+dialogue = Array[ExtResource("4_q53sw")]([SubResource("Resource_r8qqu"), SubResource("Resource_q53sw"), SubResource("Resource_yeb15")])
 
 [node name="SceneTrigger" parent="." index="6" unique_id=1319502396]
 visible = false

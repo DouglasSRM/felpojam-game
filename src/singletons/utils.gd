@@ -4,7 +4,7 @@ extends Node
 
 func sleep(time: float):
 	if time:
-		await get_tree().create_timer(time).timeout
+		await get_tree().create_timer(time, false).timeout
 
 func tween_meio_circulo(node: Node2D, target_pos: Vector2, anti_horario: bool, duracao: float):
 	var start = node.global_position

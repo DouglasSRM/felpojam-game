@@ -13,7 +13,7 @@
 script = ExtResource("4_gg1ke")
 speaker_name = "protagonista"
 speaker_img = ExtResource("5_yi03q")
-text = "mai q caraio"
+text = "Que?"
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
