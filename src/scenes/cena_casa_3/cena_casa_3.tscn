@@ -2,6 +2,42 @@
 
 [ext_resource type="PackedScene" uid="uid://bxip4mu3u2civ" path="res://src/scenes/initial_scene/initial_scene.tscn" id="1_8i7ci"]
 [ext_resource type="Script" uid="uid://1dqqwkyyvgow" path="res://src/scenes/cena_casa_3/cena_casa_3.gd" id="2_t20bk"]
+[ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="3_7hc4k"]
+[ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="4_dnffe"]
+[ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="5_ts1v8"]
+[ext_resource type="Script" uid="uid://bwmccfplhqpda" path="res://src/ui/complex_dialog/resources/dialogue_function_resource.gd" id="6_cy7px"]
+[ext_resource type="Script" uid="uid://dvqw2l4htwcuf" path="res://src/ui/complex_dialog/resources/dialogue_choice_resource.gd" id="7_8erx7"]
+
+[sub_resource type="Resource" id="Resource_cy7px"]
+script = ExtResource("5_ts1v8")
+text = "Isso foi intenso."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_dnffe"]
+script = ExtResource("5_ts1v8")
+text = "Não posso dormir... Já esta na hora, o gustavo vai chegar em breve."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_8erx7"]
+script = ExtResource("6_cy7px")
+target_path = NodePath("../..")
+function_name = "cancelar"
+metadata/_custom_type_script = "uid://bwmccfplhqpda"
+
+[sub_resource type="Resource" id="Resource_y6176"]
+script = ExtResource("6_cy7px")
+target_path = NodePath("../..")
+function_name = "sair"
+metadata/_custom_type_script = "uid://bwmccfplhqpda"
+
+[sub_resource type="Resource" id="Resource_dv1qo"]
+script = ExtResource("7_8erx7")
+text = "Talvez eu deva conferir se não esqueci nada em casa antes."
+choice_text = Array[String](["espera um pouco...", "sair de casa"])
+choice_function_call = Array[ExtResource("6_cy7px")]([SubResource("Resource_8erx7"), SubResource("Resource_y6176")])
+metadata/_custom_type_script = "uid://dvqw2l4htwcuf"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnffe"]
 
 [node name="CenaCasa3" unique_id=821454405 instance=ExtResource("1_8i7ci")]
 script = ExtResource("2_t20bk")
@@ -11,6 +47,22 @@ visible = false
 
 [node name="DialogoInteracaoGustavo" parent="Dialogos" parent_id_path=PackedInt32Array(1095403224) index="2" unique_id=1144190707]
 visible = false
+
+[node name="DialogoAcordou" parent="Dialogos" parent_id_path=PackedInt32Array(1095403224) index="3" unique_id=369042241 instance=ExtResource("3_7hc4k")]
+dialogue = Array[ExtResource("4_dnffe")]([SubResource("Resource_cy7px")])
+
+[node name="DialogoDormir" parent="Dialogos" parent_id_path=PackedInt32Array(1095403224) index="4" unique_id=1196826681 instance=ExtResource("3_7hc4k")]
+dialogue = Array[ExtResource("4_dnffe")]([SubResource("Resource_dnffe")])
+
+[node name="DialogoPorta" parent="Dialogos" parent_id_path=PackedInt32Array(1095403224) index="5" unique_id=907115589 instance=ExtResource("3_7hc4k")]
+position = Vector2(200, 103)
+activate_instant = true
+trava_o_player = true
+dialogue = Array[ExtResource("4_dnffe")]([SubResource("Resource_dv1qo")])
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoPorta" index="0" unique_id=18969540]
+shape = SubResource("RectangleShape2D_dnffe")
 
 [node name="SceneTrigger" parent="." index="6" unique_id=1319502396]
 visible = false
