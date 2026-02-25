@@ -10,8 +10,10 @@
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="8_pyp6y"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="9_pacc2"]
 [ext_resource type="Texture2D" uid="uid://xdk8l0xkabsf" path="res://assets/characters/gustavo/gustavo_gritando.png" id="9_uga7u"]
-[ext_resource type="Texture2D" uid="uid://hlg2si4v5vwk" path="res://assets/characters/gustavo/GUSTAVO - 1-Sheet.png" id="10_bb8qs"]
-[ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="11_mk21t"]
+[ext_resource type="Texture2D" uid="uid://cb5ys8s22yuxt" path="res://assets/characters/gustavo/GUSTAVO - 3-Sheet.png" id="12_bb8qs"]
+[ext_resource type="Texture2D" uid="uid://ddevbhs3g51ih" path="res://assets/characters/gustavo/GUSTAVO - 5-Sheet.png" id="13_mk21t"]
+[ext_resource type="Texture2D" uid="uid://dxg52bsynps5u" path="res://assets/characters/julia_protag/PROTA - 10.png" id="14_2c6j5"]
+[ext_resource type="Texture2D" uid="uid://dkxibn8hktogs" path="res://assets/characters/julia_protag/PROTA - 11.png" id="14_ni0uh"]
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="17_vih5p"]
 
 [sub_resource type="Resource" id="Resource_6k5om"]
@@ -28,8 +30,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 [sub_resource type="Resource" id="Resource_pyp6y"]
 script = ExtResource("9_pacc2")
 speaker_name = "protagonista"
-speaker_img = ExtResource("11_mk21t")
-speaker_img_HFrames = 2
+speaker_img = ExtResource("14_ni0uh")
 text = "[wave amp=25.0 freq=5.0 connected=1]Gustavo...[/wave]"
 text_speed = 5.0
 speaker_on_right = false
@@ -46,20 +47,28 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk21t"]
 size = Vector2(37, 28)
 
+[sub_resource type="Resource" id="Resource_tp0w8"]
+script = ExtResource("9_pacc2")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("12_bb8qs")
+speaker_img_HFrames = 2
+text = "Se arruma logo!! a gente não pode perder mais tempo que isso..."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
 [sub_resource type="Resource" id="Resource_bb8qs"]
 script = ExtResource("9_pacc2")
 speaker_name = "Gustavo"
-speaker_img = ExtResource("10_bb8qs")
+speaker_img = ExtResource("13_mk21t")
 speaker_img_HFrames = 2
-text = "Sonho tava bom Valentina?"
+text = "Se não o chefe vai acabar com a gente..."
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
-[sub_resource type="Resource" id="Resource_mk21t"]
+[sub_resource type="Resource" id="Resource_2c6j5"]
 script = ExtResource("9_pacc2")
 speaker_name = "protagonista"
-speaker_img = ExtResource("11_mk21t")
-speaker_img_HFrames = 2
-text = "Esse não é meu nome..."
+speaker_img = ExtResource("14_2c6j5")
+text = "OK... só um minutinho!"
+speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0w8"]
@@ -131,14 +140,14 @@ offset_bottom = 14.0
 [node name="DialogoInteracaoGustavo" parent="Dialogos" unique_id=1144190707 instance=ExtResource("7_lriem")]
 position = Vector2(143, 157)
 trava_o_player = true
-dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_bb8qs"), SubResource("Resource_mk21t")])
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_tp0w8"), SubResource("Resource_bb8qs"), SubResource("Resource_2c6j5")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoInteracaoGustavo" unique_id=1989961473]
 position = Vector2(10.5, -10.5)
 shape = SubResource("RectangleShape2D_tp0w8")
 
 [node name="SceneTrigger" parent="." unique_id=1319502396 instance=ExtResource("17_vih5p")]
-connected_scene = "cena_2"
+connected_scene = "transicao_1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger" unique_id=1331795292]
 position = Vector2(200, 105)

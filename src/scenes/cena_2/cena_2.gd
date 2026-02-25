@@ -9,7 +9,11 @@ class_name Cena2 extends BaseScene
 @onready var dialogo_uniforme_2: DialogArea = $Dialogos/DialogoUniforme2
 @onready var scene_trigger_to_3: SceneTrigger = $SceneTriggerTo3
 @onready var npcs: Node2D = $Npcs
+@onready var porta_fechada: TileMapLayer = $TileMaps/PortaFechada
+@onready var armario_aberto: TileMapLayer = $TileMaps/ArmarioAberto
 
+
+var player_position_failsafe := Vector2(160,155)
 var trocou_uniforme: bool = false
 
 signal libera_movimento
@@ -20,13 +24,17 @@ func cena_2_pos_carimbo():
 	dialogo_uniforme_2.visible = true
 	interacao_uniforme.visible = true
 	trocou_uniforme = false
+	porta_fechada.visible = false
 	
 	scene_trigger_to_3.enabled = false
 	for i in npcs.get_children():
 		i.visible = false
+	player.global_position = player_position_failsafe
 
 func _ready() -> void:
 	super()
+	porta_fechada.visible = false
+	armario_aberto.visible = false
 	player.animations.play("walk_down")
 
 func carimbar():
@@ -37,11 +45,14 @@ func carimbar():
 		await Utils.sleep(0.5)
 		minigame.function_call = "carimbar"
 		return
+	player_position_failsafe = player.global_position
 	SceneManager.push_scene("carimbar/cena_carimbo")
 
 func armario_uniforme():
 	if trocou_uniforme:
 		return
+	
+	armario_aberto.visible = true
 	
 	player.can_move = false
 	
@@ -65,6 +76,7 @@ func armario_uniforme():
 	trocou_uniforme = true
 	interacao_uniforme.visible = false
 	interacao_uniforme.set_area_active(false)
+	armario_aberto.visible = false
 	
 	if Global.cena_2_pos_carimbo:
 		scene_trigger_to_3.enabled = true
@@ -80,6 +92,8 @@ func gustavo_sai_de_cena():
 	await gustavo.walk("left", 60, 0.6)
 	await gustavo.walk("up", 60, 0.6)
 	gustavo.global_position = Vector2(9999,9999)
+	await Utils.sleep(0.1)
+	porta_fechada.visible = true
 	await Utils.sleep(0.1)
 	gustavo_saiu.emit()
 

@@ -8,8 +8,8 @@ enum GameState {
 
 signal terminou
 
-const pos_papel_hidden = Vector2(250, -100)
-const pos_papel_shown  = Vector2(250, 100)
+const pos_papel_hidden = Vector2(240, -100)
+const pos_papel_shown  = Vector2(240, 100)
 
 @onready var button: Button = $Button
 @onready var papel: Area2D = $Papel

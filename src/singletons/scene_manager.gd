@@ -73,9 +73,11 @@ func change_scene(from, to_scene_name: String, transicao: bool = true, detailed:
 
 func change_scene_circle(from, to_scene_name: String):
 	circle.visible = true
+	(circle.material as ShaderMaterial).set_shader_parameter("pos", Vector2(0.12, 0.4))
 	animation_player.play("circle_trans_in")
 	await SceneManager.animation_player.animation_finished
 	change_scene(from, to_scene_name, false, true)
+	(circle.material as ShaderMaterial).set_shader_parameter("pos", Vector2(0.5, 0.5))
 	animation_player.play("circle_trans_out_2")
 	await SceneManager.animation_player.animation_finished
 	circle.visible = false

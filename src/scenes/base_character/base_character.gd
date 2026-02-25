@@ -1,9 +1,11 @@
 class_name BaseCharacter extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+var estatico: bool = true
 
 func _physics_process(_delta: float) -> void:
-	move_and_slide()
+	if !estatico:
+		move_and_slide()
 
 func stop_walking(timer: float):
 	self.velocity = Vector2(0,0)
@@ -12,6 +14,8 @@ func stop_walking(timer: float):
 		await Utils.sleep(timer)
 
 func walk(direction: String, speed, duration: float):
+	var old_estatico = self.estatico
+	self.estatico = false
 	if (direction == "right"):
 		self.animation_player.play("walk_right")
 		self.velocity = Vector2(speed,0)
@@ -30,3 +34,4 @@ func walk(direction: String, speed, duration: float):
 		await Utils.sleep(duration)
 	else:
 		print("direção nao encontrada")
+	self.estatico = old_estatico
