@@ -22,6 +22,12 @@ func _ready():
 	camera_inicial = camera.offset.x
 	moto_inicial = moto.position.x
 	animation_player.play("moto")
+	await Utils.sleep(4)
+	finalizar()
+
+func finalizar():
+	if Global.permite_finalizar:
+		SceneManager.change_scene(self,"cena_7")
 
 func _process(delta: float) -> void:
 	tempo_acumulado += delta
