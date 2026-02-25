@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cjd0mj1w6c5ua"]
+[gd_scene format=3 uid="uid://blsrxwskf15u"]
 
 [ext_resource type="PackedScene" uid="uid://cdt0pws6hrg6p" path="res://src/scenes/carimbar/carimbar.tscn" id="1_1qsgl"]
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="2_lmo83"]
@@ -69,6 +69,26 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [node name="carimbar_1" unique_id=1476343516 instance=ExtResource("1_1qsgl")]
 total_tickets = 16
+prefixo_tickets = "ticket"
+
+[node name="Carimbeira" parent="." index="1" unique_id=835926219]
+position = Vector2(403, 60)
+
+[node name="Sprite2D" parent="Carimbeira" index="0" unique_id=922230306]
+visible = false
+
+[node name="CollisionShape2D" parent="Carimbeira" index="1" unique_id=730273050]
+position = Vector2(-1, -0.5)
+
+[node name="SpritePapel" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="0" unique_id=1011479199]
+scale = Vector2(0.27, 0.27)
+
+[node name="CollisionShape2D" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="1" unique_id=200678952]
+position = Vector2(-27, 65)
+
+[node name="marca" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="2" unique_id=130422851]
+position = Vector2(-26.999994, 65)
+scale = Vector2(0.19, 0.19)
 
 [node name="3" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="0" unique_id=369042241 instance=ExtResource("2_lmo83")]
 override_dialogue_position = true

@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://cdt0pws6hrg6p"]
 
 [ext_resource type="Script" uid="uid://cgigfjkooinnd" path="res://src/scenes/carimbar/carimbar.gd" id="1_enrh0"]
-[ext_resource type="Texture2D" uid="uid://wgydw7xy0uiw" path="res://assets/carimbo/papel_tilemap.png" id="1_m67a2"]
 [ext_resource type="Script" uid="uid://cpfx8qn3ot2so" path="res://src/scenes/carimbar/area_papel.gd" id="3_c8i76"]
 [ext_resource type="Texture2D" uid="uid://mds7gp7kl0ok" path="res://assets/carimbo/carimbo.png" id="3_hy3rc"]
+[ext_resource type="Texture2D" uid="uid://dkamuow0ty876" path="res://assets/minigames/ticket_1.png" id="4_c8i76"]
 [ext_resource type="Texture2D" uid="uid://da4j5bd0magxl" path="res://assets/carimbo/carimbeira.png" id="4_scb8q"]
 [ext_resource type="Script" uid="uid://cx31phn0qu3ci" path="res://src/scenes/carimbar/carimbo.gd" id="4_tk4tl"]
+[ext_resource type="Texture2D" uid="uid://dud5g7ran73ps" path="res://assets/minigames/marca_carimbo.png" id="5_pgcpv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy3rc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8i76"]
-size = Vector2(8, 4)
+size = Vector2(48, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hy3rc"]
-size = Vector2(44, 23)
+size = Vector2(45, 20.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scb8q"]
 size = Vector2(36, 16)
@@ -47,13 +48,17 @@ position = Vector2(250, -100)
 script = ExtResource("3_c8i76")
 
 [node name="SpritePapel" type="Sprite2D" parent="Papel" unique_id=1011479199]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_m67a2")
-hframes = 2
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_c8i76")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Papel" unique_id=200678952]
-position = Vector2(1, 49)
+position = Vector2(-29.5, 72.5)
 shape = SubResource("RectangleShape2D_hy3rc")
+
+[node name="marca" type="Sprite2D" parent="Papel" unique_id=130422851]
+position = Vector2(-29.999994, 73)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_pgcpv")
 
 [node name="Carimbo" type="Area2D" parent="." unique_id=1128377463]
 position = Vector2(62, 150)

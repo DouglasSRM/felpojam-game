@@ -18,13 +18,29 @@ const pos_papel_shown  = Vector2(250, 100)
 @onready var dialogos: Node2D = $Dialogos
 
 @export var total_tickets: int
+@export var prefixo_tickets: String
+
+var carimbo_starter_position: Vector2
 var current_ticket: int = 0
 var arrastando: bool = false
 var offset: Vector2 = Vector2.ZERO
-
-var papel_atual: Area2D
-
+var papel_atual: AreaPapel
 var state: GameState
+var timer_carimbo: Timer
+
+func set_timer():
+	timer_carimbo = Timer.new()
+	timer_carimbo.wait_time = 10
+	timer_carimbo.autostart = false
+	timer_carimbo.one_shot = false
+	timer_carimbo.timeout.connect(_on_timer_timeout)
+	add_child(timer_carimbo)
+	
+	timer_carimbo.stop()
+
+func _on_timer_timeout():
+	carimbo.position = carimbo_starter_position
+	release_carimbo()
 
 func diaologo(tempo: float):
 	for d in dialogos.get_children():
@@ -36,6 +52,8 @@ func diaologo(tempo: float):
 		await Utils.sleep(tempo)
 
 func _ready():
+	carimbo_starter_position = carimbo.position
+	set_timer()
 	button.visible = false
 	set_game_state(GameState.SEM_FOLHA)
 	current_ticket += 1
@@ -51,10 +69,11 @@ func set_game_state(p_state: GameState):
 		GameState.FOLHA_SEM_CARIMBO:
 			button.text = ""
 		GameState.FOLHA_CARIMBADA:
-			button.text = "Enviar"
+			button.text = "Entregar"
 			button.visible = true
 
 func chamar_ticket():
+	papel.sprite.texture = load("res://assets/minigames/"+prefixo_tickets+"_"+str(current_ticket)+".png")
 	papel_atual = papel.duplicate()
 	add_child(papel_atual)
 	move_child(papel_atual, 0)
@@ -92,8 +111,10 @@ func grab_carimbo():
 	arrastando = true
 	carimbo.sprite.frame = 1
 	offset = carimbo.global_position - get_global_mouse_position()
+	timer_carimbo.start()
 
 func release_carimbo():
+	timer_carimbo.start()
 	arrastando = false
 	carimbo.sprite.frame = 0
 	if carimbo.overlaps_area(carimbeira):
@@ -101,7 +122,7 @@ func release_carimbo():
 		return
 	if carimbo.overlaps_area(papel_atual):
 		if carimbo.status == Carimbo.CarimboState.COM_TINTA:
-			papel_atual.sprite.frame = 1
+			papel_atual.carimbar()
 			carimbo.status = Carimbo.CarimboState.SEM_TINTA
 			set_game_state(GameState.FOLHA_CARIMBADA)
 
