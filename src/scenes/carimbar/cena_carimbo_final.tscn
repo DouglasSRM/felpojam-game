@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dygimm2l4myj"]
+
+[ext_resource type="Script" uid="uid://dx0gq3sfke1m4" path="res://src/scenes/carimbar/cena_carimbo_final.gd" id="1_gooi1"]
+[ext_resource type="Texture2D" uid="uid://4t60ti7a3non" path="res://assets/minigames/MESA - NORMAL.png" id="2_w4gbf"]
+
+[node name="cena_carimbo_final" type="Node2D" unique_id=535632425]
+script = ExtResource("1_gooi1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1311522130]
+position = Vector2(240, 135)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_w4gbf")
