@@ -8,6 +8,7 @@ class_name Cena2 extends BaseScene
 @onready var interacao_uniforme: Interactable = $InteracaoUniforme
 @onready var dialogo_uniforme_2: DialogArea = $Dialogos/DialogoUniforme2
 @onready var scene_trigger_to_3: SceneTrigger = $SceneTriggerTo3
+@onready var npcs: Node2D = $Npcs
 
 var trocou_uniforme: bool = false
 
@@ -21,6 +22,8 @@ func cena_2_pos_carimbo():
 	trocou_uniforme = false
 	
 	scene_trigger_to_3.enabled = false
+	for i in npcs.get_children():
+		i.visible = false
 
 func _ready() -> void:
 	super()
@@ -67,7 +70,7 @@ func armario_uniforme():
 		scene_trigger_to_3.enabled = true
 
 func after_dialogo_chefe():
-	chefe_sai_de_cena()
+	await chefe_sai_de_cena()
 	dialogo_gustavo._activate_dialogue()
 	await dialogo_gustavo.dialogue_finished
 	libera_movimento.emit()

@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://cb5ys8s22yuxt" path="res://assets/characters/gustavo/GUSTAVO - 3-Sheet.png" id="12_n0xai"]
 [ext_resource type="PackedScene" uid="uid://bshfi56ow2ufx" path="res://src/scenes/character_gustavo/gustavo.tscn" id="13_cghnw"]
 [ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="15_x0kil"]
+[ext_resource type="Texture2D" uid="uid://bhrtmtyleirgu" path="res://assets/characters/npcs/yellownpcs1.png" id="18_2v474"]
+[ext_resource type="Texture2D" uid="uid://csyy6itce3gst" path="res://assets/characters/npcs/yellownpcs2.png" id="19_aferf"]
+[ext_resource type="Texture2D" uid="uid://br7vxodm58jx5" path="res://assets/characters/npcs/yellownpcs3.png" id="20_sc0ap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lg6p"]
 size = Vector2(19, 20)
@@ -228,6 +231,23 @@ offset_left = 3.0
 offset_top = -19.0
 offset_right = 16.0
 offset_bottom = -6.0
+
+[node name="Npcs" type="Node2D" parent="." index="9" unique_id=1638338929]
+
+[node name="Npcs1" type="Sprite2D" parent="Npcs" index="0" unique_id=1353571030]
+z_index = 2
+position = Vector2(395, 238)
+texture = ExtResource("18_2v474")
+
+[node name="Npcs2" type="Sprite2D" parent="Npcs" index="1" unique_id=1161332640]
+z_index = 2
+position = Vector2(331, 138)
+texture = ExtResource("19_aferf")
+
+[node name="Npcs3" type="Sprite2D" parent="Npcs" index="2" unique_id=1647625008]
+z_index = 2
+position = Vector2(268, 232)
+texture = ExtResource("20_sc0ap")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 
