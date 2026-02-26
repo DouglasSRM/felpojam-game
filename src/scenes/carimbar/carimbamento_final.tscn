@@ -12,16 +12,13 @@ prefixo_tickets = "certidao"
 position = Vector2(410, 64)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" parent="Carimbeira" index="0" unique_id=922230306]
-visible = false
-
 [node name="SpritePapel" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="0" unique_id=1011479199]
 texture = ExtResource("2_70sat")
 
 [node name="CollisionShape2D" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="1" unique_id=200678952]
-position = Vector2(0, 44)
+position = Vector2(1, 68)
 
 [node name="marca" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="2" unique_id=130422851]
-position = Vector2(1.0000057, 44.000004)
-scale = Vector2(0.15, 0.15)
+position = Vector2(1.0000057, 68)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_nk2e1")

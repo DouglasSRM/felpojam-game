@@ -136,6 +136,13 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0kil"]
 size = Vector2(20, 10)
 
+[sub_resource type="Resource" id="Resource_4b4w7"]
+script = ExtResource("8_kpg3w")
+speaker_name = "protagonista"
+text = "[wave amp=15.0 freq=5.0 connected=1]Esquece tudo que eu falei, eu odeio carimbos...[/wave]"
+text_speed = 13.0
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u60kx"]
 
 [node name="Cena2" unique_id=823413629 instance=ExtResource("1_blbvc")]
@@ -250,6 +257,10 @@ dialogue = Array[ExtResource("7_n5byc")]([SubResource("Resource_sc0ap")])
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoUniforme2" index="0" unique_id=1913269282]
 position = Vector2(64, 96)
 shape = SubResource("RectangleShape2D_x0kil")
+
+[node name="DialogoPosMinigame" parent="Dialogos" parent_id_path=PackedInt32Array(818597174) index="4" unique_id=1306700709 instance=ExtResource("6_u60kx")]
+trava_o_player = true
+dialogue = Array[ExtResource("7_n5byc")]([SubResource("Resource_4b4w7")])
 
 [node name="Minigame" parent="." index="9" unique_id=1222590998 instance=ExtResource("5_q14wn")]
 position = Vector2(183, 155)

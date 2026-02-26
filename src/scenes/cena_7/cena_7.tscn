@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ckeilwd7v7275" path="res://assets/characters/julia_protag/PROTA_-_4-Sheet.png" id="7_iy8na"]
 [ext_resource type="AudioStream" uid="uid://1q8tdb3jx4yx" path="res://soundtrack/secretaria.ogg" id="7_plgki"]
 [ext_resource type="Texture2D" uid="uid://33h0bpqwc3pk" path="res://assets/characters/julia_protag/PROTA - 12.png" id="8_ptsfa"]
+[ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="9_80nb4"]
 [ext_resource type="Texture2D" uid="uid://dxg52bsynps5u" path="res://assets/characters/julia_protag/PROTA - 10.png" id="9_tw0ch"]
 [ext_resource type="Texture2D" uid="uid://dkxibn8hktogs" path="res://assets/characters/julia_protag/PROTA - 11.png" id="10_l0dex"]
 [ext_resource type="Texture2D" uid="uid://bigk8id8c74rh" path="res://assets/characters/julia_protag/PROTA - 4.png" id="11_sms5v"]
@@ -27,6 +28,7 @@ speaker_img = ExtResource("7_iy8na")
 speaker_img_HFrames = 2
 speaker_img_step_frame = 3
 text = "Uhh, bom dia eu... eu vim trocar o meu nome."
+text_sound = ExtResource("9_80nb4")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -34,6 +36,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("6_iy8na")
 speaker_name = "Secretária"
 text = "Certo, trouxe todos os documentos?"
+text_sound = ExtResource("7_plgki")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_l0dex"]
@@ -41,6 +44,7 @@ script = ExtResource("6_iy8na")
 speaker_name = "protagonista"
 speaker_img = ExtResource("8_ptsfa")
 text = "Sim! Tá tudo aqui."
+text_sound = ExtResource("9_80nb4")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -50,6 +54,7 @@ speaker_name = "protagonista"
 speaker_img = ExtResource("9_tw0ch")
 font_size = 10
 text = "[shake rate=20.0 level=5 connected=1]Eu acho...[/shake]"
+text_sound = ExtResource("9_80nb4")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -57,18 +62,21 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("6_iy8na")
 speaker_name = "Secretária"
 text = "Hmmmm..."
+text_sound = ExtResource("7_plgki")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_80nb4"]
 script = ExtResource("6_iy8na")
 speaker_name = "Secretária"
 text = "Hmmmmmmmmmmmmm........."
+text_sound = ExtResource("7_plgki")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_c74pl"]
 script = ExtResource("6_iy8na")
 speaker_name = "Secretária"
 text = "[shake rate=10.0 level=5 connected=1]HMMMMMMMMMMMMMMMMMMMMMMM.........[/shake]"
+text_sound = ExtResource("7_plgki")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_h2pml"]
@@ -77,6 +85,7 @@ speaker_name = "protagonista"
 speaker_img = ExtResource("10_l0dex")
 text = "[shake rate=10.0 level=5 connected=1]...[/shake]"
 text_speed = 2.0
+text_sound = ExtResource("9_80nb4")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -84,6 +93,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("6_iy8na")
 speaker_name = "Secretária"
 text = "Perfeito. Não falta nada! Qual o novo nome pra colocar nos documentos?"
+text_sound = ExtResource("7_plgki")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_w0xne"]
@@ -91,6 +101,7 @@ script = ExtResource("6_iy8na")
 speaker_name = "protagonista"
 speaker_img = ExtResource("11_sms5v")
 text = "Hmmmm..."
+text_sound = ExtResource("9_80nb4")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 

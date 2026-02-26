@@ -11,7 +11,7 @@ class_name Cena2 extends BaseScene
 @onready var npcs: Node2D = $Npcs
 @onready var porta_fechada: TileMapLayer = $TileMaps/PortaFechada
 @onready var armario_aberto: TileMapLayer = $TileMaps/ArmarioAberto
-
+@onready var dialogo_pos_minigame: DialogArea = $Dialogos/DialogoPosMinigame
 
 var player_position_failsafe := Vector2(160,155)
 var trocou_uniforme: bool = false
@@ -30,6 +30,8 @@ func cena_2_pos_carimbo():
 	for i in npcs.get_children():
 		i.visible = false
 	player.global_position = player_position_failsafe
+	interacao_uniforme.function_call = "armario_uniforme"
+	dialogo_pos_minigame._activate_dialogue()
 
 func _ready() -> void:
 	super()
@@ -51,7 +53,7 @@ func carimbar():
 func armario_uniforme():
 	if trocou_uniforme:
 		return
-	
+	interacao_uniforme.function_call = ""
 	armario_aberto.visible = true
 	player.can_move = false
 	
