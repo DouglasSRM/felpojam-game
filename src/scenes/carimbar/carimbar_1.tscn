@@ -88,7 +88,6 @@ position = Vector2(-27, 65)
 
 [node name="marca" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="2" unique_id=130422851]
 position = Vector2(-26.999994, 65)
-scale = Vector2(0.19, 0.19)
 
 [node name="3" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="0" unique_id=369042241 instance=ExtResource("2_lmo83")]
 override_dialogue_position = true

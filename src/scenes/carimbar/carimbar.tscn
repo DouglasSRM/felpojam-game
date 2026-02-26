@@ -57,7 +57,7 @@ shape = SubResource("RectangleShape2D_hy3rc")
 
 [node name="marca" type="Sprite2D" parent="Papel" unique_id=130422851]
 position = Vector2(-29.999994, 73)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.11, 0.11)
 texture = ExtResource("5_pgcpv")
 
 [node name="Carimbo" type="Area2D" parent="." unique_id=1128377463]

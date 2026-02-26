@@ -8,8 +8,10 @@
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="5_oxnep"]
 [ext_resource type="Texture2D" uid="uid://dkxibn8hktogs" path="res://assets/characters/julia_protag/PROTA - 11.png" id="6_oxnep"]
 [ext_resource type="Texture2D" uid="uid://chf7nvg6i2pn7" path="res://assets/characters/jurya_alien/ALIEN - 1.png" id="7_6aate"]
+[ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="7_ox3gf"]
 [ext_resource type="Texture2D" uid="uid://besdx78423iuu" path="res://assets/characters/julia_protag/julia_meio_pa.png" id="8_sb3qy"]
 [ext_resource type="Texture2D" uid="uid://t7wbo8owwnhc" path="res://assets/characters/jurya_alien/ALIEN - 2.png" id="9_j1rmx"]
+[ext_resource type="AudioStream" uid="uid://ccxkbyrj0sja3" path="res://soundtrack/insolita.ogg" id="9_mt6sn"]
 [ext_resource type="Texture2D" uid="uid://b6g5hxjh8j61v" path="res://assets/characters/julia_protag/PROTA - 8.png" id="10_hqiib"]
 [ext_resource type="Texture2D" uid="uid://c0nqui7o0pfkp" path="res://assets/characters/jurya_alien/alien_pisca.png" id="11_5rf0i"]
 
@@ -19,6 +21,7 @@ speaker_name = "protagonista"
 speaker_img = ExtResource("6_oxnep")
 speaker_img_step_frame = 5
 text = "[shake rate=20.0 level=5 connected=1]SOL!!!!!!!!!!!![/shake]"
+text_sound = ExtResource("7_ox3gf")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -27,6 +30,7 @@ script = ExtResource("5_oxnep")
 speaker_name = "Insólita"
 speaker_img = ExtResource("7_6aate")
 text = "O que você tá fazendo??"
+text_sound = ExtResource("9_mt6sn")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_sb3qy"]
@@ -36,6 +40,8 @@ speaker_img = ExtResource("6_oxnep")
 font_size = 8
 text = "Eu não sei!!! Do nada eu tava no trabalho e daí tava tudo bagunçado e eu tinha que carimbar e eu comecei a carimbar mas tava diferente e tinham vários nomes e eu não sabia qual era o meu nome e eu comecei a surtar e eu acho que eu apaguei e daí do nada você apareceu e eu tenho que ir no poupa tempo e eu não sei o que fazer-"
 text_speed = 30.0
+text_sound = ExtResource("7_ox3gf")
+text_volume_db = -10.0
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -44,6 +50,7 @@ script = ExtResource("5_oxnep")
 speaker_name = "Insólita"
 speaker_img = ExtResource("7_6aate")
 text = "Calma, calma. Isso não é real. Fala devagar. Qual seu problema real?"
+text_sound = ExtResource("9_mt6sn")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_hqiib"]
@@ -54,6 +61,7 @@ speaker_img_HFrames = 2
 speaker_img_step_frame = 2
 text = "Eu não tenho... Um carimbo, eu não tenho."
 text_speed = 8.0
+text_sound = ExtResource("7_ox3gf")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -66,6 +74,7 @@ speaker_img_step_frame = 2
 font_size = 13
 text = "Eu achei que não precisava mas eu preciso... Eu não sei quem eu sou. Eu não sou ninguém. Me ajuda a ser como você..."
 text_speed = 12.0
+text_sound = ExtResource("7_ox3gf")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -75,6 +84,7 @@ speaker_name = "Insólita"
 speaker_img = ExtResource("9_j1rmx")
 font_size = 13
 text = "Você não precisa ser como eu. A parte mais importante dos nossos carimbos é a individualidade!"
+text_sound = ExtResource("9_mt6sn")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_ox3gf"]
@@ -83,6 +93,7 @@ speaker_name = "Insólita"
 speaker_img = ExtResource("7_6aate")
 font_size = 12
 text = "Eu não posso te ajudar. Só você pode se ajudar. A única coisa que eu posso fazer é te acompanhar na sua jornada."
+text_sound = ExtResource("9_mt6sn")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_mt6sn"]
@@ -91,6 +102,7 @@ speaker_name = "Insólita"
 speaker_img = ExtResource("7_6aate")
 font_size = 13
 text = "O seu carimbo tá dentro de você. Você só precisa achar. Você é quem você sempre foi. E você sabe disso."
+text_sound = ExtResource("9_mt6sn")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_k8ueg"]
@@ -99,6 +111,7 @@ speaker_name = "protagonista"
 speaker_img = ExtResource("10_hqiib")
 text = "..."
 text_speed = 5.0
+text_sound = ExtResource("7_ox3gf")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -110,6 +123,7 @@ speaker_img_HFrames = 2
 speaker_img_step_frame = 2
 text = "Mas e se eu errar?"
 text_speed = 8.0
+text_sound = ExtResource("7_ox3gf")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -121,6 +135,7 @@ speaker_img_HFrames = 2
 speaker_img_initial_frame = 1
 speaker_img_step_frame = 20
 text = "Não existe errado ou certo. Você se define."
+text_sound = ExtResource("9_mt6sn")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_id0fr"]
@@ -130,6 +145,7 @@ speaker_img = ExtResource("8_sb3qy")
 speaker_img_HFrames = 2
 text = "Ok..."
 text_speed = 5.0
+text_sound = ExtResource("7_ox3gf")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -138,6 +154,7 @@ script = ExtResource("5_oxnep")
 speaker_name = "Insólita"
 speaker_img = ExtResource("7_6aate")
 text = "Vai ficar tudo bem. Você consegue."
+text_sound = ExtResource("9_mt6sn")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [node name="Cena4" unique_id=823413629 instance=ExtResource("1_k3cqg")]

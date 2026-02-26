@@ -17,9 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://cb5ys8s22yuxt" path="res://assets/characters/gustavo/GUSTAVO - 3-Sheet.png" id="12_n0xai"]
 [ext_resource type="PackedScene" uid="uid://bshfi56ow2ufx" path="res://src/scenes/character_gustavo/gustavo.tscn" id="13_cghnw"]
 [ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="15_x0kil"]
+[ext_resource type="AudioStream" uid="uid://br3865j0iy6ue" path="res://soundtrack/gustavo.ogg" id="17_4b4w7"]
 [ext_resource type="Texture2D" uid="uid://bhrtmtyleirgu" path="res://assets/characters/npcs/yellownpcs1.png" id="18_2v474"]
 [ext_resource type="Texture2D" uid="uid://csyy6itce3gst" path="res://assets/characters/npcs/yellownpcs2.png" id="19_aferf"]
+[ext_resource type="AudioStream" uid="uid://cuyo021n3yraj" path="res://soundtrack/chefe.ogg" id="19_enqdf"]
 [ext_resource type="Texture2D" uid="uid://br7vxodm58jx5" path="res://assets/characters/npcs/yellownpcs3.png" id="20_sc0ap"]
+[ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="21_iukh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lg6p"]
 size = Vector2(19, 20)
@@ -40,6 +43,7 @@ speaker_img_HFrames = 2
 speaker_img_step_frame = 3
 text = "Por que ele anda assim...?"
 text_speed = 15.0
+text_sound = ExtResource("21_iukh0")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -50,6 +54,7 @@ speaker_img = ExtResource("12_n0xai")
 speaker_img_HFrames = 2
 speaker_img_step_frame = 3
 text = "Então... melhor não questionar"
+text_sound = ExtResource("17_4b4w7")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_mpp05"]
@@ -58,6 +63,7 @@ speaker_name = "Gustavo"
 speaker_img = ExtResource("10_cghnw")
 speaker_img_HFrames = 2
 text = "Bora por a mão na massa!!"
+text_sound = ExtResource("17_4b4w7")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_cghnw"]
@@ -74,6 +80,7 @@ speaker_img = ExtResource("15_x0kil")
 speaker_img_HFrames = 2
 speaker_img_step_frame = 3
 text = "Esse NÃO É o nosso trabalho."
+text_sound = ExtResource("21_iukh0")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -81,6 +88,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("8_kpg3w")
 speaker_name = "Chefe"
 text = "Vocês estão [shake rate=20.0 level=5 connected=1]vinte e dois[/shake] minutos atrasados."
+text_sound = ExtResource("19_enqdf")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_hqkj3"]
@@ -88,6 +96,7 @@ script = ExtResource("8_kpg3w")
 speaker_name = "protagonista"
 speaker_img = ExtResource("10_n5byc")
 text = "Foi mal chefia, eu que atrasei a gente. Tô com uns remédios novos, sabe como é..."
+text_sound = ExtResource("21_iukh0")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -95,6 +104,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("8_kpg3w")
 speaker_name = "Chefe"
 text = "Tudo bem, mas não quero que se repita."
+text_sound = ExtResource("19_enqdf")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_n5byc"]
@@ -102,6 +112,7 @@ script = ExtResource("8_kpg3w")
 speaker_name = "protagonista"
 speaker_img = ExtResource("11_kpg3w")
 text = "Sim senhor!"
+text_sound = ExtResource("21_iukh0")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 

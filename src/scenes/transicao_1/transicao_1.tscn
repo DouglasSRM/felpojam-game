@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="5_fxl6p"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="6_dp58v"]
 [ext_resource type="Texture2D" uid="uid://hlg2si4v5vwk" path="res://assets/characters/gustavo/GUSTAVO - 1-Sheet.png" id="7_3kovp"]
+[ext_resource type="AudioStream" uid="uid://b8exh37s8dyqs" path="res://soundtrack/gustavo.ogg" id="8_dp58v"]
 [ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="8_ub7js"]
+[ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="10_3kovp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xp0bl"]
 shader = ExtResource("1_8kehy")
@@ -22,6 +24,7 @@ speaker_name = "Gustavo"
 speaker_img = ExtResource("7_3kovp")
 speaker_img_HFrames = 2
 text = "Sonho tava bom Valentina?"
+text_sound = ExtResource("8_dp58v")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_mk21t"]
@@ -30,6 +33,7 @@ speaker_name = "protagonista"
 speaker_img = ExtResource("8_ub7js")
 speaker_img_HFrames = 2
 text = "Esse não é meu nome..."
+text_sound = ExtResource("10_3kovp")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -86,8 +90,8 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.6313726)
 
 [node name="Sprite1" type="Sprite2D" parent="CanvasLayer" unique_id=817956144]
-position = Vector2(244, 119.00001)
-scale = Vector2(1.5, 1.5)
+position = Vector2(237, 95)
+scale = Vector2(3, 3)
 texture = ExtResource("2_yij1g")
 hframes = 3
 frame = 1
@@ -95,6 +99,12 @@ frame = 1
 [node name="DialogoMoto1" parent="CanvasLayer" unique_id=2090186853 instance=ExtResource("4_phugq")]
 position = Vector2(143, 157)
 dialogue = Array[ExtResource("5_fxl6p")]([SubResource("Resource_bb8qs"), SubResource("Resource_mk21t")])
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=783018260]
+offset_left = -7.0
+offset_top = 191.0
+offset_right = 492.0
+offset_bottom = 276.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=302521629]
 libraries/ = SubResource("AnimationLibrary_r1d28")
