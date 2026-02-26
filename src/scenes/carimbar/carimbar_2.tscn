@@ -6,13 +6,11 @@
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="3_5utbn"]
 [ext_resource type="Texture2D" uid="uid://cqb5s6p0ts8s0" path="res://assets/minigames/pesadelo_ticket_1.png" id="3_yi03q"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="4_gg1ke"]
-[ext_resource type="Texture2D" uid="uid://c2nx3sto38xrh" path="res://assets/characters/julia_protag/PROTA - 6.png" id="5_yi03q"]
-[ext_resource type="Texture2D" uid="uid://besdx78423iuu" path="res://assets/characters/julia_protag/julia_meio_pa.png" id="6_5utbn"]
+[ext_resource type="Texture2D" uid="uid://c57t0y2xa2wiv" path="res://assets/minigames/carimbada maligna....png" id="4_k0sec"]
 
 [sub_resource type="Resource" id="Resource_f5cl5"]
 script = ExtResource("4_gg1ke")
 speaker_name = "protagonista"
-speaker_img = ExtResource("5_yi03q")
 text = "Que?"
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
@@ -20,7 +18,6 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 [sub_resource type="Resource" id="Resource_gg1ke"]
 script = ExtResource("4_gg1ke")
 speaker_name = "protagonista"
-speaker_img = ExtResource("6_5utbn")
 speaker_img_HFrames = 2
 text = "Nem dormindo eu posso descansar... Saco de carimbo."
 speaker_on_right = false
@@ -35,18 +32,16 @@ prefixo_tickets = "pesadelo_ticket"
 position = Vector2(404, 58)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" parent="Carimbeira" index="0" unique_id=922230306]
-visible = false
-
 [node name="SpritePapel" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="0" unique_id=1011479199]
 texture = ExtResource("3_yi03q")
 
 [node name="CollisionShape2D" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="1" unique_id=200678952]
-position = Vector2(1, 67)
+position = Vector2(0.25, 68.375)
 
 [node name="marca" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="2" unique_id=130422851]
-position = Vector2(-0.9999943, 68.375)
-scale = Vector2(0.25, 0.22303921)
+position = Vector2(1.0000056, 68)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("4_k0sec")
 
 [node name="1" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="0" unique_id=369042241 instance=ExtResource("2_ou2lg")]
 dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_f5cl5")])
