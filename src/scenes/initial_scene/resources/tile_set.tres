@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b5lhqnxsnt7mp" path="res://assets/tilesets/TilesetElement.png" id="2_llcxm"]
 [ext_resource type="Texture2D" uid="uid://dybtg6iqoinn" path="res://assets/tilesets/TilesetNature.png" id="3_xaxe3"]
 [ext_resource type="Texture2D" uid="uid://bfjubdcoq8ggt" path="res://assets/tilesets/TilesetJam1.png" id="4_llcxm"]
+[ext_resource type="Texture2D" uid="uid://nq074udgl61g" path="res://assets/tilesets/cityscape.png" id="5_xaxe3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yneea"]
 texture = ExtResource("1_flp0l")
@@ -1201,6 +1202,25 @@ texture = ExtResource("4_llcxm")
 4:1/size_in_atlas = Vector2i(2, 3)
 4:1/0 = 0
 4:1/0/texture_origin = Vector2i(-8, 16)
+6:14/size_in_atlas = Vector2i(2, 3)
+6:14/0 = 0
+6:14/0/texture_origin = Vector2i(-8, 16)
+6:1/size_in_atlas = Vector2i(3, 3)
+6:1/0 = 0
+6:1/0/texture_origin = Vector2i(-16, 16)
+6:11/size_in_atlas = Vector2i(2, 1)
+6:11/0 = 0
+6:11/0/texture_origin = Vector2i(-8, 0)
+6:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 10, -8, 10, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uruk0"]
+texture = ExtResource("5_xaxe3")
+0:0/size_in_atlas = Vector2i(30, 16)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-232, 120)
+30:0/size_in_atlas = Vector2i(47, 16)
+30:0/0 = 0
+30:0/0/texture_origin = Vector2i(-368, 120)
 
 [resource]
 physics_layer_0/collision_layer = 1
@@ -1208,3 +1228,4 @@ sources/0 = SubResource("TileSetAtlasSource_yneea")
 sources/1 = SubResource("TileSetAtlasSource_t2jcg")
 sources/2 = SubResource("TileSetAtlasSource_lriem")
 sources/3 = SubResource("TileSetAtlasSource_xaxe3")
+sources/4 = SubResource("TileSetAtlasSource_uruk0")
