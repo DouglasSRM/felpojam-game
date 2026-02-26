@@ -176,14 +176,14 @@ position = Vector2(41, 209)
 function_call = "ler_livro"
 
 [node name="CollisionShape2D" parent="Livro" index="0" unique_id=1559650857]
-position = Vector2(-33, -41)
+position = Vector2(-6, -2)
 shape = SubResource("RectangleShape2D_uga7u")
 
 [node name="KeyHint" parent="Livro" index="1" unique_id=316488180]
-offset_left = -41.0
-offset_top = -65.0
-offset_right = -28.0
-offset_bottom = -52.0
+offset_left = -12.0
+offset_top = -23.0
+offset_right = 1.0
+offset_bottom = -10.0
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 
