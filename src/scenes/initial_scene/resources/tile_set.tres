@@ -1212,6 +1212,11 @@ texture = ExtResource("4_llcxm")
 6:11/0 = 0
 6:11/0/texture_origin = Vector2i(-8, 0)
 6:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 10, -8, 10, 8, -8, 8)
+8:13/size_in_atlas = Vector2i(3, 4)
+8:13/0 = 0
+8:13/0/texture_origin = Vector2i(-16, 24)
+2:9/0 = 0
+2:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uruk0"]
 texture = ExtResource("5_xaxe3")
