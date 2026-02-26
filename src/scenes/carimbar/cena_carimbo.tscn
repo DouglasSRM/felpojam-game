@@ -15,6 +15,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_0yby1")
 
 [node name="Button" type="Button" parent="." unique_id=864803698]
+visible = false
 offset_left = 75.0
 offset_top = 50.0
 offset_right = 137.0

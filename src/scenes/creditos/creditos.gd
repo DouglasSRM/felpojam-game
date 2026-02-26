@@ -26,7 +26,7 @@ func finalizar():
 	Global.jogo_iniciou = false
 	Global.cena_2_pos_carimbo = false
 	Global.pos_carimbo_4 = false
-	Global.permite_finalizar = false
+	Global.permite_finalizar = true
 	SceneManager.change_scene(self, "main_menu")
 
 func _process(delta: float) -> void:
