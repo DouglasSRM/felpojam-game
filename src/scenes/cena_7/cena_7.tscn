@@ -15,12 +15,16 @@
 [ext_resource type="Texture2D" uid="uid://dxg52bsynps5u" path="res://assets/characters/julia_protag/PROTA - 10.png" id="9_tw0ch"]
 [ext_resource type="Texture2D" uid="uid://dkxibn8hktogs" path="res://assets/characters/julia_protag/PROTA - 11.png" id="10_l0dex"]
 [ext_resource type="Texture2D" uid="uid://bigk8id8c74rh" path="res://assets/characters/julia_protag/PROTA - 4.png" id="11_sms5v"]
+[ext_resource type="Texture2D" uid="uid://hbey7rrxd5tu" path="res://assets/characters/secretaria/secretaria_falando.png" id="11_uncfc"]
 [ext_resource type="PackedScene" uid="uid://btwtjqlno0g88" path="res://src/scenes/base_character/base_character.tscn" id="14_h2pml"]
 [ext_resource type="Texture2D" uid="uid://bgmwyyrw1d8qy" path="res://assets/characters/npcs/cecilia-sprites.png" id="15_1wget"]
 
 [sub_resource type="Resource" id="Resource_ptsfa"]
 script = ExtResource("6_iy8na")
 speaker_name = "Secretária"
+speaker_img = ExtResource("11_uncfc")
+speaker_img_HFrames = 2
+speaker_img_step_frame = 2
 text = "PRÓXIMO!!"
 text_sound = ExtResource("7_plgki")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
