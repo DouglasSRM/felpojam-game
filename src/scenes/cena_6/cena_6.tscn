@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bvgp7nbpgp15d" path="res://src/scenes/base_scene/base_scene.tscn" id="1_0pbel"]
 [ext_resource type="Script" uid="uid://od3k5efs5m3y" path="res://src/scenes/cena_6/cena_6.gd" id="2_8dy41"]
+[ext_resource type="Texture2D" uid="uid://dw0136t307m1o" path="res://assets/cutcenes/moto inteira gulp-Sheet.png" id="3_8dy41"]
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="3_mqped"]
 [ext_resource type="Texture2D" uid="uid://b0o63twabxl4u" path="res://assets/characters/npcs/charpim-Sheet.png" id="4_8dy41"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="4_s1v0q"]
@@ -21,7 +22,6 @@
 [ext_resource type="Script" uid="uid://bwmccfplhqpda" path="res://src/ui/complex_dialog/resources/dialogue_function_resource.gd" id="20_hyve2"]
 [ext_resource type="Texture2D" uid="uid://ckeilwd7v7275" path="res://assets/characters/julia_protag/PROTA_-_4-Sheet.png" id="21_4sbdv"]
 [ext_resource type="AudioStream" uid="uid://c7ej4f4midybf" path="res://soundtrack/motoca.ogg" id="22_b6igl"]
-[ext_resource type="PackedScene" uid="uid://dstgamin3f287" path="res://src/scenes/moto/moto.tscn" id="22_fnsfc"]
 
 [sub_resource type="Animation" id="Animation_mqped"]
 length = 0.001
@@ -266,6 +266,44 @@ text_sound = ExtResource("11_fra3j")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
+[sub_resource type="Animation" id="Animation_ome0u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NodeMoto/Moto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8dy41"]
+resource_name = "moto"
+loop_mode = 1
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NodeMoto/Moto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqped"]
+_data = {
+&"RESET": SubResource("Animation_ome0u"),
+&"moto": SubResource("Animation_8dy41")
+}
+
 [node name="Cena6" unique_id=823413629 instance=ExtResource("1_0pbel")]
 script = ExtResource("2_8dy41")
 
@@ -302,8 +340,13 @@ stream = ExtResource("22_b6igl")
 autoplay = true
 parameters/looping = true
 
-[node name="NodeMoto" parent="." index="9" unique_id=1862065444 instance=ExtResource("22_fnsfc")]
-position = Vector2(250, 213)
-metadata/_edit_group_ = true
+[node name="Moto" type="Sprite2D" parent="." index="9" unique_id=2041255192]
+z_index = 1
+position = Vector2(240, 205)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_8dy41")
+hframes = 3
 
-[editable path="NodeMoto"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="10" unique_id=927088961]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_mqped")

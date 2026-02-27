@@ -15,6 +15,7 @@ class_name Cena2 extends BaseScene
 
 var player_position_failsafe := Vector2(160,155)
 var trocou_uniforme: bool = false
+var gustavo_initial_position: Vector2
 
 signal libera_movimento
 signal gustavo_saiu
@@ -32,8 +33,15 @@ func cena_2_pos_carimbo():
 	player.global_position = player_position_failsafe
 	interacao_uniforme.function_call = "armario_uniforme"
 	dialogo_pos_minigame._activate_dialogue()
+	ajustar_gustavo_pos_carimbo()
+
+func ajustar_gustavo_pos_carimbo():
+	gustavo.global_position = gustavo_initial_position
+	await gustavo.walk("down", 0.01,0.01)
+	gustavo.stop_walking(0)
 
 func _ready() -> void:
+	gustavo_initial_position = gustavo.global_position
 	super()
 	porta_fechada.visible = false
 	armario_aberto.visible = false
@@ -83,7 +91,7 @@ func armario_uniforme():
 		scene_trigger_to_3.enabled = true
 
 func after_dialogo_chefe():
-	await chefe_sai_de_cena()
+	chefe_sai_de_cena()
 	dialogo_gustavo._activate_dialogue()
 	await dialogo_gustavo.dialogue_finished
 	libera_movimento.emit()

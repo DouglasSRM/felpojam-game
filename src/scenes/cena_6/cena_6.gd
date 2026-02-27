@@ -1,8 +1,8 @@
 class_name Cena6 extends Node2D
 
-@onready var animation_player: AnimationPlayer = $NodeMoto/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var camera: Camera2D = $Camera2D
-@onready var moto: Sprite2D = $NodeMoto/Moto
+@onready var moto: Sprite2D = $Moto
 @onready var animation_charpim: AnimationPlayer = $animation_charpim
 @onready var dialogo_cena_6: DialogArea = $CanvasLayer/DialogoCena6
 
