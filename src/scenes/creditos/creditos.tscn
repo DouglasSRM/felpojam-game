@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://crumvp1db24kb" path="res://assets/cutcenes/protag e alien jayvik.png" id="11_vgdkp"]
 [ext_resource type="Texture2D" uid="uid://dd3vuylrhtl01" path="res://assets/characters/julia_protag/sprite-assutada.png" id="12_cn3xc"]
 [ext_resource type="Texture2D" uid="uid://ba4vngvw7ug04" path="res://assets/characters/ariranha_secreto/ariranha-sheet.png" id="13_3wyk6"]
+[ext_resource type="Texture2D" uid="uid://b0o63twabxl4u" path="res://assets/characters/npcs/charpim-Sheet.png" id="13_vgdkp"]
 
 [sub_resource type="FontFile" id="FontFile_diiib"]
 cache/0/variation_coordinates = {}
@@ -591,7 +592,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("11_vgdkp")
 
 [node name="cima" type="Sprite2D" parent="." unique_id=1810387153]
-position = Vector2(108, 1240)
+position = Vector2(375, 1365)
 scale = Vector2(2, 2)
 texture = ExtResource("12_cn3xc")
 hframes = 2
@@ -610,6 +611,30 @@ offset_top = 2225.0
 offset_right = 304.0
 offset_bottom = 2256.0
 text = "Voltar ao menu"
+
+[node name="cima3" type="Sprite2D" parent="." unique_id=1699563689]
+position = Vector2(107, 1258)
+texture = ExtResource("13_vgdkp")
+hframes = 5
+frame = 1
+
+[node name="Label14" type="Label" parent="." unique_id=949817331]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = 1289.0
+offset_right = 154.0
+offset_bottom = 1303.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_5wa4v")
+theme_override_font_sizes/font_size = 8
+text = "in memorium"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 

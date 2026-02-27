@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://bxta6jlc128fo" path="res://assets/characters/julia_protag/JULIA BRAVA.png" id="17_hyve2"]
 [ext_resource type="Texture2D" uid="uid://6hf3lfa45w0e" path="res://assets/characters/gustavo/GUSTAVO - 3.png" id="18_4sbdv"]
 [ext_resource type="Texture2D" uid="uid://dfc78qanruxnh" path="res://assets/characters/julia_protag/PROTA - 9.png" id="19_b6igl"]
+[ext_resource type="Texture2D" uid="uid://co72765u8hla1" path="res://assets/characters/julia_protag/prota - 14.png" id="20_b6igl"]
 [ext_resource type="Script" uid="uid://bwmccfplhqpda" path="res://src/ui/complex_dialog/resources/dialogue_function_resource.gd" id="20_hyve2"]
-[ext_resource type="Texture2D" uid="uid://ckeilwd7v7275" path="res://assets/characters/julia_protag/PROTA_-_4-Sheet.png" id="21_4sbdv"]
 [ext_resource type="AudioStream" uid="uid://c7ej4f4midybf" path="res://soundtrack/motoca.ogg" id="22_b6igl"]
 
 [sub_resource type="Animation" id="Animation_mqped"]
@@ -259,8 +259,7 @@ metadata/_custom_type_script = "uid://bwmccfplhqpda"
 [sub_resource type="Resource" id="Resource_u43vh"]
 script = ExtResource("5_6cbqb")
 speaker_name = "protagonista"
-speaker_img = ExtResource("21_4sbdv")
-speaker_img_HFrames = 2
+speaker_img = ExtResource("20_b6igl")
 text = "Tudo bem. Eu consigo."
 text_sound = ExtResource("11_fra3j")
 speaker_on_right = false
