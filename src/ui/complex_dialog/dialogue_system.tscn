@@ -22,6 +22,7 @@ content_margin_right = 2.0
 content_margin_bottom = 0.0
 
 [node name="DialogueSystem" type="Node2D" unique_id=1569683415]
+process_mode = 1
 z_index = 4096
 script = ExtResource("1_21mdk")
 

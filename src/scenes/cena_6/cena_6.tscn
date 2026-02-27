@@ -2,14 +2,33 @@
 
 [ext_resource type="PackedScene" uid="uid://bvgp7nbpgp15d" path="res://src/scenes/base_scene/base_scene.tscn" id="1_0pbel"]
 [ext_resource type="Script" uid="uid://od3k5efs5m3y" path="res://src/scenes/cena_6/cena_6.gd" id="2_8dy41"]
-[ext_resource type="Texture2D" uid="uid://b5e31c0l12n5y" path="res://assets/cutcenes/animação indo de moto-Sheet.png" id="3_ome0u"]
+[ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="3_mqped"]
+[ext_resource type="Texture2D" uid="uid://b0o63twabxl4u" path="res://assets/characters/npcs/charpim-Sheet.png" id="4_8dy41"]
+[ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="4_s1v0q"]
+[ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="5_6cbqb"]
+[ext_resource type="Texture2D" uid="uid://hlg2si4v5vwk" path="res://assets/characters/gustavo/GUSTAVO - 1-Sheet.png" id="8_dnv5p"]
+[ext_resource type="AudioStream" uid="uid://b8exh37s8dyqs" path="res://soundtrack/gustavo.ogg" id="9_pnr0s"]
+[ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="10_pnr0s"]
+[ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="11_fra3j"]
+[ext_resource type="Texture2D" uid="uid://cb5ys8s22yuxt" path="res://assets/characters/gustavo/GUSTAVO - 3-Sheet.png" id="12_v1n8w"]
+[ext_resource type="Texture2D" uid="uid://besdx78423iuu" path="res://assets/characters/julia_protag/julia_meio_pa.png" id="13_mm0wh"]
+[ext_resource type="Texture2D" uid="uid://b0tkna32qgs" path="res://assets/characters/gustavo/GUSTAVO - 1.png" id="14_21qct"]
+[ext_resource type="Texture2D" uid="uid://c2nx3sto38xrh" path="res://assets/characters/julia_protag/PROTA - 6.png" id="15_ds8em"]
+[ext_resource type="Texture2D" uid="uid://xphcn815k46l" path="res://assets/characters/gustavo/GUSTAVO - 4.png" id="16_ds8em"]
+[ext_resource type="Texture2D" uid="uid://bxta6jlc128fo" path="res://assets/characters/julia_protag/JULIA BRAVA.png" id="17_hyve2"]
+[ext_resource type="Texture2D" uid="uid://6hf3lfa45w0e" path="res://assets/characters/gustavo/GUSTAVO - 3.png" id="18_4sbdv"]
+[ext_resource type="Texture2D" uid="uid://dfc78qanruxnh" path="res://assets/characters/julia_protag/PROTA - 9.png" id="19_b6igl"]
+[ext_resource type="Script" uid="uid://bwmccfplhqpda" path="res://src/ui/complex_dialog/resources/dialogue_function_resource.gd" id="20_hyve2"]
+[ext_resource type="Texture2D" uid="uid://ckeilwd7v7275" path="res://assets/characters/julia_protag/PROTA_-_4-Sheet.png" id="21_4sbdv"]
+[ext_resource type="AudioStream" uid="uid://c7ej4f4midybf" path="res://soundtrack/motoca.ogg" id="22_b6igl"]
+[ext_resource type="PackedScene" uid="uid://dstgamin3f287" path="res://src/scenes/moto/moto.tscn" id="22_fnsfc"]
 
-[sub_resource type="Animation" id="Animation_ome0u"]
+[sub_resource type="Animation" id="Animation_mqped"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Moto:frame")
+tracks/0/path = NodePath("eles:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -19,28 +38,233 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_8dy41"]
-resource_name = "moto"
+[sub_resource type="Animation" id="Animation_gin0u"]
+resource_name = "charpim"
+length = 7.5
 loop_mode = 1
-step = 0.4
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Moto:frame")
+tracks/0/path = NodePath("eles:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 0.6666667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 1.5, 2, 2.5, 3, 4, 5, 5.5, 6, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 1, 2, 1, 3, 4, 3, 4, 3]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqped"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1v0q"]
 _data = {
-&"RESET": SubResource("Animation_ome0u"),
-&"moto": SubResource("Animation_8dy41")
+&"RESET": SubResource("Animation_mqped"),
+&"charpim": SubResource("Animation_gin0u")
 }
+
+[sub_resource type="Resource" id="Resource_dnv5p"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("8_dnv5p")
+speaker_img_HFrames = 2
+speaker_img_step_frame = 2
+text = "Eaí, garota nova. Qual seu nome de recomeço?"
+text_speed = 13.0
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_miw3o"]
+script = ExtResource("5_6cbqb")
+speaker_name = "protagonista"
+speaker_img = ExtResource("10_pnr0s")
+speaker_img_HFrames = 2
+text = "A esse ponto eu vou acabar sendo uma Valentina mesmo..."
+text_sound = ExtResource("11_fra3j")
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_hyve2"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("12_v1n8w")
+speaker_img_HFrames = 2
+text = "Po, Valentina era piada, escolhe um mais bonitinho vai."
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_4sbdv"]
+script = ExtResource("5_6cbqb")
+speaker_name = "protagonista"
+speaker_img = ExtResource("13_mm0wh")
+speaker_img_HFrames = 2
+text = "Ah sei lá. Que tal Amanda?"
+text_sound = ExtResource("11_fra3j")
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_b6igl"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("14_21qct")
+text = "Nada a ver."
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_fnsfc"]
+script = ExtResource("5_6cbqb")
+speaker_name = "protagonista"
+speaker_img = ExtResource("15_ds8em")
+text = "Julia?"
+text_sound = ExtResource("11_fra3j")
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_aegr2"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("16_ds8em")
+text = "Qualé. Tenta pelo menos."
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_mjxmk"]
+script = ExtResource("5_6cbqb")
+speaker_name = "protagonista"
+speaker_img = ExtResource("17_hyve2")
+speaker_img_HFrames = 2
+text = "Fala um você então, bonzão!"
+text_sound = ExtResource("11_fra3j")
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_lftnh"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("18_4sbdv")
+text = "..."
+text_speed = 3.0
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_4iocf"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("8_dnv5p")
+speaker_img_HFrames = 2
+text = "Nicolly."
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_7ppey"]
+script = ExtResource("5_6cbqb")
+speaker_name = "protagonista"
+speaker_img = ExtResource("19_b6igl")
+text = "HAHAHA, VOCÊ É MUITO OTÁRIO."
+text_sound = ExtResource("11_fra3j")
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_gy6kb"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("12_v1n8w")
+speaker_img_HFrames = 2
+text = "Num curtiu..?"
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_eggc7"]
+script = ExtResource("20_hyve2")
+target_path = NodePath("../..")
+function_name = "pausa"
+hide_dialogue_box = true
+wait_for_signal_to_continue = "continuar"
+metadata/_custom_type_script = "uid://bwmccfplhqpda"
+
+[sub_resource type="Resource" id="Resource_c2be2"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("12_v1n8w")
+speaker_img_HFrames = 2
+font_size = 14
+text = "A maioria das pessoas nem escolhe o próprio nome, não deve ser tão importante assim."
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_a0h7p"]
+script = ExtResource("5_6cbqb")
+speaker_name = "protagonista"
+speaker_img = ExtResource("10_pnr0s")
+speaker_img_HFrames = 2
+text = "Sei..."
+text_sound = ExtResource("11_fra3j")
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_6ygkr"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("8_dnv5p")
+speaker_img_HFrames = 2
+text = "Não tem nada que você tipo, acha legal?"
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_si2ia"]
+script = ExtResource("5_6cbqb")
+speaker_name = "protagonista"
+speaker_img = ExtResource("10_pnr0s")
+speaker_img_HFrames = 2
+text = "Queria que fosse mais que isso."
+text_sound = ExtResource("11_fra3j")
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_hdxnp"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("12_v1n8w")
+speaker_img_HFrames = 2
+text = "Então não sei se posso te dizer o que escolher..."
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_i4mhf"]
+script = ExtResource("5_6cbqb")
+speaker_name = "protagonista"
+speaker_img = ExtResource("13_mm0wh")
+speaker_img_HFrames = 2
+text = "Você só pode \"Fazer Parte da Minha Jornada\"?"
+text_sound = ExtResource("11_fra3j")
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_uetfn"]
+script = ExtResource("5_6cbqb")
+speaker_name = "Gustavo"
+speaker_img = ExtResource("8_dnv5p")
+speaker_img_HFrames = 2
+text = "Da onde você tira esses papo brisado?"
+text_sound = ExtResource("9_pnr0s")
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_frrp3"]
+script = ExtResource("20_hyve2")
+target_path = NodePath("../..")
+function_name = "pausa"
+hide_dialogue_box = true
+wait_for_signal_to_continue = "continuar"
+metadata/_custom_type_script = "uid://bwmccfplhqpda"
+
+[sub_resource type="Resource" id="Resource_u43vh"]
+script = ExtResource("5_6cbqb")
+speaker_name = "protagonista"
+speaker_img = ExtResource("21_4sbdv")
+speaker_img_HFrames = 2
+text = "Tudo bem. Eu consigo."
+text_sound = ExtResource("11_fra3j")
+speaker_on_right = false
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [node name="Cena6" unique_id=823413629 instance=ExtResource("1_0pbel")]
 script = ExtResource("2_8dy41")
@@ -54,14 +278,32 @@ position = Vector2(-54, 160)
 [node name="Ground" parent="TileMaps" parent_id_path=PackedInt32Array(189077090) index="0" unique_id=1266151623]
 tile_map_data = PackedByteArray("AAACABAAAwABAAAAAAADABAAAwABAAAAAAAEABAAAwABAAAAAAAFABAAAwABAAAAAAAGABAAAwABAAAAAAAHABAAAwABAAAAAAAIABAAAwABAAAAAAAJABAAAwABAAAAAAAKABAAAwABAAAAAAALABAAAwABAAAAAAAMABAAAwABAAAAAAANABAAAwABAAAAAAAOABAAAwABAAAAAAAPABAAAwABAAAAAAARABAAAwABAAAAAAASABAAAwABAAAAAAATABAAAwABAAAAAAAUABAAAwABAAAAAAAVABAAAwABAAAAAAAWABAAAwABAAAAAAAXABAAAwABAAAAAAAYABAAAwABAAAAAAAZABAAAwABAAAAAAAQABAAAwABAAAAAAAAABEAAwABAAAAAAABABEAAwABAAAAAAACABEAAwABAAAAAAADABEAAwABAAAAAAAEABEAAwABAAAAAAAFABEAAwABAAAAAAAGABEAAwABAAAAAAAHABEAAwABAAAAAAAIABEAAwABAAAAAAAJABEAAwABAAAAAAAKABEAAwABAAAAAAALABEAAwABAAAAAAAMABEAAwABAAAAAAANABEAAwABAAAAAAAOABEAAwABAAAAAAAPABEAAwABAAAAAAAQABEAAwABAAAAAAARABEAAwABAAAAAAASABEAAwABAAAAAAATABEAAwABAAAAAAAUABEAAwABAAAAAAAVABEAAwABAAAAAAAWABEAAwABAAAAAAAXABEAAwABAAAAAAAYABEAAwABAAAAAAAZABEAAwABAAAAAAAaABEAAwABAAAAAAAbABEAAwABAAAAAAAcABEAAwABAAAAAAAdABEAAwABAAAAAAAAAA8ABAAAAAAAAAAAABAAAwABAAAAAAABABAAAwABAAAAAAAaABAAAwABAAAAAAAbABAAAwABAAAAAAAcABAAAwABAAAAAAAdABAAAwABAAAAAABMABAAAwABAAAAAABMABEAAwABAAAAAABNABAAAwABAAAAAABNABEAAwABAAAAAABOABAAAwABAAAAAABOABEAAwABAAAAAABPABAAAwABAAAAAABPABEAAwABAAAAAABQABAAAwABAAAAAABQABEAAwABAAAAAABRABAAAwABAAAAAABRABEAAwABAAAAAABSABAAAwABAAAAAABSABEAAwABAAAAAABTABAAAwABAAAAAABTABEAAwABAAAAAABUABAAAwABAAAAAABUABEAAwABAAAAAABVABAAAwABAAAAAABVABEAAwABAAAAAABWABAAAwABAAAAAABWABEAAwABAAAAAABXABAAAwABAAAAAABXABEAAwABAAAAAABYABAAAwABAAAAAABYABEAAwABAAAAAABZABAAAwABAAAAAABZABEAAwABAAAAAABaABAAAwABAAAAAABaABEAAwABAAAAAABbABAAAwABAAAAAABbABEAAwABAAAAAABcABAAAwABAAAAAABcABEAAwABAAAAAABdABAAAwABAAAAAABdABEAAwABAAAAAABeABAAAwABAAAAAABeABEAAwABAAAAAABfABAAAwABAAAAAABfABEAAwABAAAAAABgABAAAwABAAAAAABgABEAAwABAAAAAABhABAAAwABAAAAAABhABEAAwABAAAAAABiABAAAwABAAAAAABiABEAAwABAAAAAABjABAAAwABAAAAAABjABEAAwABAAAAAABkABAAAwABAAAAAABkABEAAwABAAAAAABlABAAAwABAAAAAABlABEAAwABAAAAAABmABAAAwABAAAAAABnABAAAwABAAAAAABnABEAAwABAAAAAABoABAAAwABAAAAAABoABEAAwABAAAAAABpABAAAwABAAAAAABpABEAAwABAAAAAABqABAAAwABAAAAAABqABEAAwABAAAAAABMAAAAAwABAAAAAABMAAEAAwABAAAAAABMAAIAAwABAAAAAABMAAMAAwABAAAAAABMAAQAAwABAAAAAABMAAUAAwABAAAAAABMAAYAAwABAAAAAABMAAcAAwABAAAAAABMAAgAAwABAAAAAABMAAkAAwABAAAAAABMAAoAAwABAAAAAABMAAsAAwABAAAAAABNAA8ABAAAAAAAAAAeAA8ABAAeAAAAAAAeABEAAwABAAAAAAAfABEAAwABAAAAAAAgABEAAwABAAAAAAAhABEAAwABAAAAAAAiABEAAwABAAAAAAAjABEAAwABAAAAAAAkABEAAwABAAAAAAAlABEAAwABAAAAAAAmABEAAwABAAAAAAAnABEAAwABAAAAAAAoABEAAwABAAAAAAApABEAAwABAAAAAAAqABEAAwABAAAAAAArABEAAwABAAAAAAAsABEAAwABAAAAAAAtABEAAwABAAAAAAAuABEAAwABAAAAAAAvABEAAwABAAAAAAAwABEAAwABAAAAAAAxABEAAwABAAAAAAAyABEAAwABAAAAAAAzABEAAwABAAAAAAA0ABEAAwABAAAAAAA1ABEAAwABAAAAAAA2ABEAAwABAAAAAAA3ABEAAwABAAAAAAA4ABEAAwABAAAAAAA5ABEAAwABAAAAAAA6ABEAAwABAAAAAAA7ABEAAwABAAAAAAA8ABEAAwABAAAAAAA9ABEAAwABAAAAAAA+ABEAAwABAAAAAAA/ABEAAwABAAAAAABAABEAAwABAAAAAABBABEAAwABAAAAAABCABEAAwABAAAAAABDABEAAwABAAAAAABEABEAAwABAAAAAABFABEAAwABAAAAAABGABEAAwABAAAAAABHABEAAwABAAAAAABIABEAAwABAAAAAABJABEAAwABAAAAAABKABEAAwABAAAAAABLABEAAwABAAAAAAAeABAAAwABAAAAAAAfABAAAwABAAAAAAAgABAAAwABAAAAAAAhABAAAwABAAAAAAAiABAAAwABAAAAAAAjABAAAwABAAAAAAAkABAAAwABAAAAAAAlABAAAwABAAAAAAAmABAAAwABAAAAAAAnABAAAwABAAAAAAAoABAAAwABAAAAAAApABAAAwABAAAAAAAqABAAAwABAAAAAAArABAAAwABAAAAAAAsABAAAwABAAAAAAAtABAAAwABAAAAAAAuABAAAwABAAAAAAAvABAAAwABAAAAAAAwABAAAwABAAAAAAAxABAAAwABAAAAAAAyABAAAwABAAAAAAAzABAAAwABAAAAAAA0ABAAAwABAAAAAAA1ABAAAwABAAAAAAA2ABAAAwABAAAAAAA3ABAAAwABAAAAAAA4ABAAAwABAAAAAAA5ABAAAwABAAAAAAA6ABAAAwABAAAAAAA7ABAAAwABAAAAAAA8ABAAAwABAAAAAAA9ABAAAwABAAAAAAA+ABAAAwABAAAAAAA/ABAAAwABAAAAAABAABAAAwABAAAAAABBABAAAwABAAAAAABCABAAAwABAAAAAABDABAAAwABAAAAAABEABAAAwABAAAAAABFABAAAwABAAAAAABGABAAAwABAAAAAABHABAAAwABAAAAAABIABAAAwABAAAAAABJABAAAwABAAAAAABKABAAAwABAAAAAABLABAAAwABAAAAAABmABEAAwABAAAAAAA=")
 
-[node name="Moto" type="Sprite2D" parent="." index="4" unique_id=1926160980]
-position = Vector2(235.00002, 177)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_ome0u")
-hframes = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5" unique_id=521908507]
-libraries/ = SubResource("AnimationLibrary_mqped")
-
-[node name="Camera2D" type="Camera2D" parent="." index="6" unique_id=1875451120]
+[node name="Camera2D" type="Camera2D" parent="." index="4" unique_id=1875451120]
 offset = Vector2(240, 135)
+
+[node name="eles" type="Sprite2D" parent="." index="5" unique_id=1944299862]
+position = Vector2(797, 165)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_8dy41")
+hframes = 5
+
+[node name="animation_charpim" type="AnimationPlayer" parent="." index="6" unique_id=189993125]
+libraries/ = SubResource("AnimationLibrary_s1v0q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="7" unique_id=1995245241]
+
+[node name="DialogoCena6" parent="CanvasLayer" index="0" unique_id=369042241 instance=ExtResource("3_mqped")]
+override_dialogue_position = true
+override_position = Vector2(240, 100)
+dialogue = Array[ExtResource("4_s1v0q")]([SubResource("Resource_dnv5p"), SubResource("Resource_miw3o"), SubResource("Resource_hyve2"), SubResource("Resource_4sbdv"), SubResource("Resource_b6igl"), SubResource("Resource_fnsfc"), SubResource("Resource_aegr2"), SubResource("Resource_mjxmk"), SubResource("Resource_lftnh"), SubResource("Resource_4iocf"), SubResource("Resource_7ppey"), SubResource("Resource_gy6kb"), SubResource("Resource_eggc7"), SubResource("Resource_c2be2"), SubResource("Resource_a0h7p"), SubResource("Resource_6ygkr"), SubResource("Resource_si2ia"), SubResource("Resource_hdxnp"), SubResource("Resource_i4mhf"), SubResource("Resource_uetfn"), SubResource("Resource_frrp3"), SubResource("Resource_u43vh")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8" unique_id=1479553835]
+stream = ExtResource("22_b6igl")
+autoplay = true
+parameters/looping = true
+
+[node name="NodeMoto" parent="." index="9" unique_id=1862065444 instance=ExtResource("22_fnsfc")]
+position = Vector2(250, 213)
+metadata/_edit_group_ = true
+
+[editable path="NodeMoto"]

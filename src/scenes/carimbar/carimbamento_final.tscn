@@ -2,9 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cdt0pws6hrg6p" path="res://src/scenes/carimbar/carimbar.tscn" id="1_cirdb"]
 [ext_resource type="Texture2D" uid="uid://2mlndtwwyx8o" path="res://assets/minigames/certidao_1.png" id="2_70sat"]
+[ext_resource type="Script" uid="uid://bofsh2up1rn6y" path="res://src/scenes/carimbar/carimbamento_final.gd" id="2_nk2e1"]
 [ext_resource type="Texture2D" uid="uid://ckm26rttwj7ld" path="res://assets/minigames/carimbado_final.png" id="3_nk2e1"]
+[ext_resource type="Texture2D" uid="uid://c4du2e8dd8b4a" path="res://assets/minigames/carimbo secretaria.png" id="5_mtf45"]
 
 [node name="CarimbamentoFinal" unique_id=1476343516 instance=ExtResource("1_cirdb")]
+script = ExtResource("2_nk2e1")
 total_tickets = 1
 prefixo_tickets = "certidao"
 
@@ -16,9 +19,12 @@ metadata/_edit_group_ = true
 texture = ExtResource("2_70sat")
 
 [node name="CollisionShape2D" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="1" unique_id=200678952]
-position = Vector2(1, 68)
+position = Vector2(16, 52)
 
 [node name="marca" parent="Papel" parent_id_path=PackedInt32Array(1635805924) index="2" unique_id=130422851]
-position = Vector2(1.0000057, 68)
+position = Vector2(15.000005, 52)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_nk2e1")
+
+[node name="SpriteCarimbo" parent="Carimbo" parent_id_path=PackedInt32Array(1128377463) index="0" unique_id=1714341058]
+texture = ExtResource("5_mtf45")

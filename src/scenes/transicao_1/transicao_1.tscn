@@ -1,8 +1,7 @@
-[gd_scene format=3 uid="uid://cjpog73r6xchl"]
+[gd_scene format=4 uid="uid://cjpog73r6xchl"]
 
-[ext_resource type="Shader" uid="uid://bqmri57k5jl58" path="res://src/post_processing_effects/horizontal_weep_transition.gdshader" id="1_8kehy"]
 [ext_resource type="Script" uid="uid://dtkyl6d13c4lw" path="res://src/scenes/transicao_1/transicao_1.gd" id="1_r1d28"]
-[ext_resource type="Texture2D" uid="uid://b5e31c0l12n5y" path="res://assets/cutcenes/animação indo de moto-Sheet.png" id="2_yij1g"]
+[ext_resource type="Texture2D" uid="uid://dw0136t307m1o" path="res://assets/cutcenes/moto inteira gulp-Sheet.png" id="2_dp58v"]
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="4_phugq"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="5_fxl6p"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="6_dp58v"]
@@ -10,13 +9,45 @@
 [ext_resource type="AudioStream" uid="uid://b8exh37s8dyqs" path="res://soundtrack/gustavo.ogg" id="8_dp58v"]
 [ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="8_ub7js"]
 [ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="10_3kovp"]
+[ext_resource type="TileSet" uid="uid://bsllcumvbuyx2" path="res://src/scenes/initial_scene/resources/tile_set.tres" id="10_dp58v"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xp0bl"]
-shader = ExtResource("1_8kehy")
-shader_parameter/progress = 0.0
-shader_parameter/reverse = true
-shader_parameter/number_of_tiles = Vector2(16, 9)
-shader_parameter/pixels_per_title = Vector2(16, 16)
+[sub_resource type="Animation" id="Animation_yij1g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Moto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_8kehy"]
+resource_name = "moto"
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Moto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333337, 0.6666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r1d28"]
+_data = {
+&"RESET": SubResource("Animation_yij1g"),
+&"moto": SubResource("Animation_8kehy")
+}
 
 [sub_resource type="Resource" id="Resource_bb8qs"]
 script = ExtResource("6_dp58v")
@@ -37,74 +68,30 @@ text_sound = ExtResource("10_3kovp")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
-[sub_resource type="Animation" id="Animation_yij1g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Sprite1:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_8kehy"]
-resource_name = "moto"
-loop_mode = 1
-step = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Sprite1:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333337, 0.6666666),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_r1d28"]
-_data = {
-&"RESET": SubResource("Animation_yij1g"),
-&"moto": SubResource("Animation_8kehy")
-}
-
 [node name="Transicao1" type="Node2D" unique_id=696945060]
 script = ExtResource("1_r1d28")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1231009320]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=302521629]
+libraries/ = SubResource("AnimationLibrary_r1d28")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=84708777]
-material = SubResource("ShaderMaterial_xp0bl")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0.6313726)
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=638700600]
+tile_map_data = PackedByteArray("AAAAAA8ABAAAAAAAAAAAABAAAwABAAAAAAAAABEAAwABAAAAAAABABAAAwABAAAAAAABABEAAwABAAAAAAACABAAAwABAAAAAAACABEAAwABAAAAAAADABAAAwABAAAAAAADABEAAwABAAAAAAAEABAAAwABAAAAAAAEABEAAwABAAAAAAAFABAAAwABAAAAAAAFABEAAwABAAAAAAAGABAAAwABAAAAAAAGABEAAwABAAAAAAAHABAAAwABAAAAAAAHABEAAwABAAAAAAAIABAAAwABAAAAAAAIABEAAwABAAAAAAAJABAAAwABAAAAAAAJABEAAwABAAAAAAAKABAAAwABAAAAAAAKABEAAwABAAAAAAALABAAAwABAAAAAAALABEAAwABAAAAAAAMABAAAwABAAAAAAAMABEAAwABAAAAAAANABAAAwABAAAAAAANABEAAwABAAAAAAAOABAAAwABAAAAAAAOABEAAwABAAAAAAAPABAAAwABAAAAAAAPABEAAwABAAAAAAAQABAAAwABAAAAAAAQABEAAwABAAAAAAARABAAAwABAAAAAAARABEAAwABAAAAAAASABAAAwABAAAAAAASABEAAwABAAAAAAATABAAAwABAAAAAAATABEAAwABAAAAAAAUABAAAwABAAAAAAAUABEAAwABAAAAAAAVABAAAwABAAAAAAAVABEAAwABAAAAAAAWABAAAwABAAAAAAAWABEAAwABAAAAAAAXABAAAwABAAAAAAAXABEAAwABAAAAAAAYABAAAwABAAAAAAAYABEAAwABAAAAAAAZABAAAwABAAAAAAAZABEAAwABAAAAAAAaABAAAwABAAAAAAAaABEAAwABAAAAAAAbABAAAwABAAAAAAAbABEAAwABAAAAAAAcABAAAwABAAAAAAAcABEAAwABAAAAAAAdABAAAwABAAAAAAAdABEAAwABAAAAAAAeABEAAwABAAAAAAAfABEAAwABAAAAAAAgABAAAwABAAAAAAAgABEAAwABAAAAAAAhABAAAwABAAAAAAAhABEAAwABAAAAAAAiABAAAwABAAAAAAAiABEAAwABAAAAAAAjABAAAwABAAAAAAAjABEAAwABAAAAAAAkABAAAwABAAAAAAAkABEAAwABAAAAAAAlABAAAwABAAAAAAAlABEAAwABAAAAAAAmABAAAwABAAAAAAAmABEAAwABAAAAAAAnABAAAwABAAAAAAAnABEAAwABAAAAAAAoABAAAwABAAAAAAAoABEAAwABAAAAAAApABAAAwABAAAAAAApABEAAwABAAAAAAAqABAAAwABAAAAAAAqABEAAwABAAAAAAArABAAAwABAAAAAAArABEAAwABAAAAAAAsABAAAwABAAAAAAAsABEAAwABAAAAAAAtABAAAwABAAAAAAAtABEAAwABAAAAAAAuABAAAwABAAAAAAAuABEAAwABAAAAAAAvABAAAwABAAAAAAAvABEAAwABAAAAAAAwABAAAwABAAAAAAAwABEAAwABAAAAAAAxABAAAwABAAAAAAAxABEAAwABAAAAAAAyABAAAwABAAAAAAAyABEAAwABAAAAAAAzABAAAwABAAAAAAAzABEAAwABAAAAAAA0ABAAAwABAAAAAAA0ABEAAwABAAAAAAA1ABAAAwABAAAAAAA1ABEAAwABAAAAAAA2ABAAAwABAAAAAAA2ABEAAwABAAAAAAA3ABAAAwABAAAAAAA3ABEAAwABAAAAAAA4ABAAAwABAAAAAAA4ABEAAwABAAAAAAA5ABAAAwABAAAAAAA5ABEAAwABAAAAAAA6ABAAAwABAAAAAAA6ABEAAwABAAAAAAA7ABAAAwABAAAAAAA7ABEAAwABAAAAAAA8ABAAAwABAAAAAAA8ABEAAwABAAAAAAA9ABAAAwABAAAAAAA9ABEAAwABAAAAAAA+ABAAAwABAAAAAAA+ABEAAwABAAAAAAA/ABAAAwABAAAAAAA/ABEAAwABAAAAAABAABAAAwABAAAAAABAABEAAwABAAAAAABBABAAAwABAAAAAABBABEAAwABAAAAAABCABAAAwABAAAAAABCABEAAwABAAAAAABDABAAAwABAAAAAABDABEAAwABAAAAAABEABAAAwABAAAAAABEABEAAwABAAAAAABFABAAAwABAAAAAABFABEAAwABAAAAAABGABAAAwABAAAAAABGABEAAwABAAAAAABHABAAAwABAAAAAABHABEAAwABAAAAAABIABAAAwABAAAAAABIABEAAwABAAAAAABJABAAAwABAAAAAABJABEAAwABAAAAAABKABAAAwABAAAAAABKABEAAwABAAAAAABLABAAAwABAAAAAABLABEAAwABAAAAAABMABAAAwABAAAAAABMABEAAwABAAAAAAAfABAAAwABAAAAAABNABAAAwABAAAAAABNABEAAwABAAAAAABOABAAAwABAAAAAABOABEAAwABAAAAAABPABAAAwABAAAAAABPABEAAwABAAAAAABQABAAAwABAAAAAABQABEAAwABAAAAAABRABAAAwABAAAAAABRABEAAwABAAAAAABSABAAAwABAAAAAABSABEAAwABAAAAAABTABAAAwABAAAAAABTABEAAwABAAAAAABUABAAAwABAAAAAABUABEAAwABAAAAAABVABAAAwABAAAAAABVABEAAwABAAAAAABWABAAAwABAAAAAABWABEAAwABAAAAAABXABAAAwABAAAAAABXABEAAwABAAAAAABYABAAAwABAAAAAABYABEAAwABAAAAAABZABAAAwABAAAAAABZABEAAwABAAAAAABaABAAAwABAAAAAABaABEAAwABAAAAAABbABAAAwABAAAAAABbABEAAwABAAAAAABcABAAAwABAAAAAABcABEAAwABAAAAAABdABAAAwABAAAAAABdABEAAwABAAAAAABeABAAAwABAAAAAABeABEAAwABAAAAAABfABAAAwABAAAAAABfABEAAwABAAAAAABgABAAAwABAAAAAABgABEAAwABAAAAAABhABAAAwABAAAAAABhABEAAwABAAAAAABiABAAAwABAAAAAABiABEAAwABAAAAAABjABAAAwABAAAAAABjABEAAwABAAAAAABkABAAAwABAAAAAABkABEAAwABAAAAAABlABAAAwABAAAAAABlABEAAwABAAAAAABmABAAAwABAAAAAABmABEAAwABAAAAAABnABAAAwABAAAAAABnABEAAwABAAAAAABoABAAAwABAAAAAABoABEAAwABAAAAAABpABAAAwABAAAAAABpABEAAwABAAAAAABqABAAAwABAAAAAABqABEAAwABAAAAAAAeABAAAwABAAAAAAAeAA8ABAAeAAAAAABNAA8ABAAAAAAAAAA=")
+tile_set = ExtResource("10_dp58v")
 
-[node name="Sprite1" type="Sprite2D" parent="CanvasLayer" unique_id=817956144]
-position = Vector2(237, 95)
-scale = Vector2(3, 3)
-texture = ExtResource("2_yij1g")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=559459515]
+offset = Vector2(240, 135)
+
+[node name="Moto" type="Sprite2D" parent="." unique_id=817956144]
+position = Vector2(246, 212)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dp58v")
 hframes = 3
 frame = 1
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=32028250]
+
 [node name="DialogoMoto1" parent="CanvasLayer" unique_id=2090186853 instance=ExtResource("4_phugq")]
 position = Vector2(143, 157)
+override_dialogue_position = true
+override_position = Vector2(240, 100)
 dialogue = Array[ExtResource("5_fxl6p")]([SubResource("Resource_bb8qs"), SubResource("Resource_mk21t")])
-
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=783018260]
-offset_left = -7.0
-offset_top = 191.0
-offset_right = 492.0
-offset_bottom = 276.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=302521629]
-libraries/ = SubResource("AnimationLibrary_r1d28")

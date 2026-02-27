@@ -3,6 +3,16 @@ class_name BaseCharacter extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var estatico: bool = true
 
+@export var autoplay: String = ""
+
+#func ready():
+	#if autoplay:
+		#animation_player.play(autoplay)
+
+func _process(_delta: float) -> void:
+	if autoplay and !animation_player.is_playing():
+		animation_player.play(autoplay)
+
 func _physics_process(_delta: float) -> void:
 	if !estatico:
 		move_and_slide()

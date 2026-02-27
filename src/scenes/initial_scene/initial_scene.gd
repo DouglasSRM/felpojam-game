@@ -23,6 +23,7 @@ func _ready() -> void:
 		await Utils.sleep(0.5)
 		await levantar("scream", 0.5)
 		interacao_cama.visible = true
+		deitada = false
 		Global.jogo_iniciou = true
 
 

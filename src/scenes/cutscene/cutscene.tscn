@@ -6,36 +6,42 @@
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="4_dir8p"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="5_5p2fw"]
 [ext_resource type="Texture2D" uid="uid://chf7nvg6i2pn7" path="res://assets/characters/jurya_alien/ALIEN - 1.png" id="6_dir8p"]
+[ext_resource type="AudioStream" uid="uid://ccxkbyrj0sja3" path="res://soundtrack/insolita.ogg" id="7_5p2fw"]
 [ext_resource type="Texture2D" uid="uid://bxta6jlc128fo" path="res://assets/characters/julia_protag/JULIA BRAVA.png" id="7_dir8p"]
+[ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="9_37xu1"]
 
 [sub_resource type="Resource" id="Resource_7831v"]
 script = ExtResource("5_5p2fw")
-speaker_name = "Alien"
+speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
 text = "Não são apenas carimbos! De onde eu venho, têm um simbolismo muito importante."
+text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_mopfk"]
 script = ExtResource("5_5p2fw")
-speaker_name = "Alien"
+speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
 font_size = 14
 text = "Representam toda a nossa vida. O início, mudanças importantes, recomeços. Até o fim."
+text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_dir8p"]
 script = ExtResource("5_5p2fw")
-speaker_name = "Alien"
+speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
 font_size = 14
 text = "É algo importante para nossa cultura. Simbolizam nossa individualidade dentro do coletivo."
+text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_5p2fw"]
 script = ExtResource("5_5p2fw")
-speaker_name = "Alien"
+speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
-text = "Engraçado imaginar que não é assim do seu planeta lama-"
+text = "Engraçado imaginar que não é assim no seu planeta lama-"
+text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_37xu1"]
@@ -45,24 +51,28 @@ speaker_img = ExtResource("7_dir8p")
 speaker_img_HFrames = 2
 speaker_img_step_frame = 2
 text = "É TERRA!!"
+text_sound = ExtResource("9_37xu1")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_y7xkx"]
 script = ExtResource("5_5p2fw")
-speaker_name = "Alien"
+speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
 text = "O carimbo me lembra da minha identidade. Eu sei quem eu sou por causa dele."
+text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="Resource" id="Resource_ht2v3"]
 script = ExtResource("5_5p2fw")
-speaker_name = "Alien"
+speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
 text = "Como você sabe quem você é se vocês não tem isso? Qual o seu carimbo?"
+text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [node name="Cutscene" type="Node2D" unique_id=1623838150]
+process_mode = 1
 script = ExtResource("1_wjx8e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1942186209]

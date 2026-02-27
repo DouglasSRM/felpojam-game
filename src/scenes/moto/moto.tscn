@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dstgamin3f287"]
+
+[ext_resource type="Texture2D" uid="uid://dw0136t307m1o" path="res://assets/cutcenes/moto inteira gulp-Sheet.png" id="1_67eqm"]
+[ext_resource type="Script" uid="uid://bmtpxwqvycnsx" path="res://src/scenes/moto/moto.gd" id="1_gbsh0"]
+
+[sub_resource type="Animation" id="Animation_ome0u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NodeMoto/Moto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8dy41"]
+resource_name = "moto"
+loop_mode = 1
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NodeMoto/Moto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqped"]
+_data = {
+&"RESET": SubResource("Animation_ome0u"),
+&"moto": SubResource("Animation_8dy41")
+}
+
+[node name="NodeMoto" type="Node2D" unique_id=1862065444]
+script = ExtResource("1_gbsh0")
+
+[node name="Moto" type="Sprite2D" parent="." unique_id=155432218]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_67eqm")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=906604751]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_mqped")

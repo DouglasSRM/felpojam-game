@@ -36,7 +36,7 @@ speaker_name = "protagonista"
 speaker_img = ExtResource("14_ni0uh")
 text = "[wave amp=25.0 freq=5.0 connected=1]Gustavo...[/wave]"
 text_speed = 5.0
-text_sound = ExtResource("10_2c6j5")
+text_sound = ExtResource("16_vih5p")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -81,6 +81,9 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0w8"]
 size = Vector2(41, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vih5p"]
+size = Vector2(35, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y18up"]
 size = Vector2(20.5, 16)
@@ -132,6 +135,7 @@ trava_o_player = true
 dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_6k5om"), SubResource("Resource_pyp6y"), SubResource("Resource_054xu")])
 
 [node name="InteracaoPosters" parent="Dialogos" unique_id=689924629 instance=ExtResource("4_82qsf")]
+visible = false
 position = Vector2(110, 89)
 dialog_key = "posters"
 
@@ -154,11 +158,18 @@ dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_tp0w8"), SubReso
 position = Vector2(10.5, -10.5)
 shape = SubResource("RectangleShape2D_tp0w8")
 
+[node name="DialogoPosters" parent="Dialogos" unique_id=923586164 instance=ExtResource("7_lriem")]
+position = Vector2(112, 114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoPosters" unique_id=1471136798]
+position = Vector2(4, -6)
+shape = SubResource("RectangleShape2D_vih5p")
+
 [node name="SceneTrigger" parent="." unique_id=1319502396 instance=ExtResource("17_vih5p")]
 connected_scene = "transicao_1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger" unique_id=1331795292]
-position = Vector2(208, 112)
+position = Vector2(208, 106)
 shape = SubResource("RectangleShape2D_y18up")
 
 [node name="EntranceMarkers" type="Node2D" parent="." unique_id=1007400135]

@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var camera: Camera2D = $Camera2D
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var camera_inicial: float
 var moto_inicial: float
@@ -18,8 +19,10 @@ func _ready():
 	#moto_inicial = moto.position.x
 	#animation_player.play("moto")
 	await Utils.sleep(2)
+	audio_stream_player.play()
+	await Utils.sleep(1)
 	subir = true
-	await Utils.sleep(10)
+	await Utils.sleep(70)
 	finalizar()
 
 func finalizar():

@@ -27,6 +27,7 @@ var offset: Vector2 = Vector2.ZERO
 var papel_atual: AreaPapel
 var state: GameState
 var timer_carimbo: Timer
+var can_grab: bool
 
 func set_timer():
 	timer_carimbo = Timer.new()
@@ -52,6 +53,7 @@ func diaologo(tempo: float):
 		await Utils.sleep(tempo)
 
 func _ready():
+	can_grab = true
 	carimbo_starter_position = carimbo.position
 	set_timer()
 	button.visible = false
@@ -108,6 +110,9 @@ func _on_carimbo_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 			release_carimbo()
 			
 func grab_carimbo():
+	if !can_grab:
+		return
+	
 	arrastando = true
 	carimbo.sprite.frame = 1
 	offset = carimbo.global_position - get_global_mouse_position()
@@ -122,9 +127,12 @@ func release_carimbo():
 		return
 	if carimbo.overlaps_area(papel_atual):
 		if carimbo.status == Carimbo.CarimboState.COM_TINTA:
-			papel_atual.carimbar()
-			carimbo.status = Carimbo.CarimboState.SEM_TINTA
-			set_game_state(GameState.FOLHA_CARIMBADA)
+			carimbar()
+
+func carimbar():
+	papel_atual.carimbar()
+	carimbo.status = Carimbo.CarimboState.SEM_TINTA
+	set_game_state(GameState.FOLHA_CARIMBADA)
 
 func _process(_delta: float) -> void:
 	if arrastando:

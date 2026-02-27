@@ -13,6 +13,7 @@ shader_parameter/number_of_tiles = Vector2(16, 9)
 shader_parameter/pixels_per_title = Vector2(16, 16)
 
 [node name="Cutscene2" type="Node2D" unique_id=1019745681]
+process_mode = 1
 script = ExtResource("1_n070e")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1989122677]
