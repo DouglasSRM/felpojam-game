@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="2_eoj3p"]
 [ext_resource type="Script" uid="uid://cm4jynoek5uqv" path="res://src/scenes/cena_7/cena_7.gd" id="2_wbdir"]
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="4_geibo"]
+[ext_resource type="Texture2D" uid="uid://buapomhwn5abw" path="res://assets/characters/npcs/secretaria-sprites.png" id="5_1wget"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="5_lpijl"]
+[ext_resource type="Texture2D" uid="uid://bcrt47vedhpry" path="res://assets/characters/npcs/lucinda-sem-uniforme.png" id="5_w0xne"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="6_iy8na"]
 [ext_resource type="Texture2D" uid="uid://ckeilwd7v7275" path="res://assets/characters/julia_protag/PROTA_-_4-Sheet.png" id="7_iy8na"]
 [ext_resource type="AudioStream" uid="uid://1q8tdb3jx4yx" path="res://soundtrack/secretaria.ogg" id="7_plgki"]
@@ -130,13 +132,28 @@ trigger_name = "MarkerCena7"
 [node name="SceneTriggerTo8" parent="." index="4" unique_id=948950765 instance=ExtResource("2_eoj3p")]
 connected_scene = "cena_8"
 
+[node name="Npc" parent="." index="5" unique_id=1222905426 instance=ExtResource("14_h2pml")]
+position = Vector2(245, 90)
+
+[node name="Sprite2D" parent="Npc" index="0" unique_id=23594111]
+texture = ExtResource("5_w0xne")
+
+[node name="Secretaria" parent="." index="6" unique_id=1650032477 instance=ExtResource("14_h2pml")]
+position = Vector2(365, 174)
+
+[node name="Sprite2D" parent="Secretaria" index="0" unique_id=23594111]
+position = Vector2(-1, -1)
+texture = ExtResource("5_1wget")
+
+[node name="Cecilia" parent="." index="7" unique_id=510678090 instance=ExtResource("14_h2pml")]
+position = Vector2(315, 175)
+
+[node name="Sprite2D" parent="Cecilia" index="0" unique_id=23594111]
+texture = ExtResource("15_1wget")
+
 [node name="DialogoFinal" parent="Dialogos" parent_id_path=PackedInt32Array(818597174) index="0" unique_id=369042241 instance=ExtResource("4_geibo")]
 dialogue = Array[ExtResource("5_lpijl")]([SubResource("Resource_ptsfa"), SubResource("Resource_tw0ch"), SubResource("Resource_iy8na"), SubResource("Resource_l0dex"), SubResource("Resource_sms5v"), SubResource("Resource_plgki"), SubResource("Resource_80nb4"), SubResource("Resource_c74pl"), SubResource("Resource_h2pml"), SubResource("Resource_1wget"), SubResource("Resource_w0xne")])
 
-[node name="Cecilia" parent="Dialogos" parent_id_path=PackedInt32Array(818597174) index="1" unique_id=1222905426 instance=ExtResource("14_h2pml")]
-position = Vector2(315, 175)
-
-[node name="Sprite2D" parent="Dialogos/Cecilia" index="0" unique_id=23594111]
-texture = ExtResource("15_1wget")
-
-[editable path="Dialogos/Cecilia"]
+[editable path="Npc"]
+[editable path="Secretaria"]
+[editable path="Cecilia"]
