@@ -12,18 +12,12 @@ const INTERVALO := 0.01
 var subir: bool = false
 
 func move_frame():
-	camera.offset.y += 0.3
+	camera.offset.y += 0.5
 
 func _ready():
 	camera_inicial = camera.offset.x
-	#moto_inicial = moto.position.x
-	#animation_player.play("moto")
 	await Utils.sleep(2)
-	audio_stream_player.play()
-	await Utils.sleep(1)
 	subir = true
-	await Utils.sleep(70)
-	finalizar()
 
 func finalizar():
 	Global.jogo_iniciou = false
@@ -34,7 +28,14 @@ func finalizar():
 
 func _process(delta: float) -> void:
 	if subir:
+		if (camera.offset.y >= 2150):
+			subir = false
+			return
+		
 		tempo_acumulado += delta
 		if tempo_acumulado >= INTERVALO:
 			tempo_acumulado = 0.0
 			move_frame()
+
+func _on_button_pressed() -> void:
+	finalizar()

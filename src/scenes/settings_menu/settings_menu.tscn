@@ -13,7 +13,6 @@ texture = ExtResource("1_sfrxv")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thkx5"]
 
 [node name="settings_menu" type="Panel" unique_id=100246387]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -32,7 +31,7 @@ script = ExtResource("2_4mek6")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 58.0
+offset_bottom = 43.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_tqtwh")
 theme_override_font_sizes/font_size = 10
@@ -48,7 +47,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -62.5
-offset_top = -48.5
+offset_top = -55.5
 offset_right = 74.5
 offset_bottom = 63.5
 grow_horizontal = 2
@@ -63,6 +62,13 @@ text = "Tela Cheia"
 
 [node name="EmptyLabel" type="Label" parent="settings_menu" unique_id=1626061894]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tqtwh")
+theme_override_font_sizes/font_size = 8
+text = "Movimento:
+  W A S D
+Interaçao:
+  E, Espaço, Enter
+"
 
 [node name="Soundtrack label" type="Label" parent="settings_menu" unique_id=937749757]
 layout_mode = 2

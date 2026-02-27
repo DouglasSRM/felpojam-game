@@ -82,6 +82,11 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0w8"]
 size = Vector2(41, 41)
 
+[sub_resource type="Resource" id="Resource_vih5p"]
+script = ExtResource("9_pacc2")
+text = "posters!!!"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vih5p"]
 size = Vector2(35, 11)
 
@@ -160,6 +165,8 @@ shape = SubResource("RectangleShape2D_tp0w8")
 
 [node name="DialogoPosters" parent="Dialogos" unique_id=923586164 instance=ExtResource("7_lriem")]
 position = Vector2(112, 114)
+trava_o_player = true
+dialogue = Array[ExtResource("8_pyp6y")]([SubResource("Resource_vih5p")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogos/DialogoPosters" unique_id=1471136798]
 position = Vector2(4, -6)

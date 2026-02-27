@@ -46,7 +46,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		var origem: String = get_tree().current_scene.scene_file_path.get_file().get_basename()
-		if origem != "main_menu":
+		if origem != "main_menu" and origem != "creditos":
 			toggle_pause()
 
 func toggle_pause():
@@ -54,7 +54,15 @@ func toggle_pause():
 	pause_menu.visible = get_tree().paused
 
 func change_scene(from, to_scene_name: String, transicao: bool = true, detailed: bool = false) -> void:
-	if from is BaseScene:
+	var full_path: String
+	if detailed:
+		full_path = scene_dir_path + to_scene_name +".tscn"
+	else:
+		full_path = scene_dir_path + to_scene_name +"/"+to_scene_name+".tscn"
+	
+	
+	
+	if from is BaseScene and load(full_path).instantiate() is BaseScene:
 		player = from.player
 		player.get_parent().remove_child(player)
 	
@@ -62,11 +70,7 @@ func change_scene(from, to_scene_name: String, transicao: bool = true, detailed:
 		animation_player.play("carimbo_in")
 		await animation_player.animation_finished
 	
-	var full_path: String
-	if detailed:
-		full_path = scene_dir_path + to_scene_name +".tscn"
-	else:
-		full_path = scene_dir_path + to_scene_name +"/"+to_scene_name+".tscn"
+	
 	from.get_tree().call_deferred("change_scene_to_file", full_path)
 	if transicao:
 		animation_player.play("carimbo_out")

@@ -11,8 +11,13 @@ var deitada: bool = false
 var player_collision_layer
 var player_collision_mask
 
+
+var trava_deitar: bool = false
 var pode_deitar: bool = true
+
 @onready var gustavo: CharacterBody2D = $Gustavo
+
+signal deitou
 
 func _ready() -> void:
 	super()
@@ -46,6 +51,9 @@ func _on_ready() -> void:
 	simple_dialog_player.visible = true
 
 func interagir_cama() -> void:
+	if trava_deitar:
+		return
+	
 	if !pode_deitar:
 		return
 	
@@ -60,6 +68,9 @@ func interagir_cama() -> void:
 	
 	await Utils.sleep(0.1)
 	pode_deitar = true
+	
+	if deitada:
+		deitou.emit()
 
 func deitar():
 	set_player_dormindo()
