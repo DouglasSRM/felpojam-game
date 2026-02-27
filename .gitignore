@@ -2,3 +2,5 @@
 .godot/
 /android/
 *.exe
+*.x86_64
+*.sh

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="8_ub7js"]
 [ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="10_3kovp"]
 [ext_resource type="TileSet" uid="uid://bsllcumvbuyx2" path="res://src/scenes/initial_scene/resources/tile_set.tres" id="10_dp58v"]
+[ext_resource type="AudioStream" uid="uid://c7ej4f4midybf" path="res://soundtrack/motoca.ogg" id="11_3kovp"]
 
 [sub_resource type="Animation" id="Animation_yij1g"]
 length = 0.001
@@ -95,3 +96,8 @@ position = Vector2(143, 157)
 override_dialogue_position = true
 override_position = Vector2(240, 100)
 dialogue = Array[ExtResource("5_fxl6p")]([SubResource("Resource_bb8qs"), SubResource("Resource_mk21t")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1491964316]
+stream = ExtResource("11_3kovp")
+autoplay = true
+parameters/looping = true

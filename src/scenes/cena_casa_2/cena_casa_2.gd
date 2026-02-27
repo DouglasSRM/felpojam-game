@@ -11,8 +11,11 @@ func _ready():
 	dialogo_inicial_3._activate_dialogue()
 	await dialogo_inicial_3.dialogue_finished
 	player.can_move = true
+	deitou.connect(Callable(self, "next"))
 
 func deitar():
-	super()
+	await super()
+	trava_deitar = true
 
+func next():
 	SceneManager.change_scene_circle(self, "carimbar/cena_carimbo_cursed")
