@@ -6,14 +6,15 @@ class_name Cena7 extends BaseScene
 
 func _ready():
 	super()
+	player.can_move = false
+	secretaria.walk("left", 0, 0.01)
+	secretaria.stop_walking(0)
 	await cecilia.walk("right", 0.1, 0.1)
 	cecilia.stop_walking(0)
 	await Utils.sleep(0.5)
 	move_cecilia()
-	player.can_move = false
 	player.animation_player.play("walk_right")
-	secretaria.walk("left", 0, 0.01)
-	secretaria.stop_walking(0)
+	
 	await Utils.sleep(0.5)
 	dialogo_final._activate_dialogue()
 	await Utils.sleep(1)
