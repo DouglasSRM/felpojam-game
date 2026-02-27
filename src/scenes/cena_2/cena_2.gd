@@ -91,7 +91,7 @@ func armario_uniforme():
 		scene_trigger_to_3.enabled = true
 
 func after_dialogo_chefe():
-	chefe_sai_de_cena()
+	await chefe_sai_de_cena()
 	dialogo_gustavo._activate_dialogue()
 	await dialogo_gustavo.dialogue_finished
 	libera_movimento.emit()
