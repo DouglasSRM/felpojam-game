@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ckoqbdhncka6u"
+path="res://.godot/imported/medo 2.ogg-a6a11dacb3cb35aae687bac15a34033d.oggvorbisstr"
+
+[deps]
+
+source_file="res://soundtrack/medo 2.ogg"
+dest_files=["res://.godot/imported/medo 2.ogg-a6a11dacb3cb35aae687bac15a34033d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
