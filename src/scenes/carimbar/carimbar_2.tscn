@@ -40,6 +40,12 @@ script = ExtResource("4_gg1ke")
 text = "[shake rate=15.0 level=3 connected=1]Qual...[/shake]"
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
+[sub_resource type="Resource" id="Resource_cte1k"]
+script = ExtResource("4_gg1ke")
+text = "[shake rate=15.0 level=3 connected=1]...[/shake]"
+text_speed = 3.0
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
 [sub_resource type="Resource" id="Resource_nvcb5"]
 script = ExtResource("4_gg1ke")
 text = "[shake rate=15.0 level=3 connected=1]Qual... é o meu nome?[/shake]"
@@ -80,8 +86,8 @@ dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_o0qmt")])
 [node name="6" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="4" unique_id=792051431 instance=ExtResource("2_ou2lg")]
 dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_6hj7m")])
 
-[node name="8" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="5" unique_id=625283641 instance=ExtResource("2_ou2lg")]
-dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_yi03q")])
+[node name="8" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="5" unique_id=1647225431 instance=ExtResource("2_ou2lg")]
+dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_cte1k")])
 
 [node name="10" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="6" unique_id=1910509871 instance=ExtResource("2_ou2lg")]
 dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_nvcb5")])
