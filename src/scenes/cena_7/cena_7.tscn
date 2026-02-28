@@ -49,7 +49,7 @@ script = ExtResource("6_iy8na")
 speaker_name = "Secretária"
 speaker_img = ExtResource("11_uncfc")
 speaker_img_HFrames = 2
-text = "Certo, trouxe todos os documentos?"
+text = "Pois bem. Trouxe todos os documentos?"
 text_sound = ExtResource("7_plgki")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -128,7 +128,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("2_wbdir")
 
 [node name="Any" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="0" unique_id=1682971536]
-position = Vector2(268, 161)
+position = Vector2(268, 174)
 
 [node name="Player" parent="." index="1" unique_id=1008942108]
 visible = true
