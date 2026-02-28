@@ -1,10 +1,7 @@
 # SOUL IMPRINT
-
-Esse joguito foi feito para a felpojam 2026
-
-Ele é muito bacana e legal
-
-voce devia jogar
-!!
-
-## serio joga pfv
+## FEITO POR COLETIVO ARIRANHA
+Nessa história, você joga como uma jovem garota travesti descobrindo sua identidade, de algum jeito, através de carimbos, alienígenas e apoio incondicional. É uma experiência linear com foco narrativo.
+WASD ou Setas para mexer.
+Enter, espaço ou E para interagir.
+ESC para abrir o Menu.
+Livre Para Todos os Públicos.
