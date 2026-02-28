@@ -46,7 +46,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		var origem: String = get_tree().current_scene.scene_file_path.get_file().get_basename()
-		if origem != "main_menu" and origem != "creditos":
+		if origem != "main_menu" and origem != "creditos" and origem != "creditos_menu":
 			toggle_pause()
 
 func toggle_pause():
