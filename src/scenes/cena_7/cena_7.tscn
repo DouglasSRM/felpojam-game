@@ -127,6 +127,9 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 [node name="Cena7" unique_id=823413629 instance=ExtResource("1_krf42")]
 script = ExtResource("2_wbdir")
 
+[node name="Any" type="Marker2D" parent="EntranceMarkers" parent_id_path=PackedInt32Array(531511781) index="0" unique_id=1682971536]
+position = Vector2(268, 161)
+
 [node name="Player" parent="." index="1" unique_id=1008942108]
 visible = true
 position = Vector2(268, 174)
