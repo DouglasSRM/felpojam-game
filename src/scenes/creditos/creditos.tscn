@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dd3vuylrhtl01" path="res://assets/characters/protagonista/sprite-assutada.png" id="12_cn3xc"]
 [ext_resource type="Texture2D" uid="uid://ba4vngvw7ug04" path="res://assets/characters/ariranha_secreto/ariranha-sheet.png" id="13_3wyk6"]
 [ext_resource type="Texture2D" uid="uid://b0o63twabxl4u" path="res://assets/characters/npcs/charpim-Sheet.png" id="13_vgdkp"]
+[ext_resource type="AudioStream" uid="uid://bkivccq7se8wk" path="res://soundtrack/musicas/22 - Dream.ogg" id="14_vgdkp"]
 
 [sub_resource type="FontFile" id="FontFile_diiib"]
 subpixel_positioning = 0
@@ -635,6 +636,11 @@ offset_top = 2225.0
 offset_right = 304.0
 offset_bottom = 2256.0
 text = "Voltar ao menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2015097226]
+stream = ExtResource("14_vgdkp")
+volume_db = 15.0
+parameters/looping = true
 
 [connection signal="pressed" from="btn_voltar" to="." method="_on_button_pressed"]
 

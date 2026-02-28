@@ -1,13 +1,14 @@
 class_name Creditos extends Node2D
 
 @onready var camera: Camera2D = $Camera2D
-#@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var camera_inicial: float
 var moto_inicial: float
 
 var carimbao: bool = true
-var step: float = 0.5
+var step: float = 0.4
+var wait_audio: float = 1
 var wait: float = 2
 var tempo_acumulado := 0.0
 const INTERVALO := 0.01
@@ -19,7 +20,9 @@ func move_frame():
 
 func _ready():
 	camera_inicial = camera.offset.x
-	await Utils.sleep(wait)
+	await Utils.sleep(wait_audio)
+	audio_stream_player.play()
+	await Utils.sleep(wait-wait_audio)
 	subir = true
 
 func finalizar():
