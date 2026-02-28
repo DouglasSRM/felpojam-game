@@ -1,22 +1,25 @@
-extends Node2D
+class_name Creditos extends Node2D
 
 @onready var camera: Camera2D = $Camera2D
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+#@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var camera_inicial: float
 var moto_inicial: float
 
+var carimbao: bool = true
+var step: float = 0.5
+var wait: float = 2
 var tempo_acumulado := 0.0
 const INTERVALO := 0.01
 
 var subir: bool = false
 
 func move_frame():
-	camera.offset.y += 0.5
+	camera.offset.y += step
 
 func _ready():
 	camera_inicial = camera.offset.x
-	await Utils.sleep(2)
+	await Utils.sleep(wait)
 	subir = true
 
 func finalizar():
@@ -24,7 +27,7 @@ func finalizar():
 	Global.cena_2_pos_carimbo = false
 	Global.pos_carimbo_4 = false
 	Global.permite_finalizar = true
-	SceneManager.change_scene(self, "main_menu")
+	SceneManager.change_scene(self, "main_menu", carimbao)
 
 func _process(delta: float) -> void:
 	if subir:

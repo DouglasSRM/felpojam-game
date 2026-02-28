@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://cnl6cldo806f"]
+
+[ext_resource type="PackedScene" uid="uid://b45d5weq13pmr" path="res://src/scenes/creditos/creditos.tscn" id="1_xhvbc"]
+[ext_resource type="Script" uid="uid://kwnl2kacxo80" path="res://src/scenes/creditos/creditos_menu.gd" id="2_dvrdf"]
+
+[node name="CreditosMenu" unique_id=536292343 instance=ExtResource("1_xhvbc")]
+script = ExtResource("2_dvrdf")
+
+[node name="Label2" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="0" unique_id=778065487]
+offset_top = 258.0
+offset_bottom = 365.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="1" unique_id=1836192475]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="2" unique_id=1656366316]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="3" unique_id=517072718]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="4" unique_id=1250306498]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="5" unique_id=1672796043]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="6" unique_id=781060151]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label8" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="7" unique_id=567022275]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label9" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="8" unique_id=887902626]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label10" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="9" unique_id=353660280]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label11" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="10" unique_id=454788660]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label12" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="11" unique_id=1801456436]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label13" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="12" unique_id=1806360356]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label14" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="13" unique_id=535505247]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label15" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="14" unique_id=562134830]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label16" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="15" unique_id=2075858472]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label17" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="16" unique_id=892297999]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label18" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="17" unique_id=688867061]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label19" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="18" unique_id=1952326253]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label20" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="19" unique_id=693441383]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label21" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="20" unique_id=1056512788]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label22" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="21" unique_id=1027223557]
+visible = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Label23" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="22" unique_id=1224184344]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label24" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="23" unique_id=1677416990]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label25" parent="Labels" parent_id_path=PackedInt32Array(90780117) index="24" unique_id=123581790]
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" parent="." index="2" unique_id=2057057215]
+position = Vector2(0, 178)
+
+[node name="Sprites" parent="." index="3" unique_id=427277598]
+visible = false
+
+[node name="Label14" parent="Sprites" index="8" unique_id=949817331]
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_voltar" parent="." index="5" unique_id=1383519463]
+metadata/_edit_use_anchors_ = true
+
+[editable path="Sprites/Cecilia"]
+[editable path="Sprites/Cecilia2"]
+[editable path="Sprites/Lucinda"]
+[editable path="Sprites/Lucinda2"]
+[editable path="Sprites/NodeMoto"]

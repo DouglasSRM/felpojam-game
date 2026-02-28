@@ -6,4 +6,10 @@
 [node name="PauseMenu" unique_id=1253128885 instance=ExtResource("1_lclnh")]
 script = ExtResource("2_qyvfh")
 
+[node name="creditos" parent="background/main_menu" parent_id_path=PackedInt32Array(10489993) index="2" unique_id=511764043]
+visible = false
+
+[node name="settings_menu" parent="." index="1" unique_id=100246387]
+visible = false
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

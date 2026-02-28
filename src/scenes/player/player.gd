@@ -62,10 +62,10 @@ func _physics_process(_delta: float) -> void:
 
 func trocar_uniforme():
 	if !uniforme:
-		sprite_2d.texture = load("res://assets/characters/julia_protag/julia-uniforme-Sheet.png")
+		sprite_2d.texture = load("res://assets/characters/protagonista/julia-uniforme-Sheet.png")
 		sprite_2d.vframes = 4
 		uniforme = true
 	else:
-		sprite_2d.texture = load("res://assets/characters/julia_protag/player_spritesheet.png")
+		sprite_2d.texture = load("res://assets/characters/protagonista/player_spritesheet.png")
 		sprite_2d.vframes = 7
 		uniforme = false

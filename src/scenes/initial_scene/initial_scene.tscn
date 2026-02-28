@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://bxip4mu3u2civ"]
 
-[ext_resource type="TileSet" uid="uid://bsllcumvbuyx2" path="res://src/scenes/initial_scene/resources/tile_set.tres" id="1_bptee"]
+[ext_resource type="TileSet" uid="uid://bsllcumvbuyx2" path="res://src/resources/tile_set.tres" id="1_bptee"]
 [ext_resource type="Script" uid="uid://etvvcufmpgrp" path="res://src/scenes/initial_scene/initial_scene.gd" id="1_vum8s"]
 [ext_resource type="PackedScene" uid="uid://c02ju3varrs0g" path="res://src/ui/simple_dialog/simple_dialog_player.tscn" id="3_gddha"]
 [ext_resource type="PackedScene" uid="uid://yi2f5p61t3oc" path="res://src/ui/simple_dialog/simple_dialog_area.tscn" id="4_82qsf"]
-[ext_resource type="PackedScene" uid="uid://bshfi56ow2ufx" path="res://src/scenes/character_gustavo/gustavo.tscn" id="4_bb8qs"]
+[ext_resource type="PackedScene" uid="uid://dc4cpmp5ogss" path="res://src/scenes/characters/gustavo/gustavo.tscn" id="4_vih5p"]
 [ext_resource type="PackedScene" uid="uid://dfe13b5urbx78" path="res://src/scenes/player/player.tscn" id="5_vum8s"]
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="7_lriem"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="8_pyp6y"]
@@ -13,8 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://b8exh37s8dyqs" path="res://soundtrack/gustavo.ogg" id="10_2c6j5"]
 [ext_resource type="Texture2D" uid="uid://cb5ys8s22yuxt" path="res://assets/characters/gustavo/GUSTAVO - 3-Sheet.png" id="12_bb8qs"]
 [ext_resource type="Texture2D" uid="uid://ddevbhs3g51ih" path="res://assets/characters/gustavo/GUSTAVO - 5-Sheet.png" id="13_mk21t"]
-[ext_resource type="Texture2D" uid="uid://dxg52bsynps5u" path="res://assets/characters/julia_protag/PROTA - 10.png" id="14_2c6j5"]
-[ext_resource type="Texture2D" uid="uid://dkxibn8hktogs" path="res://assets/characters/julia_protag/PROTA - 11.png" id="14_ni0uh"]
+[ext_resource type="Texture2D" uid="uid://dxg52bsynps5u" path="res://assets/characters/protagonista/PROTA - 10.png" id="14_2c6j5"]
+[ext_resource type="Texture2D" uid="uid://dkxibn8hktogs" path="res://assets/characters/protagonista/PROTA - 11.png" id="14_ni0uh"]
 [ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="16_vih5p"]
 [ext_resource type="PackedScene" uid="uid://ppwnuxjo4h80" path="res://src/scenes/scene_trigger/scene_trigger.tscn" id="17_vih5p"]
 
@@ -121,9 +121,8 @@ tile_set = ExtResource("1_bptee")
 position = Vector2(98, 160)
 speed = 100
 
-[node name="Gustavo" parent="." unique_id=1887093933 instance=ExtResource("4_bb8qs")]
+[node name="Gustavo" parent="." unique_id=1222905426 instance=ExtResource("4_vih5p")]
 position = Vector2(153, 163)
-metadata/_edit_group_ = true
 
 [node name="SimpleDialogPlayer" parent="." unique_id=1255215716 instance=ExtResource("3_gddha")]
 visible = false

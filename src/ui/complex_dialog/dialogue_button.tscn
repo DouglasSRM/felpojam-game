@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://da5ak8t0bnxnw"]
 
-[ext_resource type="FontFile" uid="uid://dk4rc8edrx4rd" path="res://fonts/Pixel_Operator/PixelOperator-Bold.ttf" id="1_adj0y"]
+[ext_resource type="FontFile" uid="uid://dk4rc8edrx4rd" path="res://fonts/PixelOperator-Bold.ttf" id="1_adj0y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu8dr"]
 

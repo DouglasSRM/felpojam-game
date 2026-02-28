@@ -15,12 +15,34 @@ text = "Que?"
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
+[sub_resource type="Resource" id="Resource_k0sec"]
+script = ExtResource("4_gg1ke")
+text = "Nem dormindo eu posso descansar... Saco de carimbo."
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
 [sub_resource type="Resource" id="Resource_gg1ke"]
 script = ExtResource("4_gg1ke")
-speaker_name = "protagonista"
-speaker_img_HFrames = 2
-text = "Nem dormindo eu posso descansar... Saco de carimbo."
-speaker_on_right = false
+text = "[shake rate=15.0 level=3 connected=1]Esse nome...[/shake]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_yi03q"]
+script = ExtResource("4_gg1ke")
+text = "[shake rate=15.0 level=3 connected=1]O que tá acontecendo?[/shake]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_o0qmt"]
+script = ExtResource("4_gg1ke")
+text = "[shake rate=15.0 level=3 connected=1]O meu nome...[/shake]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_6hj7m"]
+script = ExtResource("4_gg1ke")
+text = "[shake rate=15.0 level=3 connected=1]Qual...[/shake]"
+metadata/_custom_type_script = "uid://bu36cy11lb2of"
+
+[sub_resource type="Resource" id="Resource_nvcb5"]
+script = ExtResource("4_gg1ke")
+text = "[shake rate=15.0 level=3 connected=1]Qual... é o meu nome?[/shake]"
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
 [node name="Carimbar2" unique_id=1476343516 instance=ExtResource("1_k1sjw")]
@@ -44,7 +66,22 @@ scale = Vector2(0.12, 0.12)
 texture = ExtResource("4_k0sec")
 
 [node name="1" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="0" unique_id=369042241 instance=ExtResource("2_ou2lg")]
-dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_f5cl5")])
+dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_f5cl5"), SubResource("Resource_k0sec")])
 
-[node name="2" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="1" unique_id=201043894 instance=ExtResource("2_ou2lg")]
+[node name="2" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="1" unique_id=1275631531 instance=ExtResource("2_ou2lg")]
 dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_gg1ke")])
+
+[node name="3" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="2" unique_id=572753475 instance=ExtResource("2_ou2lg")]
+dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_yi03q")])
+
+[node name="5" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="3" unique_id=1997320002 instance=ExtResource("2_ou2lg")]
+dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_o0qmt")])
+
+[node name="6" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="4" unique_id=792051431 instance=ExtResource("2_ou2lg")]
+dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_6hj7m")])
+
+[node name="8" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="5" unique_id=625283641 instance=ExtResource("2_ou2lg")]
+dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_yi03q")])
+
+[node name="10" parent="Dialogos" parent_id_path=PackedInt32Array(2096437413) index="6" unique_id=1910509871 instance=ExtResource("2_ou2lg")]
+dialogue = Array[ExtResource("3_5utbn")]([SubResource("Resource_nvcb5")])

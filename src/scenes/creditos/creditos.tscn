@@ -1,20 +1,23 @@
 [gd_scene format=4 uid="uid://b45d5weq13pmr"]
 
-[ext_resource type="TileSet" uid="uid://bsllcumvbuyx2" path="res://src/scenes/initial_scene/resources/tile_set.tres" id="1_2sqs2"]
+[ext_resource type="TileSet" uid="uid://bsllcumvbuyx2" path="res://src/resources/tile_set.tres" id="1_2sqs2"]
 [ext_resource type="Script" uid="uid://c14urps28o0vt" path="res://src/scenes/creditos/creditos.gd" id="1_onwi3"]
 [ext_resource type="FontFile" uid="uid://bayl34n5s6ic7" path="res://fonts/dungeon-mode.ttf" id="2_5wa4v"]
 [ext_resource type="PackedScene" uid="uid://btwtjqlno0g88" path="res://src/scenes/base_character/base_character.tscn" id="5_r11by"]
 [ext_resource type="Texture2D" uid="uid://bgmwyyrw1d8qy" path="res://assets/characters/npcs/cecilia-sprites.png" id="6_touim"]
 [ext_resource type="Texture2D" uid="uid://bcrt47vedhpry" path="res://assets/characters/npcs/lucinda-sem-uniforme.png" id="7_touim"]
 [ext_resource type="Texture2D" uid="uid://dgo8up8s425bm" path="res://assets/characters/npcs/lucinda-uniforme.png" id="8_lwp5q"]
-[ext_resource type="Texture2D" uid="uid://bibiw382mwsw6" path="res://assets/livro/a_carimbada/pg7.png" id="8_wtgui"]
+[ext_resource type="Texture2D" uid="uid://cussrorfvb7nn" path="res://assets/livro/a_carimbada/livro_8.png" id="8_wtgui"]
 [ext_resource type="PackedScene" uid="uid://dstgamin3f287" path="res://src/scenes/moto/moto.tscn" id="10_nywg4"]
 [ext_resource type="Texture2D" uid="uid://crumvp1db24kb" path="res://assets/cutcenes/protag e alien jayvik.png" id="11_vgdkp"]
-[ext_resource type="Texture2D" uid="uid://dd3vuylrhtl01" path="res://assets/characters/julia_protag/sprite-assutada.png" id="12_cn3xc"]
+[ext_resource type="Texture2D" uid="uid://dd3vuylrhtl01" path="res://assets/characters/protagonista/sprite-assutada.png" id="12_cn3xc"]
 [ext_resource type="Texture2D" uid="uid://ba4vngvw7ug04" path="res://assets/characters/ariranha_secreto/ariranha-sheet.png" id="13_3wyk6"]
 [ext_resource type="Texture2D" uid="uid://b0o63twabxl4u" path="res://assets/characters/npcs/charpim-Sheet.png" id="13_vgdkp"]
 
 [sub_resource type="FontFile" id="FontFile_diiib"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -574,51 +577,30 @@ texture = ExtResource("8_lwp5q")
 [node name="AnimationPlayer" parent="Sprites/Lucinda2" index="1" unique_id=2083828268]
 reset_on_save = false
 
-[node name="poisbem" type="Sprite2D" parent="." unique_id=230652281]
+[node name="poisbem" type="Sprite2D" parent="Sprites" unique_id=230652281]
 position = Vector2(355, 781)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_wtgui")
 
-[node name="NodeMoto" parent="." unique_id=1862065444 instance=ExtResource("10_nywg4")]
-position = Vector2(90, 988)
-
-[node name="Moto" parent="NodeMoto" index="0" unique_id=155432218]
-position = Vector2(56, -17)
-scale = Vector2(0.8, 0.8)
-
-[node name="abraco" type="Sprite2D" parent="." unique_id=1616600297]
+[node name="abraco" type="Sprite2D" parent="Sprites" unique_id=1616600297]
 position = Vector2(375, 1088)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11_vgdkp")
 
-[node name="cima" type="Sprite2D" parent="." unique_id=1810387153]
-position = Vector2(375, 1365)
-scale = Vector2(2, 2)
-texture = ExtResource("12_cn3xc")
-hframes = 2
-
-[node name="cima2" type="Sprite2D" parent="." unique_id=373215732]
-position = Vector2(427, 1703)
-texture = ExtResource("13_3wyk6")
-hframes = 2
-
-[node name="Node2D" type="Node2D" parent="." unique_id=134800283]
-position = Vector2(251, 2345)
-
-[node name="Button" type="Button" parent="." unique_id=1383519463]
-offset_left = 177.0
-offset_top = 2225.0
-offset_right = 304.0
-offset_bottom = 2256.0
-text = "Voltar ao menu"
-
-[node name="cima3" type="Sprite2D" parent="." unique_id=1699563689]
+[node name="charpim" type="Sprite2D" parent="Sprites" unique_id=1699563689]
 position = Vector2(107, 1258)
 texture = ExtResource("13_vgdkp")
 hframes = 5
 frame = 1
 
-[node name="Label14" type="Label" parent="." unique_id=949817331]
+[node name="NodeMoto" parent="Sprites" unique_id=1862065444 instance=ExtResource("10_nywg4")]
+position = Vector2(122, 948)
+metadata/_edit_group_ = true
+
+[node name="Moto" parent="Sprites/NodeMoto" index="0" unique_id=155432218]
+scale = Vector2(0.8, 0.8)
+
+[node name="Label14" type="Label" parent="Sprites" unique_id=949817331]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -636,10 +618,28 @@ text = "in memorium"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="cima" type="Sprite2D" parent="Sprites" unique_id=1810387153]
+position = Vector2(375, 1365)
+scale = Vector2(2, 2)
+texture = ExtResource("12_cn3xc")
+hframes = 2
+
+[node name="ariranha" type="Sprite2D" parent="." unique_id=373215732]
+position = Vector2(427, 1703)
+texture = ExtResource("13_3wyk6")
+hframes = 2
+
+[node name="btn_voltar" type="Button" parent="." unique_id=1383519463]
+offset_left = 177.0
+offset_top = 2225.0
+offset_right = 304.0
+offset_bottom = 2256.0
+text = "Voltar ao menu"
+
+[connection signal="pressed" from="btn_voltar" to="." method="_on_button_pressed"]
 
 [editable path="Sprites/Cecilia"]
 [editable path="Sprites/Cecilia2"]
 [editable path="Sprites/Lucinda"]
 [editable path="Sprites/Lucinda2"]
-[editable path="NodeMoto"]
+[editable path="Sprites/NodeMoto"]

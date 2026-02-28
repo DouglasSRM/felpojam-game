@@ -8,8 +8,9 @@ var livro_path: String
 var paginas: int
 
 func _ready():
-	livro.sprite.texture = load(livro_path)
-	livro.sprite.hframes = paginas
+	livro.path = livro_path
+	livro.total_pages = paginas
+	livro.set_page()
 	livro.sair.connect(Callable(self, "_on_sair"))
 
 func _on_sair():

@@ -3,19 +3,15 @@ class_name InitialScene extends BaseScene
 @onready var simple_dialog_player: CanvasLayer = $SimpleDialogPlayer
 @onready var interacao_cama: Area2D = $InteracaoCama
 @onready var dialogo_gustavo: Area2D = $Dialogos/DialogoGustavo
+@onready var gustavo: Gustavo = $Gustavo
 
 const player_deitada = Vector2(56,130)
-
 var deitada: bool = false
-
-var player_collision_layer
-var player_collision_mask
-
-
 var trava_deitar: bool = false
 var pode_deitar: bool = true
 
-@onready var gustavo: CharacterBody2D = $Gustavo
+var player_collision_layer
+var player_collision_mask
 
 signal deitou
 
@@ -94,7 +90,7 @@ func ler_livro():
 	var cena_livro: LeituraDeLivro = load("res://src/scenes/livro/leitura_de_livro.tscn").instantiate()
 	player.can_move = false
 	
-	cena_livro.livro_path = "res://assets/livro/a_carimbada/livro_em_ordem.png"
+	cena_livro.livro_path = "res://assets/livro/a_carimbada/livro"
 	cena_livro.paginas = 11
 	
 	self.add_child(cena_livro)

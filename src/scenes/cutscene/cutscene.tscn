@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b66r2lj2gxbmv" path="res://src/ui/complex_dialog/dialogue_area_2d.tscn" id="3_mopfk"]
 [ext_resource type="Script" uid="uid://bkjdqrlbk0p6h" path="res://src/ui/complex_dialog/resources/dialogue_export_resource.gd" id="4_dir8p"]
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="5_5p2fw"]
-[ext_resource type="Texture2D" uid="uid://chf7nvg6i2pn7" path="res://assets/characters/jurya_alien/ALIEN - 1.png" id="6_dir8p"]
+[ext_resource type="Texture2D" uid="uid://chf7nvg6i2pn7" path="res://assets/characters/insolita/ALIEN - 1.png" id="6_dir8p"]
 [ext_resource type="AudioStream" uid="uid://ccxkbyrj0sja3" path="res://soundtrack/insolita.ogg" id="7_5p2fw"]
-[ext_resource type="Texture2D" uid="uid://bxta6jlc128fo" path="res://assets/characters/julia_protag/JULIA BRAVA.png" id="7_dir8p"]
+[ext_resource type="Texture2D" uid="uid://bxta6jlc128fo" path="res://assets/characters/protagonista/JULIA BRAVA.png" id="7_dir8p"]
 [ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="9_37xu1"]
 
 [sub_resource type="Resource" id="Resource_7831v"]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dc4cpmp5ogss"]
+
+[ext_resource type="PackedScene" uid="uid://btwtjqlno0g88" path="res://src/scenes/base_character/base_character.tscn" id="1_oidt6"]
+[ext_resource type="Script" uid="uid://d3xvcv3darfxh" path="res://src/scenes/characters/gustavo/gustavo.gd" id="2_dxlc0"]
+[ext_resource type="Texture2D" uid="uid://csfrekapco6as" path="res://assets/characters/gustavo/gustavosprite-Sheet.png" id="3_tki8d"]
+
+[node name="Gustavo" unique_id=1222905426 instance=ExtResource("1_oidt6")]
+script = ExtResource("2_dxlc0")
+
+[node name="Sprite2D" parent="." index="0" unique_id=23594111]
+texture = ExtResource("3_tki8d")

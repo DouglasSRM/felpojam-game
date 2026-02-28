@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://bu36cy11lb2of" path="res://src/ui/complex_dialog/resources/dialogue_text_resource.gd" id="6_dp58v"]
 [ext_resource type="Texture2D" uid="uid://hlg2si4v5vwk" path="res://assets/characters/gustavo/GUSTAVO - 1-Sheet.png" id="7_3kovp"]
 [ext_resource type="AudioStream" uid="uid://b8exh37s8dyqs" path="res://soundtrack/gustavo.ogg" id="8_dp58v"]
-[ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/julia_protag/PROTA_-_1-Sheet.png" id="8_ub7js"]
+[ext_resource type="Texture2D" uid="uid://c61gas3jiatac" path="res://assets/characters/protagonista/PROTA_-_1-Sheet.png" id="8_ub7js"]
 [ext_resource type="AudioStream" uid="uid://bxlm0y7oqcwg4" path="res://soundtrack/julia.ogg" id="10_3kovp"]
-[ext_resource type="TileSet" uid="uid://bsllcumvbuyx2" path="res://src/scenes/initial_scene/resources/tile_set.tres" id="10_dp58v"]
+[ext_resource type="TileSet" uid="uid://bsllcumvbuyx2" path="res://src/resources/tile_set.tres" id="10_dp58v"]
 [ext_resource type="AudioStream" uid="uid://c7ej4f4midybf" path="res://soundtrack/motoca.ogg" id="11_3kovp"]
 
 [sub_resource type="Animation" id="Animation_yij1g"]

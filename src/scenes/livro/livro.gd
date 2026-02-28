@@ -6,32 +6,40 @@ signal sair
 @onready var previous: Button = $VBoxContainer/HBoxContainer/Previous
 @onready var next: Button = $VBoxContainer/HBoxContainer/Next
 
+var path: String
+var total_pages: int
+var current_page: int
 
 func _ready() -> void:
-	sprite.frame = 0
+	current_page = 1
 	previous.text = "   sair    "
 
+func set_page():
+	sprite.texture = load(path+'_'+str(current_page)+'.png')
+
 func _on_previous_pressed() -> void:
-	if sprite.frame == 0:
+	if current_page == 1:
 		sair.emit()
 		return
 	
-	if sprite.hframes-1 == sprite.frame:
+	if total_pages == current_page:
 		next.text = "     >     "
 	
-	sprite.frame -= 1
+	current_page -= 1
+	set_page()
 	
-	if sprite.frame == 0:
+	if current_page == 1:
 		previous.text = "   sair    "
 
 func _on_next_pressed() -> void:
-	if sprite.hframes-1 == sprite.frame:
+	if total_pages == current_page:
 		sair.emit()
 		return
 	
 	previous.text = "     <     "
 	
-	sprite.frame += 1
+	current_page += 1
+	set_page()
 	
-	if sprite.hframes-1 == sprite.frame:
+	if total_pages == current_page:
 		next.text = "   sair    "
