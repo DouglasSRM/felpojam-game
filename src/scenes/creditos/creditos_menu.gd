@@ -6,7 +6,7 @@ func _ready():
 	carimbao = false
 	super()
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if subir:
 		if (camera.offset.y >= 2000):
 			subir = false

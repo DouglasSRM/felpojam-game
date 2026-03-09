@@ -152,6 +152,17 @@ func _choice_button_pressed(target_node: Node, wait_for_signal_to_continue: Stri
 	current_dialogue_item += 1
 	next_item = true
 
+func get_dialogue_text(p_text) -> String:
+	
+	if FileAccess.file_exists(Global.dialogue_directory):
+		FileAccess.open(Global.dialogue_directory, FileAccess.READ)
+		var json: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(Global.dialogue_directory))
+		if json.has(p_text):
+			return json[p_text]
+		else:
+			return p_text
+	return p_text
+
 func _text_resource(i: DialogueText) -> void:
 	if i.speaker_name == "protagonista":
 		speaker_name_label.text = Global.nome_protagonista
@@ -175,10 +186,12 @@ func _text_resource(i: DialogueText) -> void:
 	else:
 		speaker_parent.visible = false
 	
+	var text = get_dialogue_text(i.text)
+	
 	dialogue_label.add_theme_font_size_override("normal_font_size", i.font_size)
 	dialogue_label.visible_characters = 0
-	dialogue_label.text = i.text
-	var text_without_square_brackets: String = _text_without_square_brackets(i.text)
+	dialogue_label.text = text
+	var text_without_square_brackets: String = _text_without_square_brackets(text)
 	var total_characters: int = text_without_square_brackets.length()
 	var character_timer: float = 0.0
 	

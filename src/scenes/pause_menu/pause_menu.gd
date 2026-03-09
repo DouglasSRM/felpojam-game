@@ -7,7 +7,7 @@ func _ready() -> void:
 func _on_visibility_changed() -> void:
 	if self.visible:
 		if play:
-			play.text = "Continuar"
+			play.text = "MENU_RESUME"
 		
 		if settings_menu:
 			settings_menu.visible = false

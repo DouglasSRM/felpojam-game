@@ -14,7 +14,7 @@
 script = ExtResource("5_5p2fw")
 speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
-text = "Não são apenas carimbos! De onde eu venho, têm um simbolismo muito importante."
+text = "cutscene1_dialogo_cutscene_0"
 text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -23,7 +23,7 @@ script = ExtResource("5_5p2fw")
 speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
 font_size = 14
-text = "Representam toda a nossa vida. O início, mudanças importantes, recomeços. Até o fim."
+text = "cutscene1_dialogo_cutscene_1"
 text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -32,7 +32,7 @@ script = ExtResource("5_5p2fw")
 speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
 font_size = 14
-text = "É algo importante para nossa cultura. Simbolizam nossa individualidade dentro do coletivo."
+text = "cutscene1_dialogo_cutscene_2"
 text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -40,7 +40,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("5_5p2fw")
 speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
-text = "Engraçado imaginar que não é assim no seu planeta lama-"
+text = "cutscene1_dialogo_cutscene_3"
 text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -50,7 +50,7 @@ speaker_name = "protagonista"
 speaker_img = ExtResource("7_dir8p")
 speaker_img_HFrames = 2
 speaker_img_step_frame = 2
-text = "É TERRA!!"
+text = "cutscene1_dialogo_cutscene_4"
 text_sound = ExtResource("9_37xu1")
 speaker_on_right = false
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
@@ -59,7 +59,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("5_5p2fw")
 speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
-text = "O carimbo me lembra da minha identidade. Eu sei quem eu sou por causa dele."
+text = "cutscene1_dialogo_cutscene_5"
 text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 
@@ -67,7 +67,7 @@ metadata/_custom_type_script = "uid://bu36cy11lb2of"
 script = ExtResource("5_5p2fw")
 speaker_name = "Insólita"
 speaker_img = ExtResource("6_dir8p")
-text = "Como você sabe quem você é se vocês não tem isso? Qual o seu carimbo?"
+text = "cutscene1_dialogo_cutscene_6"
 text_sound = ExtResource("7_5p2fw")
 metadata/_custom_type_script = "uid://bu36cy11lb2of"
 

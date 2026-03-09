@@ -89,6 +89,10 @@ E={
 "events": []
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://data/localization/localization.en.translation", "res://data/localization/localization.pt.translation")
+
 [layer_names]
 
 2d_render/layer_3="dialog"

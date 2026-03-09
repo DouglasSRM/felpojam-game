@@ -38,7 +38,7 @@ func _ready():
 func finalizar():
 	SceneManager.change_scene(self,"cena_7")
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	tempo_acumulado += delta
 	if tempo_acumulado >= INTERVALO:
 		tempo_acumulado = 0.0

@@ -32,7 +32,7 @@ func finalizar():
 	Global.permite_finalizar = true
 	SceneManager.change_scene(self, "main_menu", carimbao)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if subir:
 		if (camera.offset.y >= 2150):
 			subir = false
